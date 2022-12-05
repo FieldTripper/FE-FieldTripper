@@ -13,18 +13,20 @@ import { MATTS_API_KEY } from '../../secret';
 const MUSEUMS_QUERY = gql`
   {
     museums(city: "Denver", state: "CO", zipcode: "80202") {
-     name
-        rating
-        placeId
-        latitude
-        longitude
+      name
+      rating
+      placeId
+      latitude
+      longitude
     }
   }
 `;
 
 function MuseumsContainer() {
   const {loading, error, data} = useQuery(MUSEUMS_QUERY)
-  console.log(data)
+  console.log({loading})
+  console.log({data})
+  console.log({error})
 
   const render = (Status) => {
     return <h1>{Status}</h1>;
@@ -35,10 +37,10 @@ function MuseumsContainer() {
       <Wrapper apiKey={MATTS_API_KEY} render={render}>
         <Map />
       </Wrapper>
-       {/* <QueryResult error={error} loading={loading} data={data}>
-        {console.log(data)}
-        <MuseumCard museums={museums}/>
-      </QueryResult> */}
+      <QueryResult error={error} loading={loading} data={data}>
+        {console.log({data})}
+        {/* <MuseumCard data={data} /> */}
+      </QueryResult>
     </>
   )
     
