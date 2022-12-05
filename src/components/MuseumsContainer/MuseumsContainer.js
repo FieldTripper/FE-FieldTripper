@@ -1,10 +1,17 @@
 import React, {useState} from 'react'
-import MuseumCard from '../MuseumCard/MuseumCard'
-import QueryResult from '../QueryResult/QueryResult';
 import { useQuery, gql } from '@apollo/client';
+import { Wrapper, Status } from '@googlemaps/react-wrapper';
+
+import MuseumCard from '../MuseumCard/MuseumCard';
+import Map from '../Map/Map';
+
+import QueryResult from '../QueryResult/QueryResult';
+
+import museumsData from '../../testData/museumsData';
+import { MATTS_API_KEY } from '../../secret';
 
 const MUSEUMS_QUERY = gql`
-  
+  {
     museums(city: "Denver", state: "CO", zipcode: "80202") {
      name
         rating
@@ -12,20 +19,30 @@ const MUSEUMS_QUERY = gql`
         latitude
         longitude
     }
-  
+  }
 `;
 
-function MuseumsContainer({museums}) {
-    const {loading, error, data} = useQuery(MUSEUMS_QUERY)
-    console.log(data)
-  
+function MuseumsContainer() {
+  const {loading, error, data} = useQuery(MUSEUMS_QUERY)
+  console.log(data)
+
+  const render = (Status) => {
+    return <h1>{Status}</h1>;
+  };
 
   return (
-    <QueryResult error={error} loading={loading} data={data}>
-      {console.log(data)}
-      {/* <MuseumCard museums={museums}/> */}
-    </QueryResult>
+    <>
+      <Wrapper apiKey={MATTS_API_KEY} render={render}>
+        <Map />
+      </Wrapper>
+       {/* <QueryResult error={error} loading={loading} data={data}>
+        {console.log(data)}
+        <MuseumCard museums={museums}/>
+      </QueryResult> */}
+    </>
   )
+    
+   
 }
 
 export default MuseumsContainer
