@@ -1,9 +1,17 @@
 import React from "react";
 
-function MuseumCard({museums}) {
-  const cards = museums.map(museum => {
-    return <p>{museum}</p>
-  })
+function MuseumCard({ data }) {
+  let cards;
+  
+  if (data) {
+    cards = data.data.map(museum => {
+      return <p>{museum}</p>
+    });
+  } else {
+    cards = <p>Nope</p>
+  }
+  
+
   return (
     <div>
       {cards}

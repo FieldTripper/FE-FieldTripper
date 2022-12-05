@@ -5,7 +5,7 @@ import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
 import { ApolloClient, ApolloProvider, InMemoryCache, ApolloLink, HttpLink } from '@apollo/client';
-import testUri from './secret';
+import {testUri} from './secret';
 
 const httpLink = new HttpLink({
   uri: testUri
