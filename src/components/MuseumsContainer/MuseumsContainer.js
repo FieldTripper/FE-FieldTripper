@@ -1,32 +1,42 @@
-import React, {useState} from 'react'
-import { useQuery, gql } from '@apollo/client';
-import { Wrapper, Status } from '@googlemaps/react-wrapper';
+import React, { useState } from "react";
+import { useQuery, gql } from "@apollo/client";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
-import MuseumCard from '../MuseumCard/MuseumCard';
-import Map from '../Map/Map';
+import MuseumCard from "../MuseumCard/MuseumCard";
+import Map from "../Map/Map";
 
-import QueryResult from '../QueryResult/QueryResult';
+import QueryResult from "../QueryResult/QueryResult";
 
-import museumsData from '../../testData/museumsData';
-import { MATTS_API_KEY } from '../../secret';
+import museumsData from "../../testData/museumsData";
+// import { MATTS_API_KEY } from "../../secret";
 
 const MUSEUMS_QUERY = gql`
   {
     museums(city: "Denver", state: "CO", zipcode: "80202") {
+      placeId
       name
       rating
-      placeId
       latitude
       longitude
     }
   }
 `;
 
+// query: "{
+//   museums(city: "Denver", state: "CO", zipcode: "80202") {
+//       placeId
+//       name
+//       rating
+//       latitude
+//       longitude
+//   }
+// }"
+
 function MuseumsContainer() {
-  const {loading, error, data} = useQuery(MUSEUMS_QUERY)
-  console.log({loading})
-  console.log({data})
-  console.log({error})
+  const { loading, error, data } = useQuery(MUSEUMS_QUERY);
+  console.log({ loading });
+  console.log({ data });
+  console.log({ error });
 
   const render = (Status) => {
     return <h1>{Status}</h1>;
@@ -38,13 +48,11 @@ function MuseumsContainer() {
         <Map />
       </Wrapper>
       <QueryResult error={error} loading={loading} data={data}>
-        {console.log({data})}
+        {console.log({ data })}
         {/* <MuseumCard data={data} /> */}
       </QueryResult>
     </>
-  )
-    
-   
+  );
 }
 
-export default MuseumsContainer
+export default MuseumsContainer;
