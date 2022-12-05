@@ -11,15 +11,19 @@ import {
   ApolloLink,
   HttpLink,
 } from "@apollo/client";
-// import {testUri} from './secret';
+import { PRODUCTION_URI, TEST_URI } from "./secret";
 
 const httpLink = new HttpLink({
-  uri: testUri,
+  uri: PRODUCTION_URI,
+  headers: {
+    "x-mock-match-request-body": true,
+  },
 });
 
 const client = new ApolloClient({
   link: ApolloLink.from([httpLink]),
   cache: new InMemoryCache(),
+  connectToDevTools: true,
 });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
