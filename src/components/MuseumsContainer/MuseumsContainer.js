@@ -9,6 +9,7 @@ import QueryResult from "../QueryResult/QueryResult";
 
 import museumsData from "../../testData/museumsData";
 import { MATTS_API_KEY } from "../../secret";
+import "./MuseumsContainer.css";
 
 const MUSEUMS_QUERY = gql`
   query Museums($city: String!, $state: String!, $zipcode: String!) {
@@ -22,21 +23,11 @@ const MUSEUMS_QUERY = gql`
   }
 `;
 
-// query: "{
-//   museums(city: "Denver", state: "CO", zipcode: "80202") {
-//       placeId
-//       name
-//       rating
-//       latitude
-//       longitude
-//   }
-// }"
-
 function MuseumsContainer() {
   const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
     variables: { city: "Denver", state: "CO", zipcode: "80202" },
   });
-  // console.log({ loading });
+  console.log({ loading });
   console.log({ error });
   console.log({ data });
 
@@ -45,15 +36,14 @@ function MuseumsContainer() {
   };
 
   return (
-    <>
+    <section className="museums-container">
+      <QueryResult error={error} loading={loading} data={data}>
+        <MuseumCard data={data} />
+      </QueryResult>
       <Wrapper apiKey={MATTS_API_KEY} render={render}>
         <Map />
       </Wrapper>
-      <QueryResult error={error} loading={loading} data={data}>
-        {console.log({ data })}
-        {/* <MuseumCard data={data} /> */}
-      </QueryResult>
-    </>
+    </section>
   );
 }
 
