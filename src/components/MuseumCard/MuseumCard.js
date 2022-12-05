@@ -1,12 +1,12 @@
 import React from "react";
 
-function MuseumCard() {
-
+function MuseumCard({museums}) {
+  const cards = museums.map(museum => {
+    return <p>{museum}</p>
+  })
   return (
     <div>
-
-      <h2>Denver Art Museum</h2>
-      <h3>Rating: 4.5</h3>
+      {cards}
     </div>
   )
 }

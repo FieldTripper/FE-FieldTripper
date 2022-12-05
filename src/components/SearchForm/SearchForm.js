@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import {Link} from 'react-router-dom'
 
-function SearchForm() {
+function SearchForm({updateSearch}) {
 
   const [values, setValues] = useState({city: ''})
 
@@ -19,7 +20,11 @@ function SearchForm() {
         onChange={(event) => handleChange(event)}
         value={values.city}
       />
-      <button onClick={}>Submit</button>
+      <Link to='/museums'>
+
+        <button onClick={() => updateSearch()}>Submit</button>
+      </Link>
+
     </form>
   )
 }

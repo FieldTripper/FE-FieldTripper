@@ -4,12 +4,25 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
+import { ApolloClient, ApolloProvider, InMemoryCache, ApolloLink, HttpLink } from '@apollo/client';
+import testUri from './secret';
+
+const httpLink = new HttpLink({
+  uri: testUri
+})
+
+const client = new ApolloClient({
+  link: ApolloLink.from([httpLink]),
+  cache: new InMemoryCache()
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-      <App />
-  </BrowserRouter>
+  <ApolloProvider client={client}>
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+  </ApolloProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
