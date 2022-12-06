@@ -10,6 +10,8 @@ function App() {
  
   }
 
+  console.log(process.env)
+
   return (
     <main>
       <Routes>
