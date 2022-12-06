@@ -4,8 +4,8 @@ import './index.css';
 import App from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'
-import { ApolloClient, ApolloProvider, InMemoryCache, ApolloLink, HttpLink } from '@apollo/client';
-import {PRODUCTION_URI, TEST_URI} from './secret';
+import {ApolloClient, ApolloProvider, InMemoryCache, ApolloLink, HttpLink} from '@apollo/client';
+import {PRODUCTION_URI} from './secret';
 
 const httpLink = new HttpLink({
   uri: PRODUCTION_URI,
