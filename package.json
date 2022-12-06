@@ -17,10 +17,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "env-cmd react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "env-cmd react-scripts test",
-    "cypress": "env-cmd cypress open",
+    "test": "react-scripts test",
+    "cypress": "cypress open",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
