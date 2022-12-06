@@ -16,14 +16,14 @@ const httpLink = new HttpLink({
 const client = new ApolloClient({
   link: ApolloLink.from([httpLink]),
   cache: new InMemoryCache(),
-  connectToDevTools: true
-})
+  connectToDevTools: true,
+});
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ApolloProvider client={client}>
     <BrowserRouter>
-        <App />
+      <App />
     </BrowserRouter>
   </ApolloProvider>
 );
