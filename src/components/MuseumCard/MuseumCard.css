@@ -1,19 +1,31 @@
 .museums-card {
-  border: 1px solid black;
-  border-radius: 10%;
   display: flex;
   width: 30vw;
-  height: 10vh;
+  height: 20vh;
   margin: 7%;
   align-items: center;
   justify-content: space-between;
+  background-color: #03989ead;
 }
 
 .card-info {
   display: flex;
   flex-direction: column;
+  margin-left: 5%;
+}
+
+.museum-image {
+  margin-right: 3%;
 }
 
 h3 {
   margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
+h4 {
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
