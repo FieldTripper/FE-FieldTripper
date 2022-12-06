@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import React, { Children, isValidElement, cloneElement, children } from 'react';
+import React, { Children, isValidElement, cloneElement } from 'react';
 
 import './Map.css';
 
@@ -19,13 +19,13 @@ function Map({ data }) {
   return (
     <>
       <div className="map--container" ref={ref} />
-      {Children.map(children, (child) => {
+      {/* {Children.map(children, (child) => {
         if (isValidElement(child)) {
           // set the map prop on the child component
           // @ts-ignore
           return cloneElement(child, { map });
         }
-      })}
+      })} */}
   </>
   )
 }
