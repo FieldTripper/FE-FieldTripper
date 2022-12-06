@@ -11,7 +11,7 @@ function SearchForm({ updateSearch }) {
   }
 
   return (
-    <main className='form-page'>
+    <main className='page--container column'>
       <form>
         <input
           type='text'
