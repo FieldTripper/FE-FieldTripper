@@ -13,7 +13,7 @@ function MuseumCard({ data }) {
             <h3>{museum.name}</h3>
             <h4>{museum.rating}</h4>
           </div>
-          <div>🏙️</div>
+          <div className='museum-image'>🏙️</div>
         </section>
       );
     });

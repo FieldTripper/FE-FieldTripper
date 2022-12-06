@@ -1,0 +1,48 @@
+.form-page {
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+}
+
+.zip {
+    width: 10%;
+}
+
+input {
+	margin: 5px;
+	width: 20%;
+	font-size: 18px;
+    height: 15%;
+}
+
+.search-button {
+    width: 10%;
+    height: 20%;
+    background-color: #054a57;
+    border: 2px solid #054a57;
+    color: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 92%;
+    font-weight: 600;
+    margin-bottom: 2%;
+    text-align: center;
+    transition: all 300ms
+}
+
+.search-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #054a57;
+}
+
+.search-button:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(4px)
+}
