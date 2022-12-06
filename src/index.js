@@ -11,7 +11,7 @@ import {
   ApolloLink,
   HttpLink,
 } from "@apollo/client";
-import { PRODUCTION_URI, TEST_URI } from "./secret";
+import { PRODUCTION_URI } from "./secret";
 
 const httpLink = new HttpLink({
   uri: PRODUCTION_URI,
