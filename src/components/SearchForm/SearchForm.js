@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './SearchForm.css'
 
 function SearchForm({ updateSearch }) {
-
   const [values, setValues] = useState({ city: '', state: '', zipCode: '' })
 
   const handleChange = (event) => {
