@@ -3,9 +3,10 @@ import { useQuery, gql } from "@apollo/client";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import MuseumCard from "../MuseumCard/MuseumCard";
 import Map from "../Map/Map";
+import Marker from '../Marker/Marker';
 import QueryResult from "../QueryResult/QueryResult";
-import { MATTS_API_KEY } from "../../secret";
 import "./MuseumsContainer.css";
+
 
 const MUSEUMS_QUERY = gql`
   query Museums($city: String!, $state: String!, $zipcode: String!) {
@@ -42,12 +43,14 @@ function MuseumsContainer({ queryValues }) {
     <section className="museums-container">
       <QueryResult error={error} loading={loading} data={data}>
         <MuseumCard data={data} />
+        <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
+          <Map data={data} >
+            <Marker />
+          </Map>
+        </Wrapper>
       </QueryResult>
-      <Wrapper apiKey={MATTS_API_KEY} render={render}>
-        <Map />
-      </Wrapper>
     </section>
-  );
+  )
 }
 
 export default MuseumsContainer;

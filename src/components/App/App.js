@@ -11,6 +11,8 @@ function App() {
     setSearchTerms({city: values.city, state: values.state, zipCode: values.zipCode})
   }
 
+  console.log(process.env)
+
   return (
     <main>
       <Routes>
