@@ -13,8 +13,8 @@ import {
 } from "@apollo/client";
 
 const httpLink = new HttpLink({
-  // uri: process.env.REACT_APP_PRODUCTION_URI,
-  uri: process.env.REACT_APP_TEST_URI,
+  uri: process.env.REACT_APP_PRODUCTION_URI,
+  // uri: process.env.REACT_APP_TEST_URI,
   headers: {
     "x-mock-match-request-body": true,
   },
