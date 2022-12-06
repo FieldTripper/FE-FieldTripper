@@ -1,0 +1,24 @@
+.footer {
+    width: 100%;
+    height: 10%;
+    background-color: hsl(182deg 96% 32%);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.created-by {
+    margin-bottom: 1%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 60%;
+}
+
+.creators {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 70%;
+}

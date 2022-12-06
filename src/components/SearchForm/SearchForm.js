@@ -17,21 +17,21 @@ function SearchForm({ updateSearch }) {
         <input
           type='text'
           name='city'
-          placeholder="Enter city"
+          placeholder="Enter City"
           onChange={(event) => handleChange(event)}
           value={values.city}
         />
         <input
           type='text'
           name='state'
-          placeholder="Enter state "
+          placeholder="Enter State"
           onChange={(event) => handleChange(event)}
           value={values.state}
         />
         <input className='zip'
           type='text'
           name='zipCode'
-          placeholder="Enter zip code"
+          placeholder="Zip Code (Optional)"
           onChange={(event) => handleChange(event)}
           value={values.zipCode}
         />
