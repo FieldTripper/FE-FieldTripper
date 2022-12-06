@@ -4,6 +4,7 @@ import Header from '../Header/Header';
 import SearchForm from '../SearchForm/SearchForm';
 import MuseumsContainer from '../MuseumsContainer/MuseumsContainer';
 import Footer from '../Footer/Footer';
+import Error from '../Error/Error';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<SearchForm updateSearch={updateSearch} />} />
         <Route path='/museums' element={<MuseumsContainer queryValues={values} />} />
+        <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
     </main>
