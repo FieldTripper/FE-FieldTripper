@@ -8,7 +8,7 @@ import Map from "../Map/Map";
 import QueryResult from "../QueryResult/QueryResult";
 
 // import museumsData from "../../testData/museumsData";
-// import { MATTS_API_KEY } from "../../secret";
+import { MATTS_API_KEY } from "../../secret";
 import "./MuseumsContainer.css";
 
 const MUSEUMS_QUERY = gql`
