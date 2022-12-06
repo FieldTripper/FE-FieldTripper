@@ -1,4 +1,5 @@
 import React from "react";
+// import "./MuseumCard.css";
 import "./MuseumCard.css";
 
 function MuseumCard({ data }) {
