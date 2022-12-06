@@ -23,3 +23,9 @@ input:focus {
     box-shadow:0 0 3px 3px #03989e;
 }
 
+.search--button {
+    width: 8vw;
+    height: 3.3vh;
+    margin-left: 5%;
+}
+

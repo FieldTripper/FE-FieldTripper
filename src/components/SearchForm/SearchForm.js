@@ -35,7 +35,7 @@ function SearchForm({ updateSearch }) {
           value={values.zipCode}
         />
         <Link to='/museums'>
-          <button className='search-button' onClick={() => updateSearch(values)}>Search</button>
+          <button className='primary--button search--button' onClick={() => updateSearch(values)}>Search</button>
         </Link>
       </form>
     </main>

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
+import './Error.css';
 
-function Error() {
+function Error({ errorMessage }) {
   return (
     <section className="page--container column">
-      <p>404: This page does not exist. Try returning to the homepage.</p>
+      <h2>{`${errorMessage} Try returning to the homepage.`}</h2>
       <Link to='/'>  
-        <button className="search-button">Return Home</button>
+        <button className="primary--button home--button">Return Home</button>
       </Link>
     </section>
   )
