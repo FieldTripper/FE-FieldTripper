@@ -34,8 +34,8 @@ input {
 .search-button {
     width: 10vw;
     height: 3.1vh;
-    background-color: #054a57;
-    border: 2px solid #054a57;
+    background-color: #03989e;
+    border: 2px solid #03989e;
     color: white;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
@@ -48,7 +48,7 @@ input {
 .search-button:hover {
     cursor: pointer;
     background-color: white;
-    color: #054a57;
+    color: #03989e;
 }
 
 .search-button:active {
