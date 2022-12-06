@@ -1,0 +1,57 @@
+.form-page {
+    height: 75vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size:     cover;                 
+    background-repeat:   no-repeat;
+    background-position: center center;
+    background-image: 
+        linear-gradient(to bottom, #ffffffdb, #ffffffdb),
+        url('../../images/city.png');
+}
+
+form {
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zip {
+    width: 10%;
+}
+
+input {
+	margin: 5px;
+	width: 20%;
+	font-size: 18px;
+    height: 15%;
+}
+
+.search-button {
+    width: 10vw;
+    height: 3.1vh;
+    background-color: #054a57;
+    border: 2px solid #054a57;
+    color: white;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 92%;
+    font-weight: 600;
+    text-align: center;
+    transition: all 300ms;
+}
+
+.search-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #054a57;
+}
+
+.search-button:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(4px)
+}

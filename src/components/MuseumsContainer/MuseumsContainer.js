@@ -3,20 +3,25 @@ import { useQuery, gql } from "@apollo/client";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import MuseumCard from "../MuseumCard/MuseumCard";
 import Map from "../Map/Map";
-import Marker from '../Marker/Marker';
+import Marker from "../Marker/Marker";
 import QueryResult from "../QueryResult/QueryResult";
 import "./MuseumsContainer.css";
 
+// const MUSEUMS_QUERY = gql`
+//   query Museums($city: String!, $state: String!, $zipcode: String!) {
+//     museums(city: $city, state: $state, zipcode: $zipcode) {
+//       placeId
+//       name
+//       rating
+//       latitude
+//       longitude
+//     }
+//   }
+// `;
 
 const MUSEUMS_QUERY = gql`
-  query Museums($city: String!, $state: String!, $zipcode: String!) {
-    museums(city: $city, state: $state, zipcode: $zipcode) {
-      placeId
-      name
-      rating
-      latitude
-      longitude
-    }
+  {
+    museums
   }
 `;
 
@@ -44,13 +49,13 @@ function MuseumsContainer({ queryValues }) {
       <QueryResult error={error} loading={loading} data={data}>
         <MuseumCard data={data} />
         <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
-          <Map data={data} >
+          <Map data={data}>
             <Marker />
           </Map>
         </Wrapper>
       </QueryResult>
     </section>
-  )
+  );
 }
 
 export default MuseumsContainer;
