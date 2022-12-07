@@ -17,7 +17,7 @@ const BookingForm = ({ bookTrip }) => {
   };
 
   return (
-    <main className="booking-page">
+    <section className="booking-page">
       <h2>Book a Field Trip</h2>
       <form className="booking-form">
         <select
@@ -65,7 +65,7 @@ const BookingForm = ({ bookTrip }) => {
           Book a Field Trip
         </button>
       </form>
-    </main>
+    </section>
   );
 };
 
