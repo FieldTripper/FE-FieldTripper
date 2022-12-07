@@ -13,18 +13,16 @@ const MUSEUM_QUERY = gql `
         longitude
     }
   }
-
 `
+
 function MuseumInfo() {
   const {placeId} = useParams()
 
-  const { loading, error, data } = useQuery(MUSEUM_QUERY, {
-    variables: {
-      city: queryValues.city,
-      state: queryValues.state,
-      zipcode: queryValues.zipCode,
-    },
-  });
+  // const { loading, error, data } = useQuery(MUSEUM_QUERY, {
+  //   variables: {
+  //     placeId: 
+  //   },
+  // });
 
   return (
     <section className="museum-info">

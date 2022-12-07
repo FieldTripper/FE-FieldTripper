@@ -9,13 +9,13 @@ function MuseumCard({ data }) {
   if (data) {
     cards = data.museums.map((museum) => {
       return (
-        <Link to='`/museums/{museum.placeId}` '>
+        <Link to="/museums/:placeId">
           <section className="museums-card">
             <div className="card-info">
               <h3>{museum.name}</h3>
               <h4>{museum.rating}</h4>
             </div>
-            <div className='museum-image'>🏙️</div>
+            <div className="museum-image">🏙️</div>
           </section>
         </Link>
       );

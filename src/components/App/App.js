@@ -22,7 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<SearchForm updateSearch={updateSearch} />} />
         <Route path='/museums' element={<MuseumsContainer queryValues={values} />} />
-        <Route path='/museums/:id' element={<MuseumInfo />} />
+        <Route path='/museums/:placeId' element={<MuseumInfo />} />
         <Route path='*' element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
