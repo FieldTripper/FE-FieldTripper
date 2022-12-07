@@ -6,25 +6,46 @@ import MuseumsContainer from '../MuseumsContainer/MuseumsContainer';
 import Footer from '../Footer/Footer'
 import Error from '../Error/Error';
 import MuseumInfo from '../MuseumInfo/MuseumInfo';
-import './App.css';
+import BookingForm from "../BookingForm/BookingForm";
 import singleMuseumData from '../../testData/singleMuseumData'
+import './App.css';
+
 
 function App() {
-  const [values, setSearchTerms] = useState({city: '', state: '', zipCode: ''});
-  const [errorMessage, setErrorMessage] = useState('404: This page does not exist.');
+  const [values, setSearchTerms] = useState({
+    city: "",
+    state: "",
+    zipCode: "",
+  });
+  const [errorMessage, setErrorMessage] = useState(
+    "404: This page does not exist."
+  );
 
   const updateSearch = (values) => {
-    setSearchTerms({ city: values.city, state: values.state, zipCode: values.zipCode })
-  }
+    setSearchTerms({
+      city: values.city,
+      state: values.state,
+      zipCode: values.zipCode,
+    });
+  };
+
+  const bookTrip = (values) => {
+    setSearchTerms({
+      museum: values.museum,
+      time: values.time,
+      people: values.people,
+    });
+  };
 
   return (
     <main>
-      <Header />
+       <Header />
       <Routes>
-        <Route path='/' element={<SearchForm updateSearch={updateSearch} />} />
-        <Route path='/museums' element={<MuseumsContainer queryValues={values} />} />
+        <Route path="/" element={<SearchForm updateSearch={updateSearch} />} />
+        <Route path="/museums" element={<MuseumsContainer queryValues={values} />} />
+        <Route path="/booking-form" element={<BookingForm bookTrip={bookTrip} />} />
         <Route path='/museums/:name' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
-        <Route path='*' element={<Error errorMessage={errorMessage} />} />
+        <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
     </main>
