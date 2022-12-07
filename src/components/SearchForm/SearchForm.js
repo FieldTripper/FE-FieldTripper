@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './SearchForm.css'
 
 function SearchForm({ updateSearch }) {
-
   const [values, setValues] = useState({ city: '', state: '', zipCode: '' })
 
   const handleChange = (event) => {
@@ -12,7 +11,7 @@ function SearchForm({ updateSearch }) {
   }
 
   return (
-    <main className='form-page'>
+    <main className='page--container column'>
       <form>
         <input
           type='text'
@@ -36,7 +35,7 @@ function SearchForm({ updateSearch }) {
           value={values.zipCode}
         />
         <Link to='/museums'>
-          <button className='search-button' onClick={() => updateSearch(values)}>Search</button>
+          <button className='primary--button search--button' onClick={() => updateSearch(values)}>Search</button>
         </Link>
       </form>
     </main>
