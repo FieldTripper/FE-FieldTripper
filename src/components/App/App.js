@@ -7,6 +7,7 @@ import Footer from '../Footer/Footer'
 import Error from '../Error/Error';
 import MuseumInfo from '../MuseumInfo/MuseumInfo';
 import './App.css';
+import singleMuseumData from '../../testData/singleMuseumData'
 
 function App() {
   const [values, setSearchTerms] = useState({city: '', state: '', zipCode: ''});
@@ -22,7 +23,7 @@ function App() {
       <Routes>
         <Route path='/' element={<SearchForm updateSearch={updateSearch} />} />
         <Route path='/museums' element={<MuseumsContainer queryValues={values} />} />
-        <Route path='/museums/:placeId' element={<MuseumInfo />} />
+        <Route path='/museums/:name' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
         <Route path='*' element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />

@@ -11,4 +11,4 @@ const singleMuseumData = {
   },
 };
 
-export default museumsData;
+export default singleMuseumData;

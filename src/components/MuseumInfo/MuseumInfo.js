@@ -15,8 +15,8 @@ const MUSEUM_QUERY = gql `
   }
 `
 
-function MuseumInfo() {
-  const {placeId} = useParams()
+function MuseumInfo({singleMuseumData}) {
+  const {name} = useParams()
 
   // const { loading, error, data } = useQuery(MUSEUM_QUERY, {
   //   variables: {
@@ -25,8 +25,10 @@ function MuseumInfo() {
   // });
 
   return (
-    <section className="museum-info">
-      <h1></h1>
+    <section key={singleMuseumData.placeId} className="museum-info">
+      <h1>{singleMuseumData.museum.name}</h1>
+      <p>{singleMuseumData.museum.rating}</p>
+      <p>Price Level: {singleMuseumData.museum.price_level}</p>
     </section>
   )
 }
