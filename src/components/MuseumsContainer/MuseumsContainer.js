@@ -9,17 +9,17 @@ import "./MuseumsContainer.css";
 
 import museumsData from "../../testData/museumsData";
 
-// const MUSEUMS_QUERY = gql`
-//   query Museums($city: String!, $state: String!, $zipcode: String!) {
-//     museums(city: $city, state: $state, zipcode: $zipcode) {
-//       placeId
-//       name
-//       rating
-//       latitude
-//       longitude
-//     }
-//   }
-// `;
+const MUSEUMS_QUERY = gql`
+  query Museums($city: String!, $state: String!, $zipcode: String!) {
+    museums(city: $city, state: $state, zipcode: $zipcode) {
+      placeId
+      name
+      rating
+      latitude
+      longitude
+    }
+  }
+`;
 
 function MuseumsContainer({ queryValues }) {
   // const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
