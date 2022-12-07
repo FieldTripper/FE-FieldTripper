@@ -4,7 +4,8 @@ import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
 import BookingForm from "../BookingForm/BookingForm";
 import MuseumsContainer from "../MuseumsContainer/MuseumsContainer";
-import Footer from "../Footer/Footer";
+import Footer from '../Footer/Footer';
+import About from '../About/About'
 import Error from "../Error/Error";
 import "./App.css";
 
