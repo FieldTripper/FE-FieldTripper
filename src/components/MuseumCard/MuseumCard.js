@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import "./MuseumCard.css";
 import "./MuseumCard.css";
 
@@ -8,13 +9,15 @@ function MuseumCard({ data }) {
   if (data) {
     cards = data.museums.map((museum) => {
       return (
-        <section className="museums-card">
-          <div className="card-info">
-            <h3>{museum.name}</h3>
-            <h4>{museum.rating}</h4>
-          </div>
-          <div className='museum-image'>🏙️</div>
-        </section>
+        <Link to='`/museums/{museum.placeId}` '>
+          <section className="museums-card">
+            <div className="card-info">
+              <h3>{museum.name}</h3>
+              <h4>{museum.rating}</h4>
+            </div>
+            <div className='museum-image'>🏙️</div>
+          </section>
+        </Link>
       );
     });
   } else {

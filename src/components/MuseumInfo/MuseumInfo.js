@@ -1,0 +1,36 @@
+import { gql } from "@apollo/client";
+import React from "react";
+import { useParams } from "react-router";
+
+const MUSEUM_QUERY = gql `
+  query Museum($placeId: String!) {
+    museum(placeId: $placeId) {
+        placeId
+        name
+        address
+        rating
+        latitude
+        longitude
+    }
+  }
+
+`
+function MuseumInfo() {
+  const {placeId} = useParams()
+
+  const { loading, error, data } = useQuery(MUSEUM_QUERY, {
+    variables: {
+      city: queryValues.city,
+      state: queryValues.state,
+      zipcode: queryValues.zipCode,
+    },
+  });
+
+  return (
+    <section className="museum-info">
+      <h1></h1>
+    </section>
+  )
+}
+
+export default MuseumInfo

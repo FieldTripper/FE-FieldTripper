@@ -5,6 +5,7 @@ import SearchForm from '../SearchForm/SearchForm';
 import React, {useState} from 'react';
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
+import MuseumInfo from '../MuseumInfo/MuseumInfo';
 
 function App() {
   const [values, setSearchTerms] = useState({city: '', state: '', zipCode: ''})
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<SearchForm updateSearch={updateSearch} />} />
         <Route path='/museums' element={<MuseumsContainer queryValues={values} />} />
+        <Route path='/museums/:id' element={<MuseumInfo />} />
       </Routes>
       <Footer />
     </main>
