@@ -21,7 +21,7 @@ function MuseumCard({ data }) {
       );
     });
   } else {
-    cards = <p>Nope</p>;
+    cards = <p>Sorry, There are no museums to be displayed. Please search in a different area</p>;
   }
 
   return <div>{cards}</div>;

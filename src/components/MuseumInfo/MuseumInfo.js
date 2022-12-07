@@ -26,7 +26,7 @@ function MuseumInfo({singleMuseumData}) {
 
   return (
     <section key={singleMuseumData.placeId} className="museum-info">
-      <h1>{singleMuseumData.museum.name}</h1>
+      <h1>{name}</h1>
       <p>{singleMuseumData.museum.rating}</p>
       <p>Price Level: {singleMuseumData.museum.price_level}</p>
     </section>
