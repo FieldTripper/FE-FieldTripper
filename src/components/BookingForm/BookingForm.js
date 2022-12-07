@@ -2,9 +2,10 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import "./BookingForm.css";
 import museumsData from "../../testData/museumsData";
+import singleMuseumData from "../../testData/singleMuseumData";
 
 const BookingForm = ({ bookTrip }) => {
-  let museumSelection = museumsData.museums.map((museum) => museum);
+  console.log({ singleMuseumData });
   let [museumValues, setMuseumValues] = useState({
     museum: "",
     time: "",
@@ -26,7 +27,7 @@ const BookingForm = ({ bookTrip }) => {
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value="Select a Museum">Select a Museum</option>
-          {museumSelection.map((museum) => (
+          {museumsData.museums.map((museum) => (
             <option key={museum.name} value={museum}>
               {museum.name}
             </option>
