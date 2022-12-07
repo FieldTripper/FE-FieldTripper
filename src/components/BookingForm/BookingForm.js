@@ -6,6 +6,7 @@ import singleMuseumData from "../../testData/singleMuseumData";
 
 const BookingForm = ({ bookTrip }) => {
   console.log({ singleMuseumData });
+  console.log({ museumsData });
   let [museumValues, setMuseumValues] = useState({
     museum: "",
     time: "",

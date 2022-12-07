@@ -1,4 +1,4 @@
-import { isCompositeType } from "graphql";
+// import { isCompositeType } from "graphql";
 
 const museumsData = {
   museums: [
