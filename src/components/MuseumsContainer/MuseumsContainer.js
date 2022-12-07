@@ -7,7 +7,7 @@ import Map from "../Map/Map";
 import Marker from "../Marker/Marker";
 import "./MuseumsContainer.css";
 
-import museumsData from '../../testData/museumsData';
+import museumsData from "../../testData/museumsData";
 
 // const MUSEUMS_QUERY = gql`
 //   query Museums($city: String!, $state: String!, $zipcode: String!) {
@@ -20,12 +20,6 @@ import museumsData from '../../testData/museumsData';
 //     }
 //   }
 // `;
-
-const MUSEUMS_QUERY = gql`
-  {
-    museums
-  }
-`;
 
 function MuseumsContainer({ queryValues }) {
   // const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
@@ -51,11 +45,11 @@ function MuseumsContainer({ queryValues }) {
         </Wrapper>
       </QueryResult> */}
       <MuseumCard data={museumsData} />
-        <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
-          <Map data={museumsData}>
-            <Marker />
-          </Map>
-        </Wrapper>
+      <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
+        <Map data={museumsData}>
+          <Marker />
+        </Map>
+      </Wrapper>
     </section>
   );
 }
