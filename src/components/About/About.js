@@ -4,8 +4,14 @@ import './About.css'
 const About = () => {
     return (
         <div className='about-page'>
-            <p className='created-by'><b>Created By:</b></p>
-            <p className='creators'> Mary Ballantyne | Carissa Gross | Andrew Knapick | Dinne Kopelevich | A.J. Krumholz | Andrew Mullins | Matthew Press </p>
+            <p className='created-by'><b>CREATED BY</b></p>
+            <p className='creators'> <b>Mary Ballantyne:</b> LinkedIn | GitHub<br></br>
+            <b>Carissa Gross:</b> LinkedIn | GitHub<br></br>
+            <b>Andrew Knapick:</b> LinkedIn | GitHub<br></br>
+            <b>Dinne Kopelevich:</b> LinkedIn | GitHub<br></br>
+            <b>A.J. Krumholz:</b> LinkedIn | GitHub<br></br>
+            <b>Andrew Mullins:</b> LinkedIn | GitHub<br></br>
+            <b>Matthew Press:</b> LinkedIn | GitHub </p>
         </div>
     )
 }

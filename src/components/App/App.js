@@ -48,6 +48,7 @@ function App() {
           path="/booking-form"
           element={<BookingForm bookTrip={bookTrip} />}
         />
+        <Route path="/About" element={<About about={About} />} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
