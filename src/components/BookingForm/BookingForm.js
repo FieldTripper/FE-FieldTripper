@@ -2,9 +2,11 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import "./BookingForm.css";
 import museumsData from "../../testData/museumsData";
+import singleMuseumData from "../../testData/singleMuseumData";
 
 const BookingForm = ({ bookTrip }) => {
-  let museumSelection = museumsData.museums.map((museum) => museum);
+  console.log({ singleMuseumData });
+  console.log({ museumsData });
   let [museumValues, setMuseumValues] = useState({
     museum: "",
     time: "",
@@ -17,7 +19,7 @@ const BookingForm = ({ bookTrip }) => {
   };
 
   return (
-    <main className="booking-page">
+    <section className="booking-page">
       <h2>Book a Field Trip</h2>
       <form className="booking-form">
         <select
@@ -26,7 +28,7 @@ const BookingForm = ({ bookTrip }) => {
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value="Select a Museum">Select a Museum</option>
-          {museumSelection.map((museum) => (
+          {museumsData.museums.map((museum) => (
             <option key={museum.name} value={museum}>
               {museum.name}
             </option>
@@ -65,7 +67,7 @@ const BookingForm = ({ bookTrip }) => {
           Book a Field Trip
         </button>
       </form>
-    </main>
+    </section>
   );
 };
 
