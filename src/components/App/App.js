@@ -5,6 +5,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import BookingForm from "../BookingForm/BookingForm";
 import MuseumsContainer from "../MuseumsContainer/MuseumsContainer";
 import Footer from "../Footer/Footer";
+import Error from "../Error/Error";
 import "./App.css";
 
 function App() {
@@ -13,6 +14,9 @@ function App() {
     state: "",
     zipCode: "",
   });
+  const [errorMessage, setErrorMessage] = useState(
+    "404: This page does not exist."
+  );
 
   const updateSearch = (values) => {
     setSearchTerms({
@@ -43,6 +47,7 @@ function App() {
           path="/booking-form"
           element={<BookingForm bookTrip={bookTrip} />}
         />
+        <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
     </main>

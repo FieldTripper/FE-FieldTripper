@@ -35,7 +35,7 @@ function MuseumsContainer({ queryValues }) {
   };
 
   return (
-    <section className="museums-container">
+    <section className="page--container row">
       {/* <QueryResult error={error} loading={loading} data={data}>
         <MuseumCard data={data} />
         <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
