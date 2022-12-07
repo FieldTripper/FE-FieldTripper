@@ -1,0 +1,18 @@
+.booking-page {
+  display: flex;
+  width: 100vw;
+  height: 60vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 35vh;
+}
+
+.booking-options {
+  width: 20vw;
+}
