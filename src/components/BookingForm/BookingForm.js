@@ -44,6 +44,7 @@ const BookingForm = ({ bookTrip }) => {
           value="2022-07-22"
           min="2022-12-01"
           max="2024-12-31"
+          onChange={(e) => handleMuseumChange(e)}
         ></input>
 
         <select
