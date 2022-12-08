@@ -7,6 +7,7 @@ import MuseumsContainer from "../MuseumsContainer/MuseumsContainer";
 import Footer from '../Footer/Footer';
 import About from '../About/About'
 import Error from "../Error/Error";
+import TripType from "../TripType/TripType"
 import "./App.css";
 
 function App() {
@@ -44,11 +45,12 @@ function App() {
           path="/museums"
           element={<MuseumsContainer queryValues={values} />}
         />
+        <Route path="/trip-type" element={<TripType tripType={TripType} />} />
         <Route
           path="/booking-form"
           element={<BookingForm bookTrip={bookTrip} />}
         />
-        <Route path="/About" element={<About about={About} />} />
+        <Route path="/about" element={<About about={About} />} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />

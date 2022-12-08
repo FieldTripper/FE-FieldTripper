@@ -1,0 +1,30 @@
+.trip-type {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #03989e;
+}
+
+.choose {
+    margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+
+.trip-host, .trip-join {
+    margin-bottom: 2%;
+    background-color: hsl(182deg 96% 32%);
+    border: 2px solid hsl(182deg 96% 32%);
+    color: hsl(0deg 0% 100%);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 92%;
+    font-weight: 600;
+    text-align: center;
+    transition: all 300ms;
+    width: 12vw;
+    height: 3.3vh;
+}
