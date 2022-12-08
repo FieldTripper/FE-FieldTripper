@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-    <Link className='header' to='/'>
-            <img src={logo} alt="logo" className="logo" />
-    </Link>
+        <div className='header'>
+            <Link to='/'> <img src={logo} alt="logo" className="logo" />
+            </Link>
+        </div>
     )
 }
 export default Header
