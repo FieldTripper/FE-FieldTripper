@@ -17,7 +17,6 @@ import "./Map.css";
   return (
   <div className="map">
     <h2 className="map-h2">Museums</h2>
-    {console.log("data in location", data)}
     <div className="google-map">
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_MATTS_API_KEY }}
