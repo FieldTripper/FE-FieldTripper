@@ -86,3 +86,16 @@
   box-shadow: 0 2px #666;
   transform: translateY(4px)
 }
+
+input {
+  margin: 5px;
+  width: 15%;
+  font-size: 12px;
+  height: 18%;
+}
+
+input:focus {
+  -moz-box-shadow:0 0 3px 3px #03989e;
+  -webkit-box-shadow:0 0 3px 3px #03989e;
+  box-shadow:0 0 3px 3px #03989e;
+}
