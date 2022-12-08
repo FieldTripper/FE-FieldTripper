@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Marker = (options) => {
   const [marker, setMarker] = useState();
+  console.log({ options });
 
   useEffect(() => {
     if (!marker) {
@@ -20,11 +21,10 @@ const Marker = (options) => {
   useEffect(() => {
     if (marker) {
       marker.setOptions(options);
-      console.log({marker})
+      console.log({ marker });
     }
   }, [marker, options]);
   return null;
 };
-
 
 export default Marker;

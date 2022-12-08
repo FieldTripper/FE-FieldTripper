@@ -1,33 +1,23 @@
-import { useState, useEffect, useRef } from 'react';
-import React, { Children, isValidElement, cloneElement } from 'react';
+import { useState, useEffect, useRef } from "react";
 
-import './Map.css';
+import "./Map.css";
 
-function Map({ data }) {
+function Map() {
   const ref = useRef(null);
   const [map, setMap] = useState();
 
   useEffect(() => {
     if (ref.current && !map) {
-      setMap(new window.google.maps.Map(ref.current, {
-        center: { lat: data.museums[0].latitude , lng: data.museums[0].longitude },
-        zoom: 10
-      }));
+      setMap(
+        new window.google.maps.Map(ref.current, {
+          center: { lat: 39.703, lng: -105.064 },
+          zoom: 8,
+        })
+      );
     }
   }, [ref, map]);
 
-  return (
-    <>
-      <div className="map--container" ref={ref} />
-      {/* {Children.map(children, (child) => {
-        if (isValidElement(child)) {
-          // set the map prop on the child component
-          // @ts-ignore
-          return cloneElement(child, { map });
-        }
-      })} */}
-  </>
-  )
+  return <div className="map--container" ref={ref} />;
 }
 
 export default Map;

@@ -9,6 +9,7 @@ const BookingForm = ({ bookTrip }) => {
   console.log({ museumsData });
   let [museumValues, setMuseumValues] = useState({
     museum: "",
+    date: "",
     time: "",
     people: "",
   });
@@ -35,15 +36,30 @@ const BookingForm = ({ bookTrip }) => {
           ))}
         </select>
 
+        <input
+          className="booking-options"
+          type="date"
+          id="start"
+          name="trip-start"
+          value="2022-07-22"
+          min="2022-12-01"
+          max="2024-12-31"
+        ></input>
+
         <select
           className="booking-options"
           name="time"
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value={null}>Select a Time</option>
+          <option value="10:00am">10:00am</option>
+          <option value="11:00am">11:00am</option>
+          <option value="12:00pm">12:00pm</option>
           <option value="1:00pm">1:00pm</option>
           <option value="2:00pm">2:00pm</option>
           <option value="3:00pm">3:00pm</option>
+          <option value="4:00pm">4:00pm</option>
+          <option value="5:00pm">5:00pm</option>
         </select>
 
         <select
