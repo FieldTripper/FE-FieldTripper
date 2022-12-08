@@ -34,6 +34,24 @@ function MuseumInfo() {
   });
   console.log('data', data)
 
+  const displayPrice = (priceNumber) => {
+    if(priceNumber === 1) {
+      return "$"
+    } else if (priceNumber === 2) {
+      return "$$"
+    } else if (priceNumber === 3) {
+      return "$$$"
+    }
+  }
+
+  const wheelchairAccessible = (isAccessible) => {
+    if(isAccessible) {
+      return "Yes"
+    } else {
+      return "No"
+    }
+  }
+
   return (
     <QueryResult error={error} loading={loading} data={data}>
       <section>
@@ -56,11 +74,11 @@ function MuseumInfo() {
         )}
 
         {data.museum.price && (
-            <h3>Price: {data.museum.price}</h3>
+            <h3>Price: {displayPrice(data.museum.price)}</h3>
         )}
 
         {data.museum.wheelchairAccessibleEntrance && (
-          <h3>Wheelchair Accessible: {data.museum.wheelchairAccessibleEntrance}</h3>
+          <h3>Wheelchair Accessible: {wheelchairAccessible(data.museum.wheelchairAccessibleEntrance)}</h3>
         )}
 
         {data.museum.combinedHoo && (
