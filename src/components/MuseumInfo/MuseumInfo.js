@@ -17,6 +17,9 @@ const MUSEUM_QUERY = gql `
       totalRatings
       separatedHoo
       combinedHoo
+      wheelchairAccessibleEntrance
+      imageUrl
+      imageDescription
     }
   }
 `
@@ -35,14 +38,28 @@ function MuseumInfo() {
     <QueryResult error={error} loading={loading} data={data}>
       <section>
         <h1>{name}</h1>
+        
+        {/* <h2>{data.museum.address}</h2>
+        <img src={data.museum.imageUrl} alt={data.museum.imageDescription} width="500" height="600"/>
+        <h3>Rating: {data.museum.rating}/5</h3>
+        <h3>Total Ratings: {data.museum.totalRatings}</h3>
+        {data.museum.price && (
+            <h3>Price: {data.museum.price}</h3>
+        )}
+        {data.museum.wheelchairAccessibleEntrance && (
+          <h3>Wheelchair Accessible: {data.museum.wheelchairAccessibleEntrance}</h3>
+        )}
+        {data.museum.combinedHoo}
+        <ul>
+        {data.museum.combinedHoo.map((day) => (
+          <li key={day}>{day}</li>
+        ))}
+        </ul>
+        <a href={data.museum.website}>{data.museum.website}</a> */}
+       
       </section>
     </QueryResult>
 
-    // <section key={singleMuseumData.placeId} className="museum-info">
-    //   <h1>{name}</h1>
-    //   <p>{singleMuseumData.museum.rating}</p>
-    //   <p>Price Level: {singleMuseumData.museum.price_level}</p>
-    // </section>
   )
 }
 
