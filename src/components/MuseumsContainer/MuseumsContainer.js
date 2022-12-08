@@ -9,26 +9,26 @@ import "./MuseumsContainer.css";
 
 import museumsData from "../../testData/museumsData";
 
-// const MUSEUMS_QUERY = gql`
-//   query Museums($city: String!, $state: String!, $zipcode: String!) {
-//     museums(city: $city, state: $state, zipcode: $zipcode) {
-//       placeId
-//       name
-//       rating
-//       latitude
-//       longitude
-//     }
-//   }
-// `;
+const MUSEUMS_QUERY = gql`
+  query Museums($city: String!, $state: String!, $zipcode: String!) {
+    museums(city: $city, state: $state, zipcode: $zipcode) {
+      placeId
+      name
+      rating
+      latitude
+      longitude
+    }
+  }
+`;
 
 function MuseumsContainer({ queryValues }) {
-  // const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
-  //   variables: {
-  //     city: queryValues.city,
-  //     state: queryValues.state,
-  //     zipcode: queryValues.zipCode,
-  //   },
-  // });
+  const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
+    variables: {
+      city: queryValues.city,
+      state: queryValues.state,
+      zipcode: queryValues.zipCode,
+    },
+  });
 
   const render = (Status) => {
     return <h1>{Status}</h1>;
@@ -36,20 +36,20 @@ function MuseumsContainer({ queryValues }) {
 
   return (
     <section className="page--container row">
-      {/* <QueryResult error={error} loading={loading} data={data}>
+      <QueryResult error={error} loading={loading} data={data}>
         <MuseumCard data={data} />
         <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
           <Map data={data}>
             <Marker />
           </Map>
         </Wrapper>
-      </QueryResult> */}
-      <MuseumCard data={museumsData} />
+      </QueryResult>
+      {/* <MuseumCard data={museumsData} />
       <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
         <Map data={museumsData}>
           <Marker />
         </Map>
-      </Wrapper>
+      </Wrapper> */}
     </section>
   );
 }
