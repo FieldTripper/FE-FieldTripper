@@ -38,20 +38,20 @@ function MuseumsContainer({ queryValues }) {
 
   return (
     <section className="page--container row">
-      {/* <QueryResult error={error} loading={loading} data={data}>
+      <QueryResult error={error} loading={loading} data={data}>
         <MuseumCard data={data} />
         <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
           <Map data={data}>
             <Marker />
           </Map>
         </Wrapper>
-      </QueryResult> */}
-      <MuseumCard data={museumsData} />
+      </QueryResult>
+      {/* <MuseumCard data={museumsData} />
       <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
         <Map data={museumsData}>
           <Marker />
         </Map>
-      </Wrapper>
+      </Wrapper> */}
     </section>
   );
 }
