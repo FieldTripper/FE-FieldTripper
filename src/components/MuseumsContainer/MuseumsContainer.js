@@ -29,6 +29,7 @@ function MuseumsContainer({ queryValues }) {
       zipcode: queryValues.zipCode,
     },
   });
+  console.log(error)
 
   return (
     <section className="page--container row">
