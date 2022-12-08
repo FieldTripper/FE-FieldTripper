@@ -16,9 +16,8 @@ import "./Map.css";
 
   return (
   <div className="map">
-    <h2 className="map-h2">Museums</h2>
     <div className="google-map">
-      <GoogleMapReact
+      <GoogleMapReact className="google-map"
         bootstrapURLKeys={{ key: process.env.REACT_APP_MATTS_API_KEY }}
         defaultCenter={defaultCenter.center}
         defaultZoom={defaultCenter.zoom}
