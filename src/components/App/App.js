@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";;
+import { Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
 import LoginForm from '../LoginForm/LoginForm';
 import SearchForm from "../SearchForm/SearchForm";
@@ -8,7 +8,6 @@ import MuseumsContainer from "../MuseumsContainer/MuseumsContainer";
 import Footer from '../Footer/Footer';
 import About from '../About/About'
 import Error from "../Error/Error";
-import { USER_QUERY } from '../../queries/queries';
 import TripType from "../TripType/TripType"
 import "./App.css";
 
@@ -39,37 +38,11 @@ function App() {
     });
   };
 
-  const handleLogin = (data, formChoice) => {
-    // if (formChoice === 'Login') {
-    //   const { loading, error, data } = useQuery(SOME_QUERY, {
-    //     variables: {
-    //       something: something
-    //     },
-    //   });
-    // } else if (formChoice === 'Sign Up') {
-    //   const { loading, error, data } = useQuery(SOME_QUERY, {
-    //     variables: {
-    //       something: something
-    //     },
-    //   });
-    // } else {
-    //   const { loading, error, data } = useQuery(SOME_QUERY, {
-    //     variables: {
-    //       something: something
-    //     },
-    //   });
-    // }
-    
-
-    // TESTING PURPOSES
-    setUser(data.user);
-  }
-
   return (
     <main>
       <Header />
       <Routes>
-        <Route path="/" element={<LoginForm handleLogin={handleLogin} />} />
+        <Route path="/" element={<LoginForm setUser={setUser} />} />
         <Route path='/search' element={<SearchForm updateSearch={updateSearch} />} />
         <Route
           path="/museums"
