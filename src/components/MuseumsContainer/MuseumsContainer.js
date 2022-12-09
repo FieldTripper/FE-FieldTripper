@@ -33,6 +33,7 @@ function MuseumsContainer({ queryValues }) {
       zipcode: queryValues.zipCode,
     },
   });
+  console.log(error)
 
   const parentToChild = () => {
     console.log({ data });

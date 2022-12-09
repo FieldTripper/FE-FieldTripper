@@ -1,13 +1,23 @@
-import React, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import Header from "../Header/Header";
-import SearchForm from "../SearchForm/SearchForm";
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom'
+import Header from '../Header/Header'
+import SearchForm from '../SearchForm/SearchForm';
+import MuseumsContainer from '../MuseumsContainer/MuseumsContainer';
+import Footer from '../Footer/Footer'
+import Error from '../Error/Error';
+import MuseumInfo from '../MuseumInfo/MuseumInfo';
 import BookingForm from "../BookingForm/BookingForm";
+<<<<<<< HEAD
 import MuseumsContainer from "../MuseumsContainer/MuseumsContainer";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
 import Error from "../Error/Error";
 import TripType from "../TripType/TripType";
+=======
+import About from '../About/About'
+import TripType from "../TripType/TripType"
+import singleMuseumData from '../../testData/singleMuseumData'
+>>>>>>> main
 import "./App.css";
 
 function App() {
@@ -38,9 +48,10 @@ function App() {
 
   return (
     <main>
-      <Header />
+       <Header />
       <Routes>
         <Route path="/" element={<SearchForm updateSearch={updateSearch} />} />
+<<<<<<< HEAD
         <Route
           path="/museums"
           element={<MuseumsContainer queryValues={values} />}
@@ -50,7 +61,13 @@ function App() {
           path="/booking-form"
           element={<BookingForm queryValues={values} bookTrip={bookTrip} />}
         />
+=======
+>>>>>>> main
         <Route path="/about" element={<About about={About} />} />
+        <Route path="/trip-type" element={<TripType tripType={TripType} />} />
+        <Route path="/museums" element={<MuseumsContainer queryValues={values} />} />
+        <Route path="/booking-form" element={<BookingForm bookTrip={bookTrip} />} />
+        <Route path='/museums/:placeId' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
