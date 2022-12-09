@@ -3,6 +3,16 @@
 const museumsData = {
   museums: [
     {
+      name: "National Ballpark Museum",
+      rating: 4.8,
+      placeId: "ChIJb13H9tx4bIcRPQoWtgSMyKk",
+      latitude: 39.7355683,
+      longitude: -104.9905479,
+      image: "http://www.kirklandmuseum.org/",
+      price_level: 3,
+      wheelchair_accessible: true,
+    },
+    {
       name: "Union Station Fountains",
       rating: 4.9,
       placeId: "ChIJocNwSiZ5bIcRRfsuPp4C400",
@@ -19,16 +29,6 @@ const museumsData = {
       latitude: 39.7355683,
       longitude: -104.9905479,
       image: "../images/city.png",
-      price_level: 3,
-      wheelchair_accessible: true,
-    },
-    {
-      name: "National Ballpark Museum",
-      rating: 4.8,
-      placeId: "ChIJb13H9tx4bIcRPQoWtgSMyKk",
-      latitude: 39.7355683,
-      longitude: -104.9905479,
-      image: "http://www.kirklandmuseum.org/",
       price_level: 3,
       wheelchair_accessible: true,
     },
