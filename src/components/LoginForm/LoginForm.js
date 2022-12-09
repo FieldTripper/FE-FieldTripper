@@ -12,7 +12,7 @@ function LoginForm({ setUser }) {
       <QueryResult data={data} error={error} loading={loading} >
         <h2>Welcome to FieldTrippers!</h2>
         <form>
-          <Link to='/search'>
+          <Link to='/trip-type'>
             <button 
               className="primary--button login--button" 
               onClick={() => setUser(data.users[0])}
