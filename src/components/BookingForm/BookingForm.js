@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
+// import { useLazyQuery } from "@apollo/client";
 import "./BookingForm.css";
 import museumsData from "../../testData/museumsData";
 // import singleMuseumData from "../../testData/singleMuseumData";
 
-const BookingForm = ({ bookTrip, data }) => {
+const BookingForm = ({ bookTrip, museumData }) => {
   // console.log(bookTrip);
-  console.log({ data });
+  console.log({ museumData });
   let [museumValues, setMuseumValues] = useState({
     museum: "",
     date: "",

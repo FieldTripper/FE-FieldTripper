@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql, useLazyQuery } from "@apollo/client";
 // import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import { Link } from "react-router-dom";
 import QueryResult from "../QueryResult/QueryResult";
@@ -24,7 +24,7 @@ const MUSEUMS_QUERY = gql`
 `;
 
 function MuseumsContainer({ queryValues }) {
-  const [museumData, setMuseumData] = useState([]);
+  const [museumData, setMuseumData] = useState("");
 
   const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
     variables: {
@@ -33,18 +33,15 @@ function MuseumsContainer({ queryValues }) {
       zipcode: queryValues.zipCode,
     },
   });
-  console.log(error)
+  console.log(error);
 
   const parentToChild = () => {
     console.log({ data });
-    setMuseumData([...museumData], data);
+    setMuseumData(...museumData, data);
     console.log({ museumData });
   };
 
-  // const bookingForm = data.museums.map((museum) => (
-  //   <BookingForm name={museum.name} placeId={museum.placeId} />
-  // ));
-
+  <BookingForm museumData={museumData} />;
   return (
     <section className="page--container row">
       <QueryResult error={error} loading={loading} data={data}>
@@ -56,7 +53,7 @@ function MuseumsContainer({ queryValues }) {
         <Link to="/booking-form">
           <button
             primary
-            onClick={() => parentToChild()}
+            onClick={() => parentToChild(museumData)}
             // data={data}
             // bookingForm={<BookingForm parentToChild={data} />}
             className="go-book-trip"
@@ -64,7 +61,7 @@ function MuseumsContainer({ queryValues }) {
             Book Trip
           </button>
         </Link>
-        {/* {bookingForm} */}
+        {console.log({ museumData })}
       </QueryResult>
       {/* <MuseumCard data={museumsData} />
       <Wrapper apiKey={process.env.REACT_APP_MATTS_API_KEY} render={render}>
