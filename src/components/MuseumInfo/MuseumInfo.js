@@ -25,11 +25,11 @@ const MUSEUM_QUERY = gql `
 `
 
 function MuseumInfo() {
-  const {name} = useParams()
+  const {placeId} = useParams()
 
   const { loading, error, data } = useQuery(MUSEUM_QUERY, {
     variables: {
-      placeId: "ChIJb13H9tx4bIcRPQoWtgSMyKk"
+      placeId: placeId
     },
   });
   console.log('data', data)
@@ -53,7 +53,6 @@ function MuseumInfo() {
     }
   }
 
-
 const formatAddress = (address) => {
   const newAddress = address.split(',').map((span) => {
     return span.slice(22)
@@ -68,7 +67,7 @@ const formatAddress = (address) => {
       <section>
         {loading ? <p>Please Wait</p> :
           <>
-            <h1>{name}</h1>
+            <h1>{data.museum.name}</h1>
 
             {data.museum.address && (
               <h2>

@@ -9,7 +9,7 @@ function MuseumCard({ data }) {
   if (data) {
     cards = data.museums.map((museum) => {
       return (
-        <Link to={`/museums/${museum.name}`}>
+        <Link to={`/museums/${museum.placeId}`}>
           <section key={museum.placeId} className="museums-card">
             <div className="card-info">
               <h3>{museum.name}</h3 >

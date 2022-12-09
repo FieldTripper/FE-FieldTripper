@@ -47,7 +47,7 @@ function App() {
         <Route path="/trip-type" element={<TripType tripType={TripType} />} />
         <Route path="/museums" element={<MuseumsContainer queryValues={values} />} />
         <Route path="/booking-form" element={<BookingForm bookTrip={bookTrip} />} />
-        <Route path='/museums/:name' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
+        <Route path='/museums/:placeId' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
