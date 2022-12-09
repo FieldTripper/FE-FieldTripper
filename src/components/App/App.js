@@ -4,10 +4,10 @@ import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
 import BookingForm from "../BookingForm/BookingForm";
 import MuseumsContainer from "../MuseumsContainer/MuseumsContainer";
-import Footer from '../Footer/Footer';
-import About from '../About/About'
+import Footer from "../Footer/Footer";
+import About from "../About/About";
 import Error from "../Error/Error";
-import TripType from "../TripType/TripType"
+import TripType from "../TripType/TripType";
 import "./App.css";
 
 function App() {
@@ -48,7 +48,7 @@ function App() {
         <Route path="/trip-type" element={<TripType tripType={TripType} />} />
         <Route
           path="/booking-form"
-          element={<BookingForm bookTrip={bookTrip} />}
+          element={<BookingForm queryValues={values} bookTrip={bookTrip} />}
         />
         <Route path="/about" element={<About about={About} />} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />

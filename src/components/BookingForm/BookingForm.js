@@ -2,11 +2,11 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import "./BookingForm.css";
 import museumsData from "../../testData/museumsData";
-import singleMuseumData from "../../testData/singleMuseumData";
+// import singleMuseumData from "../../testData/singleMuseumData";
 
-const BookingForm = ({ bookTrip }) => {
-  console.log({ singleMuseumData });
-  console.log({ museumsData });
+const BookingForm = ({ bookTrip, data }) => {
+  // console.log(bookTrip);
+  console.log({ data });
   let [museumValues, setMuseumValues] = useState({
     museum: "",
     date: "",
