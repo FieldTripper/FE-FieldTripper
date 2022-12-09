@@ -77,14 +77,14 @@ const formatAddress = (address) => {
 
   return (
     <QueryResult error={error} loading={loading} data={data}>
-      <section>
+      <section className='museum-info-container'>
         {loading ? <p>Please Wait</p> :
           <>
-            <h1>{data.museum.name}</h1>
+            <h1>{data.museum.name}</h1><br></br>
 
             {data.museum.address && (
               <h2>
-                Address: {formatAddress(data.museum.address)}
+                <b>Address:</b><br></br> {formatAddress(data.museum.address)}
               </h2>
             )}
 
@@ -93,15 +93,15 @@ const formatAddress = (address) => {
             )}
 
             {data.museum.rating && data.museum.rating > 0 ?(
-              <h3>Rating: {data.museum.rating}/5</h3>
+              <h3><b>Rating:</b> {data.museum.rating}/5</h3>
             ) : <></>}
 
             {data.museum.totalRatings && data.museum.totalRatings > 0 ? (
-              <h3>Total Ratings: {data.museum.totalRatings}</h3>
+              <h3><b>Total Ratings:</b> {data.museum.totalRatings}</h3>
             ) : <></>}
 
             {data.museum.price && (
-                <h3>Price: {formatPrice(data.museum.price)}</h3>
+                <h3><b>Price:</b> {formatPrice(data.museum.price)}</h3>
             )}
 
             {data.museum.wheelchairAccessibleEntrance && (
