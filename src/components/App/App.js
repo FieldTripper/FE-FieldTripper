@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom'
-import Header from '../Header/Header'
-import SearchForm from '../SearchForm/SearchForm';
+
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "../Header/Header";
+import LoginForm from '../LoginForm/LoginForm';
+import SearchForm from "../SearchForm/SearchForm";
 import MuseumsContainer from '../MuseumsContainer/MuseumsContainer';
 import Footer from '../Footer/Footer'
 import Error from '../Error/Error';
@@ -14,6 +16,7 @@ import ExistingTrips from '../ExistingTrips/ExistingTrips'
 import "./App.css";
 
 function App() {
+  const [user, setUser] = useState({});
   const [values, setSearchTerms] = useState({
     city: "",
     state: "",
@@ -43,11 +46,12 @@ function App() {
     <main>
        <Header />
       <Routes>
+        <Route path="/" element={<LoginForm setUser={setUser} />} />
+        <Route path="/museums" element={<MuseumsContainer queryValues={values} />} />
+        <Route path="/trip-type" element={<TripType tripType={TripType} />} />
+        <Route path="/booking-form" element={<BookingForm bookTrip={bookTrip} />} />
         <Route path="/search-form" element={<SearchForm updateSearch={updateSearch} />} />
         <Route path="/about" element={<About about={About} />} />
-        <Route path="/" element={<TripType tripType={TripType} />} />
-        <Route path="/museums" element={<MuseumsContainer queryValues={values} />} />
-        <Route path="/booking-form" element={<BookingForm bookTrip={bookTrip} />} />
         <Route path='/museums/:placeId' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
         <Route path="/existing-trips" element={<ExistingTrips /> } />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
