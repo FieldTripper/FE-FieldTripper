@@ -79,13 +79,13 @@ const formatAddress = (address) => {
               <img src={data.museum.imageUrl} alt={data.museum.imageDescription} width="500" height="600"/>
             )}
 
-            {data.museum.rating && (
+            {data.museum.rating && data.museum.rating > 0 ?(
               <h3>Rating: {data.museum.rating}/5</h3>
-            )}
+            ) : <></>}
 
-            {data.museum.totalRatings && (
+            {data.museum.totalRatings && data.museum.totalRatings > 0 ? (
               <h3>Total Ratings: {data.museum.totalRatings}</h3>
-            )}
+            ) : <></>}
 
             {data.museum.price && (
                 <h3>Price: {formatPrice(data.museum.price)}</h3>
