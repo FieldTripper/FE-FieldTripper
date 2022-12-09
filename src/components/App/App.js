@@ -10,6 +10,7 @@ import BookingForm from "../BookingForm/BookingForm";
 import About from '../About/About'
 import TripType from "../TripType/TripType"
 import singleMuseumData from '../../testData/singleMuseumData'
+import ExistingTrips from '../ExistingTrips/ExistingTrips'
 import "./App.css";
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
         <Route path="/museums" element={<MuseumsContainer queryValues={values} />} />
         <Route path="/booking-form" element={<BookingForm bookTrip={bookTrip} />} />
         <Route path='/museums/:placeId' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
-        <Route path="/existing-trips" element={<ExistingTrip existingTrip={existingTrip} /> } />
+        <Route path="/existing-trips" element={<ExistingTrips /> } />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />

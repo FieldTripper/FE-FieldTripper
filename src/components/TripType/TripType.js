@@ -7,9 +7,11 @@ const TripType = () => {
         <div className='trip-type'>
             <p className='choose'>Choose Your Trip Type</p>
             <Link to='/search-form'>
-            <button className='trip-host'>Host A Trip</button> </Link>
-            
-            <button className='trip-join'>Join A Trip</button>
+                <button className='trip-host'>Host A Trip</button>
+            </Link>
+            <Link to='/existing-trips'>
+                <button className='trip-join'>Join A Trip</button>
+            </Link>
         </div >
     )
 }
