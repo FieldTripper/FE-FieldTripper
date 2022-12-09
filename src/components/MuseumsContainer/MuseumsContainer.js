@@ -7,8 +7,6 @@ import Map from "../Map/Map";
 import LocationPin from "../LocationPin/LocationPin";
 import "./MuseumsContainer.css";
 
-// import museumsData from "../../testData/museumsData";
-
 const MUSEUMS_QUERY = gql`
   query Museums($city: String!, $state: String!, $zipcode: String!) {
     museums(city: $city, state: $state, zipcode: $zipcode) {
@@ -29,7 +27,6 @@ function MuseumsContainer({ queryValues }) {
       zipcode: queryValues.zipCode,
     },
   });
-  console.log(error)
 
   return (
     <section className="page--container row">
