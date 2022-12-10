@@ -1,15 +1,37 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import "./BookingForm.css";
-import museumsData from "../../testData/museumsData";
-import singleMuseumData from "../../testData/singleMuseumData";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-const BookingForm = ({ bookTrip, user }) => {
-  console.log({ singleMuseumData });
-  console.log({ museumsData });
+// const CREATE_TRIP = gql`
+//   mutation CreateTrip($input: CreateUserTrip!) {
+//     createUserTrip(input: $input) {
+//       trip {
+//         userId
+//         museumName
+//         tripId
+//         date
+//         time
+//         city
+//         state
+//         address
+//         longitude
+//         latitude
+//       }
+//     }
+//   }
+// `;
+
+const BookingForm = ({ bookTrip, museumData, user }) => {
+  const [startDate, setStartDate] = useState(new Date());
+  console.log({ museumData });
+
   let [museumValues, setMuseumValues] = useState({
-    museum: "",
-    date: "",
+    name: "",
+    destinationName: "",
+    placeId: "",
+    date: startDate,
     time: "",
     people: "",
   });
@@ -17,35 +39,49 @@ const BookingForm = ({ bookTrip, user }) => {
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
     setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
+    // if (fieldOption.name === "placeId") {
+    //   setMuseumValues({
+    //     ...museumValues,
+    //     destinationName: ,
+    //     placeId: fieldOption.value,
+    //   });
+    // }
+  };
+
+  let handleDateChange = (date) => {
+    setMuseumValues({ ...museumValues, ...{ date: date } });
   };
 
   return (
     <section className="booking-page">
       <h2>Book a Field Trip</h2>
       <form className="booking-form">
+        <input
+          type="text"
+          placeholder="Name your trip"
+          name="name"
+          value={museumValues.name}
+          onChange={(e) => handleMuseumChange(e)}
+        />
         <select
           className="booking-options"
-          name="museum"
+          name="placeId"
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value="Select a Museum">Select a Museum</option>
-          {museumsData.museums.map((museum) => (
-            <option key={museum.name} value={museum}>
+          {museumData.museums.map((museum) => (
+            <option key={museum.name} value={museum.placeId}>
               {museum.name}
             </option>
           ))}
         </select>
 
-        <input
-          className="booking-options"
-          type="date"
-          id="start"
-          name="trip-start"
-          value="2022-07-22"
-          min="2022-12-01"
-          max="2024-12-31"
-          onChange={(e) => handleMuseumChange(e)}
-        ></input>
+        <div className="date-picker-styling">
+          <DatePicker
+            selected={museumValues.date}
+            onChange={(date) => handleDateChange(date)}
+          />
+        </div>
 
         <select
           className="booking-options"
@@ -81,6 +117,7 @@ const BookingForm = ({ bookTrip, user }) => {
           className="booking-button"
           onClick={() => bookTrip(museumValues)}
         >
+          {console.log({ museumValues })}
           Book a Field Trip
         </button>
       </form>

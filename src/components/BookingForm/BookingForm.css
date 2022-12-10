@@ -17,3 +17,17 @@
   height: 3vh;
   width: 20vw;
 }
+
+.date-picker-styling {
+  display: flex;
+  width: 19.5vw;
+}
+
+.date-picker-styling {
+  display: flex;
+}
+
+.react-datepicker__input-container input {
+  width: 20vw;
+  height: 3vh;
+}

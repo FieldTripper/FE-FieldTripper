@@ -23,7 +23,6 @@ import "./Map.css";
         defaultZoom={defaultCenter.zoom}
       >
         {data.museums.map((pin) => {
- 
     return (
       <LocationPin
           lat={pin.latitude}

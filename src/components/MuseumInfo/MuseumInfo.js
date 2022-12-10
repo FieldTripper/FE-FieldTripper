@@ -2,121 +2,152 @@ import { useQuery, gql } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router";
 import QueryResult from "../QueryResult/QueryResult";
-import './MuseumInfo.css'
+import { MUSEUM_QUERY } from "../../queries/queries";
+import "./MuseumInfo.css";
 
-const MUSEUM_QUERY = gql`
-  query Museum($placeId: String!) {
-    museum(placeId: $placeId) {
-      placeId
-      name
-      rating
-      latitude
-      longitude
-      price
-      website
-      address
-      totalRatings
-      separatedHoo
-      combinedHoo
-      wheelchairAccessibleEntrance
-      imageUrl
-      imageDescription
-    }
-  }
-`
+// const MUSEUM_QUERY = gql`
+//   query Museum($placeId: String!) {
+//     museum(placeId: $placeId) {
+//       placeId
+//       name
+//       rating
+//       latitude
+//       longitude
+//       price
+//       website
+//       address
+//       totalRatings
+//       separatedHoo
+//       combinedHoo
+//       wheelchairAccessibleEntrance
+//       imageUrl
+//       imageDescription
+//     }
+//   }
+// `;
 
 function MuseumInfo() {
-  const { placeId } = useParams()
+  const { placeId } = useParams();
 
   const { loading, error, data } = useQuery(MUSEUM_QUERY, {
     variables: {
-      placeId: placeId
+      placeId: placeId,
     },
   });
 
   const formatPrice = (priceNumber) => {
-    if(priceNumber === 0) {
-      return "Free"
+    if (priceNumber === 0) {
+      return "Free";
     } else if (priceNumber === 1) {
-      return "$"
+      return "$";
     } else if (priceNumber === 2) {
-      return "$$"
+      return "$$";
     } else if (priceNumber === 3) {
-      return "$$$"
+      return "$$$";
     } else {
-      return "$$$$"
+      return "$$$$";
     }
-  }
+  };
 
   const wheelchairAccessible = (isAccessible) => {
     if (isAccessible) {
-      return "Yes"
+      return "Yes";
     } else {
-      return "No"
+      return "No";
     }
-  }
+  };
 
-const formatAddress = (address) => {
-  const newAddress1 = address.replaceAll('<span class="street-address">', "")
-  const newAddress2 = newAddress1.replaceAll('<span class="locality">', "")
-  const newAddress3 = newAddress2.replaceAll('<span class="region">', "")
-  const newAddress4 = newAddress3.replaceAll('<span class="postal-code">', "")
-  const newAddress5 = newAddress4.replaceAll('<span class="country-name">', "")
-  const newAddress6 = newAddress5.replaceAll('</span>', "")
-  return newAddress6
-}
+  const formatAddress = (address) => {
+    const newAddress1 = address.replaceAll('<span class="street-address">', "");
+    const newAddress2 = newAddress1.replaceAll('<span class="locality">', "");
+    const newAddress3 = newAddress2.replaceAll('<span class="region">', "");
+    const newAddress4 = newAddress3.replaceAll(
+      '<span class="postal-code">',
+      ""
+    );
+    const newAddress5 = newAddress4.replaceAll(
+      '<span class="country-name">',
+      ""
+    );
+    const newAddress6 = newAddress5.replaceAll(
+      '<span class="extended-address">',
+      ""
+    );
+    const newAddress7 = newAddress6.replaceAll("</span>", "");
+    return newAddress7;
+  };
 
   return (
     <QueryResult error={error} loading={loading} data={data}>
-      <section className='museum-info-container'>
-        {loading ? <p>Please Wait</p> :
+      <section className="museum-info-container">
+        {loading ? (
+          <p>Please Wait</p>
+        ) : (
           <>
-            <h1>{data.museum.name}</h1><br></br>
+            <h1>{data.museum.name}</h1>
+            <br></br>
             {data.museum.website && (
               <a href={data.museum.website}>{data.museum.website}</a>
             )}
 
-            {/* <p className='address-title'><b>Address:</b></p><br></br> */}
-              {data.museum.address && (
-            <p className='address'>
-                { formatAddress(data.museum.address)} 
-            </p>
+            {data.museum.address && (
+              <p className="address">{formatAddress(data.museum.address)}</p>
             )}
 
             {data.museum.imageUrl && (
-              <img className='museum-image-info' src={data.museum.imageUrl} alt={data.museum.imageDescription} />
+              <img
+                className="museum-image-info"
+                src={data.museum.imageUrl}
+                alt={data.museum.imageDescription}
+              />
             )}
 
             {data.museum.rating && data.museum.rating > 0 ? (
-              <h3><b>Rating:</b> {data.museum.rating}/5</h3>
-            ) : <></>}
+              <h3>
+                <b>Rating:</b> {data.museum.rating}/5
+              </h3>
+            ) : (
+              <></>
+            )}
 
             {data.museum.totalRatings && data.museum.totalRatings > 0 ? (
-              <h3><b>Total Ratings:</b> {data.museum.totalRatings}</h3>
-            ) : <></>}
+              <h3>
+                <b>Total Ratings:</b> {data.museum.totalRatings}
+              </h3>
+            ) : (
+              <></>
+            )}
 
             {data.museum.price && (
-              <h3><b>Price:</b> {formatPrice(data.museum.price)}</h3>
+              <h3>
+                <b>Price:</b> {formatPrice(data.museum.price)}
+              </h3>
             )}
 
             {data.museum.wheelchairAccessibleEntrance && (
-              <h3><b>Wheelchair Accessible:</b> {wheelchairAccessible(data.museum.wheelchairAccessibleEntrance)}</h3>
+              <h3>
+                <b>Wheelchair Accessible:</b>{" "}
+                {wheelchairAccessible(data.museum.wheelchairAccessibleEntrance)}
+              </h3>
             )}
 
-            <h3><b>Hours:</b></h3>
+            <h3>
+              <b>Hours:</b>
+            </h3>
             {data.museum.combinedHoo && (
               <p>
                 {data.museum.combinedHoo.map((day) => (
-                  <p className='hours' key={day}>{day}</p>
+                  <p className="hours" key={day}>
+                    {day}
+                  </p>
                 ))}
               </p>
             )}
-
           </>
-        }
+        )}
       </section>
     </QueryResult>
-  )
+  );
 }
 
-export default MuseumInfo
+export default MuseumInfo;
