@@ -33,16 +33,18 @@ function MuseumInfo() {
       placeId: placeId,
     },
   });
-  console.log("data", data);
-  console.log("loading", loading);
 
   const formatPrice = (priceNumber) => {
-    if (priceNumber === 1) {
+    if (priceNumber === 0) {
+      return "Free";
+    } else if (priceNumber === 1) {
       return "$";
     } else if (priceNumber === 2) {
       return "$$";
     } else if (priceNumber === 3) {
       return "$$$";
+    } else {
+      return "$$$$";
     }
   };
 
@@ -53,16 +55,6 @@ function MuseumInfo() {
       return "No";
     }
   };
-
-  // const formatAddress = (address) => {
-  //   const newAddress = address.split(',').map((span) => {
-  //     return span.slice(22)
-  //   }). map((span) => {
-  //     return span.slice(0, -7)
-  //   })
-  //   console.log(newAddress)
-  //   return newAddress
-  // }
 
   const formatAddress = (address) => {
     const newAddress1 = address.replaceAll('<span class="street-address">', "");

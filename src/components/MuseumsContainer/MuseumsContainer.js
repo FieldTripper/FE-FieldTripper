@@ -9,8 +9,6 @@ import LocationPin from "../LocationPin/LocationPin";
 import "./MuseumsContainer.css";
 import BookingForm from "../BookingForm/BookingForm";
 
-// import museumsData from "../../testData/museumsData";
-
 const MUSEUMS_QUERY = gql`
   query Museums($city: String!, $state: String!, $zipcode: String!) {
     museums(city: $city, state: $state, zipcode: $zipcode) {

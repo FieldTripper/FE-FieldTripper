@@ -28,6 +28,7 @@ import "./Map.css";
           lat={pin.latitude}
           lng={pin.longitude}
           name={pin.name}
+          placeId={pin.placeId}
           key={pin.placeId}
         />
     );
