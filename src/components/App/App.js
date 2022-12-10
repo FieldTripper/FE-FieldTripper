@@ -53,7 +53,7 @@ function App() {
         <Route path="/search" element={<SearchForm updateSearch={updateSearch} />} />
         <Route path="/about" element={<About about={About} />} />
         <Route path='/museums/:placeId' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
-        <Route path="/existing-trips" element={<ExistingTrips /> } />
+        <Route path="/existing-trips" element={<ExistingTrips user={user} /> } />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
