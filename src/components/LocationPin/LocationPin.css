@@ -2,7 +2,7 @@
   width: 2vw;
 }
 
-.locaton-pin {
+.location-pin {
  filter: invert(36%) sepia(94%) saturate(976%) hue-rotate(149deg) brightness(95%) contrast(103%);
  height: 5vh;
 }

@@ -49,8 +49,8 @@ function App() {
         <Route path="/" element={<LoginForm setUser={setUser} />} />
         <Route path="/museums" element={<MuseumsContainer queryValues={values} />} />
         <Route path="/trip-type" element={<TripType tripType={TripType} />} />
-        <Route path="/booking-form" element={<BookingForm bookTrip={bookTrip} user={user} />} />
-        <Route path="/search-form" element={<SearchForm updateSearch={updateSearch} />} />
+        <Route path="/booking-form" element={<BookingForm bookTrip={bookTrip} />} />
+        <Route path="/search" element={<SearchForm updateSearch={updateSearch} />} />
         <Route path="/about" element={<About about={About} />} />
         <Route path='/museums/:placeId' element={<MuseumInfo singleMuseumData={singleMuseumData}/>} />
         <Route path="/existing-trips" element={<ExistingTrips user={user} /> } />
