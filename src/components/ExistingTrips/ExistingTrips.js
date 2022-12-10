@@ -21,11 +21,24 @@ const ExistingTrips = () => {
     console.log('data', data)
     console.log('error', error)
 
-    return (
-        <div className='saved-trips'>
-            <p>saved trips here</p>
-        </div>
+    let trips
 
-    )
+    if(data) {
+      trips = data.trips.map((trip) => {
+        return (
+            <div key={trip.destinationPlaceId} className='saved-trips'>
+              <h1>{trip.name}</h1>
+              <h2>{trip.destinationName}</h2>
+              <h3>{trip.startTime}</h3>
+            </div>
+        )
+      })
+    } else if(error){
+      trips = <p>{error.message}</p>
+    } else {
+      trips = <p>There are no trips at this time. Please return to "Host A Trip" to plan a trip!</p>
+    }
+
+    return <>{trips}</>
 }
 export default ExistingTrips
