@@ -69,10 +69,45 @@ const DELETE_TRIP_MUTATION = gql`
   }
 `;
 
+const MUSEUMS_QUERY = gql`
+  query Museums($city: String!, $state: String!, $zipcode: String!) {
+    museums(city: $city, state: $state, zipcode: $zipcode) {
+      placeId
+      name
+      rating
+      latitude
+      longitude
+    }
+  }
+`;
+
+const MUSEUM_QUERY = gql`
+  query Museum($placeId: String!) {
+    museum(placeId: $placeId) {
+      placeId
+      name
+      rating
+      latitude
+      longitude
+      price
+      website
+      address
+      totalRatings
+      separatedHoo
+      combinedHoo
+      wheelchairAccessibleEntrance
+      imageUrl
+      imageDescription
+    }
+  }
+`;
+
 export {
   USERS_QUERY,
   TRIPS_QUERY,
   CREATE_TRIP_MUTATION,
   CREATE_USER_TRIP_MUTATION,
   DELETE_TRIP_MUTATION,
+  MUSEUMS_QUERY,
+  MUSEUM_QUERY,
 };

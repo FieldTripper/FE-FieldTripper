@@ -23,30 +23,13 @@ import "react-datepicker/dist/react-datepicker.css";
 //   }
 // `;
 
-/*
-mutation {
-    createUserTrip(input: {
-        userId: 2
-        tripId: 6 
-        isHost: true}) {
-            userTrip {
-                userId
-                tripId
-                user {
-                    name
-                    email
-                }
-            }
-        }
-    }
-  */
-
 const BookingForm = ({ bookTrip, museumData, user }) => {
   const [startDate, setStartDate] = useState(new Date());
-  // console.log(bookTrip);
   console.log({ museumData });
 
   let [museumValues, setMuseumValues] = useState({
+    name: "",
+    destinationName: "",
     placeId: "",
     date: startDate,
     time: "",
@@ -56,21 +39,30 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
     setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
-    // setStartDate(...startDate);
+    // if (fieldOption.name === "placeId") {
+    //   setMuseumValues({
+    //     ...museumValues,
+    //     destinationName: ,
+    //     placeId: fieldOption.value,
+    //   });
+    // }
   };
 
   let handleDateChange = (date) => {
     setMuseumValues({ ...museumValues, ...{ date: date } });
   };
-  // const test = museumData.museums.map((museum) =>
-  //   // console.log("museum name", museum.name)
-  //   console.log({ museum })
-  // );
 
   return (
     <section className="booking-page">
       <h2>Book a Field Trip</h2>
       <form className="booking-form">
+        <input
+          type="text"
+          placeholder="Name your trip"
+          name="name"
+          value={museumValues.name}
+          onChange={(e) => handleMuseumChange(e)}
+        />
         <select
           className="booking-options"
           name="placeId"
@@ -88,7 +80,6 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
           <DatePicker
             selected={museumValues.date}
             onChange={(date) => handleDateChange(date)}
-            // value={museumValues.date}
           />
         </div>
 

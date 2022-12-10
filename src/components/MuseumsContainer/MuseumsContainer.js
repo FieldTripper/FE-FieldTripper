@@ -7,19 +7,20 @@ import MuseumCard from "../MuseumCard/MuseumCard";
 import Map from "../Map/Map";
 import LocationPin from "../LocationPin/LocationPin";
 import "./MuseumsContainer.css";
+import { MUSEUMS_QUERY } from "../../queries/queries";
 import BookingForm from "../BookingForm/BookingForm";
 
-const MUSEUMS_QUERY = gql`
-  query Museums($city: String!, $state: String!, $zipcode: String!) {
-    museums(city: $city, state: $state, zipcode: $zipcode) {
-      placeId
-      name
-      rating
-      latitude
-      longitude
-    }
-  }
-`;
+// const MUSEUMS_QUERY = gql`
+//   query Museums($city: String!, $state: String!, $zipcode: String!) {
+//     museums(city: $city, state: $state, zipcode: $zipcode) {
+//       placeId
+//       name
+//       rating
+//       latitude
+//       longitude
+//     }
+//   }
+// `;
 
 function MuseumsContainer({ queryValues, setMuseumData }) {
   const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
