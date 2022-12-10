@@ -4,7 +4,7 @@ import "./BookingForm.css";
 import museumsData from "../../testData/museumsData";
 import singleMuseumData from "../../testData/singleMuseumData";
 
-const BookingForm = ({ bookTrip }) => {
+const BookingForm = ({ bookTrip, user }) => {
   console.log({ singleMuseumData });
   console.log({ museumsData });
   let [museumValues, setMuseumValues] = useState({

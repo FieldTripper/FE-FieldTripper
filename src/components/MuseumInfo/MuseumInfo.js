@@ -33,16 +33,18 @@ function MuseumInfo() {
       placeId: placeId
     },
   });
-  console.log('data', data)
-  console.log('loading', loading)
 
   const formatPrice = (priceNumber) => {
-    if (priceNumber === 1) {
+    if(priceNumber === 0) {
+      return "Free"
+    } else if (priceNumber === 1) {
       return "$"
     } else if (priceNumber === 2) {
       return "$$"
     } else if (priceNumber === 3) {
       return "$$$"
+    } else {
+      return "$$$$"
     }
   }
 
@@ -54,26 +56,15 @@ function MuseumInfo() {
     }
   }
 
-  // const formatAddress = (address) => {
-  //   const newAddress = address.split(',').map((span) => {
-  //     return span.slice(22)
-  //   }). map((span) => {
-  //     return span.slice(0, -7)
-  //   })
-  //   console.log(newAddress)
-  //   return newAddress
-  // }
-
-  const formatAddress = (address) => {
-    console.log(address)
-    const newAddress1 = address.replaceAll('<span class="street-address">', "")
-    const newAddress2 = newAddress1.replaceAll('<span class="locality">', "")
-    const newAddress3 = newAddress2.replaceAll('<span class="region">', "")
-    const newAddress4 = newAddress3.replaceAll('<span class="postal-code">', "")
-    const newAddress5 = newAddress4.replaceAll('<span class="country-name">', "")
-    const newAddress6 = newAddress5.replaceAll('</span>', "")
-    return newAddress6
-  }
+const formatAddress = (address) => {
+  const newAddress1 = address.replaceAll('<span class="street-address">', "")
+  const newAddress2 = newAddress1.replaceAll('<span class="locality">', "")
+  const newAddress3 = newAddress2.replaceAll('<span class="region">', "")
+  const newAddress4 = newAddress3.replaceAll('<span class="postal-code">', "")
+  const newAddress5 = newAddress4.replaceAll('<span class="country-name">', "")
+  const newAddress6 = newAddress5.replaceAll('</span>', "")
+  return newAddress6
+}
 
   return (
     <QueryResult error={error} loading={loading} data={data}>
