@@ -11,6 +11,8 @@
 h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
+    color:#03989e;
+
 }
 
 h2 {
@@ -38,7 +40,7 @@ h3 {
 }
 
 .museum-image-info {
-    width: 30vw;
+    width: 28vw;
     height: auto;
     margin-top: 2%;
     margin-bottom: 1%;

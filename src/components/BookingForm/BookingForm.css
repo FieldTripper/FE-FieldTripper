@@ -6,6 +6,14 @@
   align-items: center;
 }
 
+.book-trip {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #03989e;
+  font-size: 120%;
+  margin-bottom: 2%;
+}
+
 .booking-form {
   display: flex;
   flex-direction: column;
@@ -16,4 +24,29 @@
 .booking-options {
   height: 3vh;
   width: 20vw;
+}
+
+.booking-button {
+  background-color: #03989e;
+  border: 2px solid #03989e;
+  color: white;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 92%;
+  font-weight: 600;
+  text-align: center;
+  transition: all 300ms;
+  width: 12vw;
+  height: 3.3vh;
+}
+
+.booking-button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: #03989e;
+}
+
+.booking-button:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(4px)
 }

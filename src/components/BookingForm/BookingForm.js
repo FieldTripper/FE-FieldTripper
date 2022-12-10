@@ -21,7 +21,7 @@ const BookingForm = ({ bookTrip, user }) => {
 
   return (
     <section className="booking-page">
-      <h2>Book a Field Trip</h2>
+      <p className='book-trip'>Book a Field Trip</p>
       <form className="booking-form">
         <select
           className="booking-options"
@@ -81,7 +81,7 @@ const BookingForm = ({ bookTrip, user }) => {
           className="booking-button"
           onClick={() => bookTrip(museumValues)}
         >
-          Book a Field Trip
+          Book Trip
         </button>
       </form>
     </section>

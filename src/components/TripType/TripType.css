@@ -1,6 +1,6 @@
 .trip-type {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,5 +26,5 @@
     text-align: center;
     transition: all 300ms;
     width: 12vw;
-    height: 3.3vh;
+    height: 5vh;
 }
