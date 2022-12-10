@@ -41,10 +41,11 @@ mutation {
     }
   */
 
-const BookingForm = ({ bookTrip, museumData }) => {
+const BookingForm = ({ bookTrip, museumData, user }) => {
   const [startDate, setStartDate] = useState(new Date());
   // console.log(bookTrip);
   console.log({ museumData });
+
   let [museumValues, setMuseumValues] = useState({
     placeId: "",
     date: startDate,

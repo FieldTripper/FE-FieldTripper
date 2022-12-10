@@ -71,7 +71,7 @@ function App() {
           path="/museums/:placeId"
           element={<MuseumInfo singleMuseumData={singleMuseumData} />}
         />
-        <Route path="/existing-trips" element={<ExistingTrips />} />
+        <Route path="/existing-trips" element={<ExistingTrips user={user} />} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
