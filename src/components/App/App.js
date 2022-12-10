@@ -60,10 +60,10 @@ function App() {
         <Route path="/trip-type" element={<TripType tripType={TripType} />} />
         <Route
           path="/booking-form"
-          element={<BookingForm bookTrip={bookTrip} />}
+          element={<BookingForm bookTrip={bookTrip} museumData={museumData} />}
         />
         <Route
-          path="/search"
+          path="/search-form"
           element={<SearchForm updateSearch={updateSearch} />}
         />
         <Route path="/about" element={<About about={About} />} />

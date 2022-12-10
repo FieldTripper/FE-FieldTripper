@@ -1,19 +1,53 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
-// import { useLazyQuery } from "@apollo/client";
 import "./BookingForm.css";
 import DatePicker from "react-datepicker";
-// import museumsData from "../../testData/museumsData";
-// import singleMuseumData from "../../testData/singleMuseumData";
 import "react-datepicker/dist/react-datepicker.css";
+
+// const CREATE_TRIP = gql`
+//   mutation CreateTrip($input: CreateUserTrip!) {
+//     createUserTrip(input: $input) {
+//       trip {
+//         userId
+//         museumName
+//         tripId
+//         date
+//         time
+//         city
+//         state
+//         address
+//         longitude
+//         latitude
+//       }
+//     }
+//   }
+// `;
+
+/*
+mutation {
+    createUserTrip(input: {
+        userId: 2
+        tripId: 6 
+        isHost: true}) {
+            userTrip {
+                userId
+                tripId
+                user {
+                    name
+                    email
+                }
+            }
+        }
+    }
+  */
 
 const BookingForm = ({ bookTrip, museumData }) => {
   const [startDate, setStartDate] = useState(new Date());
   // console.log(bookTrip);
   console.log({ museumData });
   let [museumValues, setMuseumValues] = useState({
-    museum: "",
-    // date: new Date(),
+    placeId: "",
+    date: startDate,
     time: "",
     people: "",
   });
@@ -21,8 +55,16 @@ const BookingForm = ({ bookTrip, museumData }) => {
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
     setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
-    setStartDate(...startDate, []);
+    // setStartDate(...startDate);
   };
+
+  let handleDateChange = (date) => {
+    setMuseumValues({ ...museumValues, ...{ date: date } });
+  };
+  // const test = museumData.museums.map((museum) =>
+  //   // console.log("museum name", museum.name)
+  //   console.log({ museum })
+  // );
 
   return (
     <section className="booking-page">
@@ -30,12 +72,12 @@ const BookingForm = ({ bookTrip, museumData }) => {
       <form className="booking-form">
         <select
           className="booking-options"
-          name="museum"
+          name="placeId"
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value="Select a Museum">Select a Museum</option>
           {museumData.museums.map((museum) => (
-            <option key={museum.name} value={museum}>
+            <option key={museum.name} value={museum.placeId}>
               {museum.name}
             </option>
           ))}
@@ -43,21 +85,11 @@ const BookingForm = ({ bookTrip, museumData }) => {
 
         <div className="date-picker-styling">
           <DatePicker
-            selected={startDate}
-            onChange={(date) => handleMuseumChange(date)}
+            selected={museumValues.date}
+            onChange={(date) => handleDateChange(date)}
+            // value={museumValues.date}
           />
         </div>
-
-        {/* <input
-          className="booking-options"
-          type="date"
-          id="start"
-          name="trip-start"
-          value="date"
-          min="2022-12-01"
-          max="2024-12-31"
-          onChange={(e) => handleMuseumChange(e)}
-        ></input> */}
 
         <select
           className="booking-options"
@@ -93,6 +125,7 @@ const BookingForm = ({ bookTrip, museumData }) => {
           className="booking-button"
           onClick={() => bookTrip(museumValues)}
         >
+          {console.log({ museumValues })}
           Book a Field Trip
         </button>
       </form>

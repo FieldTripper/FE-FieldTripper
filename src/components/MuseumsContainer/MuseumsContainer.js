@@ -22,8 +22,6 @@ const MUSEUMS_QUERY = gql`
 `;
 
 function MuseumsContainer({ queryValues, setMuseumData }) {
-  // const [museumData, setMuseumData] = useState("");
-
   const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
     variables: {
       city: queryValues.city,
@@ -36,7 +34,6 @@ function MuseumsContainer({ queryValues, setMuseumData }) {
   useEffect(() => {
     console.log({ data });
     setMuseumData(data);
-    // console.log({ museumData });
   }, [data]);
 
   return (
@@ -49,7 +46,7 @@ function MuseumsContainer({ queryValues, setMuseumData }) {
         </Map>
         <Link to="/booking-form">
           <button
-            primary
+            // primary
             // onClick={() => handleBookingClick()}
             // data={data}
             // bookingForm={<BookingForm sendDataToBooking={data} />}

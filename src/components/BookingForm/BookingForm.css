@@ -23,8 +23,11 @@
   width: 19.5vw;
 }
 
+.date-picker-styling {
+  display: flex;
+}
+
 .react-datepicker__input-container input {
-  display: block;
-  width: 100%;
+  width: 20vw;
   height: 3vh;
 }
