@@ -21,16 +21,24 @@ const ExistingTrips = () => {
     console.log('data', data)
     console.log('error', error)
 
+    const formatDate = (tripDate) => {
+      const newDate = new Date(tripDate).toUTCString().slice(0, -7)
+      return newDate
+    }
+
     let trips
 
     if(data) {
       trips = data.trips.map((trip) => {
         return (
+          <section>
             <div key={trip.destinationPlaceId} className='saved-trips'>
               <h1>{trip.name}</h1>
               <h2>{trip.destinationName}</h2>
-              <h3>{trip.startTime}</h3>
+              <h3>{formatDate(trip.startTime)}</h3>
             </div>
+            <button>Join Trip</button>
+          </section>
         )
       })
     } else if(error){
