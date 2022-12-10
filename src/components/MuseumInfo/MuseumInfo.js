@@ -81,6 +81,9 @@ function MuseumInfo() {
         {loading ? <p>Please Wait</p> :
           <>
             <h1>{data.museum.name}</h1><br></br>
+            {data.museum.website && (
+              <a href={data.museum.website}>{data.museum.website}</a>
+            )}
 
             {/* <p className='address-title'><b>Address:</b></p><br></br> */}
               {data.museum.address && (
@@ -90,7 +93,7 @@ function MuseumInfo() {
             )}
 
             {data.museum.imageUrl && (
-              <img className='museum-image' src={data.museum.imageUrl} alt={data.museum.imageDescription} width="500" height="600" />
+              <img className='museum-image-info' src={data.museum.imageUrl} alt={data.museum.imageDescription} />
             )}
 
             {data.museum.rating && data.museum.rating > 0 ? (
@@ -118,9 +121,6 @@ function MuseumInfo() {
               </p>
             )}
 
-            {data.museum.website && (
-              <a href={data.museum.website}>{data.museum.website}</a>
-            )}
           </>
         }
       </section>

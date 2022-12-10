@@ -37,12 +37,19 @@ h3 {
     font-weight: 400;
 }
 
-.museum-image {
-    width: 25vw;
+.museum-image-info {
+    width: 30vw;
     height: auto;
     margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     border-color: #03989e;
     border-width: 5px;
     border-style: solid;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 1%;
+
 }
