@@ -24,6 +24,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState(
     "404: This page does not exist."
   );
+  const [museumData, setMuseumData] = useState("");
 
   const updateSearch = (values) => {
     setSearchTerms({
@@ -40,7 +41,7 @@ function App() {
       people: values.people,
     });
   };
-
+  console.log({ museumData });
   return (
     <main>
       <Header />
@@ -48,12 +49,18 @@ function App() {
         <Route path="/" element={<LoginForm setUser={setUser} />} />
         <Route
           path="/museums"
-          element={<MuseumsContainer queryValues={values} />}
+          element={
+            <MuseumsContainer
+              queryValues={values}
+              updateSearch={updateSearch}
+              setMuseumData={setMuseumData}
+            />
+          }
         />
         <Route path="/trip-type" element={<TripType tripType={TripType} />} />
         <Route
           path="/booking-form"
-          element={<BookingForm bookTrip={bookTrip} />}
+          element={<BookingForm bookTrip={bookTrip} museumData={museumData} />}
         />
         <Route
           path="/search-form"

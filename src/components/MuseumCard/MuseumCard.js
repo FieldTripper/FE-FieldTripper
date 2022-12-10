@@ -12,7 +12,7 @@ function MuseumCard({ data }) {
         <Link to={`/museums/${museum.placeId}`}>
           <section key={museum.placeId} className="museums-card">
             <div className="card-info">
-              <h3>{museum.name}</h3 >
+              <h3>{museum.name}</h3>
               <h4>{museum.rating}</h4>
             </div>
             <div className="museum-image">🏙️</div>
@@ -21,7 +21,12 @@ function MuseumCard({ data }) {
       );
     });
   } else {
-    cards = <p>Sorry, There are no museums to be displayed. Please search in a different area</p>;
+    cards = (
+      <p>
+        Sorry, There are no museums to be displayed. Please search in a
+        different area
+      </p>
+    );
   }
 
   return <div>{cards}</div>;

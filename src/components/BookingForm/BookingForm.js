@@ -2,15 +2,18 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 // import { useLazyQuery } from "@apollo/client";
 import "./BookingForm.css";
-import museumsData from "../../testData/museumsData";
+import DatePicker from "react-datepicker";
+// import museumsData from "../../testData/museumsData";
 // import singleMuseumData from "../../testData/singleMuseumData";
+import "react-datepicker/dist/react-datepicker.css";
 
 const BookingForm = ({ bookTrip, museumData }) => {
+  const [startDate, setStartDate] = useState(new Date());
   // console.log(bookTrip);
   console.log({ museumData });
   let [museumValues, setMuseumValues] = useState({
     museum: "",
-    date: "",
+    // date: new Date(),
     time: "",
     people: "",
   });
@@ -18,6 +21,7 @@ const BookingForm = ({ bookTrip, museumData }) => {
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
     setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
+    setStartDate(...startDate, []);
   };
 
   return (
@@ -30,23 +34,30 @@ const BookingForm = ({ bookTrip, museumData }) => {
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value="Select a Museum">Select a Museum</option>
-          {museumsData.museums.map((museum) => (
+          {museumData.museums.map((museum) => (
             <option key={museum.name} value={museum}>
               {museum.name}
             </option>
           ))}
         </select>
 
-        <input
+        <div className="date-picker-styling">
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => handleMuseumChange(date)}
+          />
+        </div>
+
+        {/* <input
           className="booking-options"
           type="date"
           id="start"
           name="trip-start"
-          value="2022-07-22"
+          value="date"
           min="2022-12-01"
           max="2024-12-31"
           onChange={(e) => handleMuseumChange(e)}
-        ></input>
+        ></input> */}
 
         <select
           className="booking-options"
