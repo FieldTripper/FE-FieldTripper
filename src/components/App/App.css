@@ -74,7 +74,7 @@
   font-weight: 600;
   text-align: center;
   transition: all 300ms;
-  width: 10vw;
+  width: 18vw;
   height: 4vh;
 }
 
@@ -91,9 +91,9 @@
 
 input {
   margin: 5px;
-  width: 15%;
+  width: 15vw;
   font-size: 12px;
-  height: 30%;
+  height: 40vh;
 }
 
 input:focus {
