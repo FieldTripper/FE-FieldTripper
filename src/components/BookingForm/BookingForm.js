@@ -4,28 +4,9 @@ import "./BookingForm.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-// const CREATE_TRIP = gql`
-//   mutation CreateTrip($input: CreateUserTrip!) {
-//     createUserTrip(input: $input) {
-//       trip {
-//         userId
-//         museumName
-//         tripId
-//         date
-//         time
-//         city
-//         state
-//         address
-//         longitude
-//         latitude
-//       }
-//     }
-//   }
-// `;
-
 const BookingForm = ({ bookTrip, museumData, user }) => {
   const [startDate, setStartDate] = useState(new Date());
-  console.log({ museumData });
+  console.log('MD', { museumData });
 
   let [museumValues, setMuseumValues] = useState({
     name: "",
@@ -36,16 +17,34 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
     people: "",
   });
 
+  const checkDestination = (name, fon, fov) => {
+    const foundMuseum = museumData.museums.find((museum) => {
+     return museum.name === name
+    })
+    if (foundMuseum.placeId !== museumValues.placeId) {
+     const newMuseum = museumData.museums.find((museum) => {
+        return museumValues.placeId === museum.placeId
+      })
+      setMuseumValues({...museumValues, destinationName: newMuseum.name})
+    } else {
+      setMuseumValues({...museumValues, [fon]: fov })
+    }
+  }
+
+  console.log('MV', museumValues)
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
+    
     setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
-    // if (fieldOption.name === "placeId") {
-    //   setMuseumValues({
-    //     ...museumValues,
-    //     destinationName: ,
-    //     placeId: fieldOption.value,
-    //   });
-    // }
+    if (!museumValues.destinationName && museumValues.placeId) {
+        const name = museumData.museums.find((museum) => {
+          return museum.placeId === museumValues.placeId
+        })
+        setMuseumValues({...museumValues, destinationName: name.name});
+    } else {
+      checkDestination(museumValues.destinationName, fieldOption.name, fieldOption.value)
+    }
+    console.log('pid', fieldOption.value)
   };
 
   let handleDateChange = (date) => {
@@ -117,7 +116,6 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
           className="booking-button"
           onClick={() => bookTrip(museumValues)}
         >
-          {console.log({ museumValues })}
           Book a Field Trip
         </button>
       </form>

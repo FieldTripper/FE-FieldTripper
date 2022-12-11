@@ -41,7 +41,7 @@ function App() {
       people: values.people,
     });
   };
-  console.log({ museumData });
+
   return (
     <main>
       <Header />
