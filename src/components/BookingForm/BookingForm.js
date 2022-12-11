@@ -4,25 +4,6 @@ import "./BookingForm.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-// const CREATE_TRIP = gql`
-//   mutation CreateTrip($input: CreateUserTrip!) {
-//     createUserTrip(input: $input) {
-//       trip {
-//         userId
-//         museumName
-//         tripId
-//         date
-//         time
-//         city
-//         state
-//         address
-//         longitude
-//         latitude
-//       }
-//     }
-//   }
-// `;
-
 const BookingForm = ({ bookTrip, museumData, user }) => {
   const [startDate, setStartDate] = useState(new Date());
   console.log({ museumData });
@@ -39,13 +20,6 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
     setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
-    // if (fieldOption.name === "placeId") {
-    //   setMuseumValues({
-    //     ...museumValues,
-    //     destinationName: ,
-    //     placeId: fieldOption.value,
-    //   });
-    // }
   };
 
   let handleDateChange = (date) => {
