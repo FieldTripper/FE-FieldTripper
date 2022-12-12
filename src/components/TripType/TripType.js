@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const TripType = () => {
   return (
     <div className="trip-type">
-      <p className="choose">Choose Your Trip Type</p>
+      <p className="choose-trip">Choose Your Trip Type</p>
       <Link to="/search-form">
         <button className="trip-host">Host A Trip</button>
       </Link>

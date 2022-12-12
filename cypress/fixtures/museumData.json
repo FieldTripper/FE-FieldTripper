@@ -1,0 +1,12 @@
+{
+  "museumData": [
+    {
+      "latitude": "39.7526149",
+      "longitude": "-105.0004503",
+      "name": "Union Station Fountains Test",
+      "placeId": "ChIJocNwSiZ5bIcRRfsuPp4C400",
+      "rating": "4.9",
+      "__typename": "Museum"
+    }
+  ]
+}

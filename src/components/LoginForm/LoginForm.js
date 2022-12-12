@@ -10,7 +10,7 @@ function LoginForm({ setUser }) {
   return (
     <section className="page--container column">
       <QueryResult data={data} error={error} loading={loading}>
-        <h2>Welcome to FieldTrippers!</h2>
+        <p className='welcome'>Welcome to FieldTrippers!</p>
         <form>
           <Link to="/trip-type">
             <button
