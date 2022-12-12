@@ -13,6 +13,7 @@ const UserSavedTrips = () => {
 
   return (
     <div className="saved-trip-container">
+      <h2>Your Saved Field Trips</h2>
       <QueryResult data={data} error={error} loading={loading}>
         <>
           {data?.trips.map((trip) => {
