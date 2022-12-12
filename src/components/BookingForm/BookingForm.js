@@ -14,7 +14,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
   let [museumValues, setMuseumValues] = useState({
     // isHost: true,
     // userName: user.name,
-    // userId: user.id,
+    userId: user.id,
     name: "",
     destinationName: "",
     destinationPlaceId: "",
@@ -25,7 +25,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
   });
 
   const handleAddTrip = ({
-    // userId,
+    userId,
     name,
     destinationName,
     destinationPlaceId,
@@ -36,7 +36,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
   }) => {
     createTrip({
       variables: {
-        // userId: userId,
+        userId: userId,
         name: name,
         destinationName: destinationName,
         destinationPlaceId: destinationPlaceId,
@@ -86,9 +86,10 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
 
   return (
     <section className="booking-page">
-      <p className='book-trip'>Book a Field Trip</p>
+      <p className="book-trip">Book a Field Trip</p>
       <form className="booking-form">
-        <input className='name-your-trip'
+        <input
+          className="name-your-trip"
           type="text"
           placeholder="Name your trip"
           name="name"

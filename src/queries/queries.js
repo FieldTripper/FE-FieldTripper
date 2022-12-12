@@ -24,6 +24,7 @@ const TRIPS_QUERY = gql`
 
 const CREATE_TRIP_MUTATION = gql`
   mutation CreateTrip(
+    $userId: ID!
     $name: String!
     $destinationName: String!
     $destinationPlaceId: String!
@@ -32,6 +33,7 @@ const CREATE_TRIP_MUTATION = gql`
   ) {
     createTrip(
       input: {
+        userId: $userId
         name: $name
         destinationName: $destinationName
         destinationPlaceId: $destinationPlaceId
