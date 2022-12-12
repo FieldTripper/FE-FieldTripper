@@ -48,6 +48,7 @@ const CREATE_SESSION_QUERY = gql`
         user {
             id
             name
+            email
         }
     }
   }

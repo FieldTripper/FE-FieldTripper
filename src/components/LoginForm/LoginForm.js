@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { CREATE_SESSION_QUERY } from '../../queries/queries';
+import ConditionalLink from '../ConditionalLink/ConditionalLink';
 import './LoginForm.css';
 
 function LoginForm({ setUser }) {
@@ -13,16 +14,13 @@ function LoginForm({ setUser }) {
 
   const handleChange = (event) => {
     const fieldInput = event.target
-    setLoginValues({ ...loginValues, [fieldInput.name]: fieldInput.value })
+    setLoginValues({ ...loginValues, [fieldInput.name]: fieldInput.value });
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     loginUser({ variables: { email: loginValues.email, password: loginValues.password } });
-    console.log({loading});
-    console.log({error});
-    console.log({data});
-
-    // setUser(data);
+    setUser(data.createSession.user);
   }
 
   return (
@@ -41,14 +39,14 @@ function LoginForm({ setUser }) {
           placeholder="Password"
           onChange={(event) => handleChange(event)}
         />
-        <Link to="/trip-type">
+        <ConditionalLink path="/trip-type" condition={data} >
           <button 
             className="primary--button"
-            onClick={() => handleSubmit()}
+            onClick={(event) => handleSubmit(event)}
           >
             Login
           </button>
-        </Link>
+        </ConditionalLink>
       </form>
     </section>
   )
