@@ -18,6 +18,9 @@ const TRIPS_QUERY = gql`
       destinationPlaceId
       destinationName
       startTime
+      attendance
+      hostId
+      maxAttendees
     }
   }
 `;

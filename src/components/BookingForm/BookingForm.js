@@ -7,7 +7,7 @@ import { useMutation } from "@apollo/client";
 import { CREATE_TRIP_MUTATION } from "../../queries/queries";
 
 const BookingForm = ({ bookTrip, museumData, user }) => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [newStartDate, setStartDate] = useState(new Date());
 
   const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
 
@@ -18,7 +18,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
     name: "",
     destinationName: "",
     destinationPlaceId: "",
-    startTime: startDate,
+    startDate: newStartDate,
     // time: "",
     // attendees: "",
     maxAttendees: "",
@@ -29,7 +29,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
     name,
     destinationName,
     destinationPlaceId,
-    startTime,
+    startDate,
     // time,
     // attendees,
     maxAttendees,
@@ -40,7 +40,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
         name: name,
         destinationName: destinationName,
         destinationPlaceId: destinationPlaceId,
-        startTime: startTime,
+        startDate: startDate,
         // time: time,
         // attendees: parseInt(attendees),
         maxAttendees: parseInt(maxAttendees),
@@ -80,8 +80,8 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
     }
   };
 
-  let handleDateChange = (startTime) => {
-    setMuseumValues({ ...museumValues, ...{ startTime: startTime } });
+  let handleDateChange = (startDate) => {
+    setMuseumValues({ ...museumValues, ...{ startDate: startDate } });
   };
 
   return (
@@ -111,8 +111,8 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
 
         <div className="date-picker-styling">
           <DatePicker
-            selected={museumValues.startTime}
-            onChange={(startTime) => handleDateChange(startTime)}
+            selected={museumValues.startDate}
+            onChange={(startDate) => handleDateChange(startDate)}
           />
         </div>
 

@@ -30,7 +30,7 @@ function MuseumsContainer({ queryValues, setMuseumData }) {
       zipcode: queryValues.zipCode,
     },
   });
-  console.log(error);
+  // console.log(error);
 
   useEffect(() => {
     console.log({ data });
