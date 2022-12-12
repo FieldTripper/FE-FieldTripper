@@ -1,18 +1,17 @@
 form {
-    height: 15vh;
+    height: 20vh;
     width: 100vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 .zip {
-    width: 10%;
+    width: 15%;
+    margin-bottom: 2%;
 }
 
 .search--button {
-    width: 8vw;
-    height: 4vh;
     margin-left: 5%;
 }
 

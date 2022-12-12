@@ -1,3 +1,20 @@
 .page--container {
     overflow-y: auto;
+    width: 100vw;
+    height: 100vh;
+}
+
+.go-book-trip {
+    margin-bottom: 2%;
+    background-color: hsl(182deg 96% 32%);
+    border: 2px solid hsl(182deg 96% 32%);
+    color: hsl(0deg 0% 100%);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 92%;
+    font-weight: 600;
+    text-align: center;
+    transition: all 300ms;
+    width: 18vw;
+    height: 5vh;
 }

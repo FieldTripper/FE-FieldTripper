@@ -53,9 +53,9 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
 
   return (
     <section className="booking-page">
-      <h2>Book a Field Trip</h2>
+      <p className='book-trip'>Book a Field Trip</p>
       <form className="booking-form">
-        <input
+        <input className='name-your-trip'
           type="text"
           placeholder="Name your trip"
           name="name"

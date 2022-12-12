@@ -13,7 +13,7 @@ const ExistingTrips = ({ user }) => {
 
   return (
     <div className="saved-trips page--container column">
-      <h2>Join A Trip</h2>
+      <p className='join-trip'>Join A Trip</p>
       <QueryResult loading={loading} error={error} data={data}>
         <article className="page--container row">
           {data?.trips.map((trip) => {

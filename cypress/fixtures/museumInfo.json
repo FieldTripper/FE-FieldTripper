@@ -1,0 +1,30 @@
+{
+    "data": {
+        "museum": {
+            "placeId": "ChIJocNwSiZ5bIcRRfsuPp4C400",
+            "name": "Union Station Fountains Test",
+            "rating": 4.9,
+            "latitude": 39.7526149,
+            "longitude": -105.0004503,
+            "price": null,
+            "website": null,
+            "address": "<span class=\"street-address\">Unnamed Road</span>, <span class=\"locality\">Denver</span>, <span class=\"region\">CO</span> <span class=\"postal-code\">80202</span>, <span class=\"country-name\">USA</span>",
+            "totalRatings": 15,
+            "separatedHoo": [
+                "{:open=>{:day=>0, :time=>\"0000\"}}"
+            ],
+            "combinedHoo": [
+                "Monday: Open 24 hours",
+                "Tuesday: Open 24 hours",
+                "Wednesday: Open 24 hours",
+                "Thursday: Open 24 hours",
+                "Friday: Open 24 hours",
+                "Saturday: Open 24 hours",
+                "Sunday: Open 24 hours"
+            ],
+            "wheelchairAccessibleEntrance": true,
+            "imageUrl": "https://images.unsplash.com/photo-1532214950507-92ba44a2f6f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzk3NzN8MHwxfHNlYXJjaHwxfHxVbmlvbiUyMFN0YXRpb24lMjBGb3VudGFpbnN8ZW58MHx8fHwxNjcwNzc1MjQ4&ixlib=rb-4.0.3&q=80&w=1080",
+            "imageDescription": "european flag"
+        }
+    }
+}
