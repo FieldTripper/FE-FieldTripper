@@ -87,10 +87,7 @@ function App() {
           element={<MuseumInfo singleMuseumData={singleMuseumData} />}
         />
         <Route path="/existing-trips" element={<ExistingTrips user={user} />} />
-        <Route
-          path="/saved-trips"
-          element={<UserSavedTrips mockUserSavedTrips={mockUserSavedTrips} />}
-        />
+        <Route path="/saved-trips" element={<UserSavedTrips user={user} />} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
