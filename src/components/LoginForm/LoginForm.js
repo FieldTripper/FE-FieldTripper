@@ -20,7 +20,8 @@ function LoginForm({ setUser }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     loginUser({ variables: { email: loginValues.email, password: loginValues.password } });
-    setUser(data.createSession.user);
+    console.log({data})
+    if (data) setUser(data.createSession.user);
   }
 
   return (
@@ -39,14 +40,12 @@ function LoginForm({ setUser }) {
           placeholder="Password"
           onChange={(event) => handleChange(event)}
         />
-        <ConditionalLink path="/trip-type" condition={data} >
-          <button 
-            className="primary--button"
-            onClick={(event) => handleSubmit(event)}
-          >
-            Login
-          </button>
-        </ConditionalLink>
+        <button 
+          className="primary--button"
+          onClick={(event) => handleSubmit(event)}
+        >
+          Login
+        </button>
       </form>
     </section>
   )
