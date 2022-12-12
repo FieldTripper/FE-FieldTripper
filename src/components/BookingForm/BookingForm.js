@@ -10,6 +10,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
   const [newStartDate, setStartDate] = useState(new Date());
 
   const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
+  console.log({ user });
 
   let [museumValues, setMuseumValues] = useState({
     // isHost: true,
@@ -19,7 +20,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
     destinationName: "",
     destinationPlaceId: "",
     startDate: newStartDate,
-    // time: "",
+    startTime: "",
     // attendees: "",
     maxAttendees: "",
   });
@@ -30,7 +31,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
     destinationName,
     destinationPlaceId,
     startDate,
-    // time,
+    startTime,
     // attendees,
     maxAttendees,
   }) => {
@@ -41,7 +42,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
         destinationName: destinationName,
         destinationPlaceId: destinationPlaceId,
         startDate: startDate,
-        // time: time,
+        startTime: startTime,
         // attendees: parseInt(attendees),
         maxAttendees: parseInt(maxAttendees),
       },
@@ -116,10 +117,10 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
           />
         </div>
 
-        {/* <select
+        <select
           className="booking-options"
-          name="time"
-          value={museumValues.time}
+          name="startTime"
+          value={museumValues.startTime}
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value={null}>Select a Time</option>
@@ -131,7 +132,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
           <option value="3:00pm">3:00pm</option>
           <option value="4:00pm">4:00pm</option>
           <option value="5:00pm">5:00pm</option>
-        </select> */}
+        </select>
 
         {/* <select
           className="booking-options"
