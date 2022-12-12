@@ -23,13 +23,20 @@ const TRIPS_QUERY = gql`
 `;
 
 const CREATE_TRIP_MUTATION = gql`
-  mutation {
+  mutation CreateTrip(
+    $name: String!
+    $destinationName: String!
+    $destinationPlaceId: String!
+    $startTime: String!
+    $maxAttendees: Int!
+  ) {
     createTrip(
       input: {
-        name: "Denver Arts Museum Trip"
-        destinationName: "Denver Art Museum"
-        destinationPlaceId: "siuhg983shdgfi"
-        startTime: "Tuesday January 24, 2022 10:00 AM"
+        name: $name
+        destinationName: $destinationName
+        destinationPlaceId: $destinationPlaceId
+        startTime: $startTime
+        maxAttendees: $maxAttendees
       }
     ) {
       trip {
@@ -37,6 +44,7 @@ const CREATE_TRIP_MUTATION = gql`
         destinationName
         destinationPlaceId
         startTime
+        maxAttendees
       }
       errors
     }

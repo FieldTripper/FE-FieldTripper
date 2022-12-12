@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+import { CREATE_TRIP_MUTATION } from "../../queries/queries";
+import QueryResult from "../QueryResult/QueryResult";
 import Header from "../Header/Header";
 import LoginForm from "../LoginForm/LoginForm";
 import SearchForm from "../SearchForm/SearchForm";
@@ -11,6 +14,8 @@ import BookingForm from "../BookingForm/BookingForm";
 import About from "../About/About";
 import TripType from "../TripType/TripType";
 import singleMuseumData from "../../testData/singleMuseumData";
+import mockUserSavedTrips from "../../testData/mockUserSavedTrips";
+import UserSavedTrips from "../UserSavedTrips/UserSavedTrips";
 import ExistingTrips from "../ExistingTrips/ExistingTrips";
 import "./App.css";
 
@@ -25,6 +30,7 @@ function App() {
     "404: This page does not exist."
   );
   const [museumData, setMuseumData] = useState("");
+  // const [userSavedTripData, setUserSavedTripData] = useState("");
 
   const updateSearch = (values) => {
     setSearchTerms({
@@ -34,13 +40,15 @@ function App() {
     });
   };
 
-  const bookTrip = (values) => {
+  const goToBookingForm = (values) => {
     setSearchTerms({
       museum: values.museum,
       time: values.time,
       people: values.people,
     });
   };
+
+  // addBooking = (newBooking) => {};
 
   return (
     <main>
@@ -60,7 +68,14 @@ function App() {
         <Route path="/trip-type" element={<TripType tripType={TripType} />} />
         <Route
           path="/booking-form"
-          element={<BookingForm bookTrip={bookTrip} museumData={museumData} />}
+          element={
+            <BookingForm
+              bookTrip={goToBookingForm}
+              museumData={museumData}
+              user={user}
+              // addBooking={addBooking}
+            />
+          }
         />
         <Route
           path="/search-form"
@@ -72,6 +87,10 @@ function App() {
           element={<MuseumInfo singleMuseumData={singleMuseumData} />}
         />
         <Route path="/existing-trips" element={<ExistingTrips user={user} />} />
+        <Route
+          path="/saved-trips"
+          element={<UserSavedTrips mockUserSavedTrips={mockUserSavedTrips} />}
+        />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
       <Footer />
