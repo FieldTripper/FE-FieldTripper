@@ -75,6 +75,7 @@ const CREATE_TRIP_MUTATION = gql`
     $name: String!
     $destinationName: String!
     $destinationPlaceId: String!
+    $startDate: String!
     $startTime: String!
     $maxAttendees: Int!
   ) {
@@ -84,6 +85,7 @@ const CREATE_TRIP_MUTATION = gql`
         name: $name
         destinationName: $destinationName
         destinationPlaceId: $destinationPlaceId
+        startDate: $startDate
         startTime: $startTime
         maxAttendees: $maxAttendees
       }
