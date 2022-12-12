@@ -1,7 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import LocationPin from "../LocationPin/LocationPin";
-
 import "./Map.css";
 
  const Map = ({ data }) => {

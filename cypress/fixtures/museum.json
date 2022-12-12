@@ -1,0 +1,26 @@
+{
+    "data": {
+        "museums": [
+            {
+                "name": "Union Station Fountains Test",
+                "rating": "4.9",
+                "totalRatings": "453",
+                "placeId": "ChIJocNwSiZ5bIcRRfsuPp4C400",
+                "latitude": "39.7526149",
+                "longitude": "-105.0004503",
+                "imageUrl": "image",
+                "imageDescription": "Flowers in a Metal Vase."
+            },
+            {
+                "name": "Kirkland Museum of Fine & Decorative Art Test",
+                "rating": "4.8",
+                "totalRatings": "452314",
+                "placeId": "ChIJXwSNg9R-bIcRltbMQ0joT70",
+                "latitude": "39.7355683",
+                "longitude": "-104.9905479",
+                "imageUrl": "image",
+                "imageDescription": "Flowers in a Not metal Vase."
+            }
+        ]
+    }
+}
