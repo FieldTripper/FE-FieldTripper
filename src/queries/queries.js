@@ -62,18 +62,32 @@ const TRIPS_QUERY = gql`
       destinationPlaceId
       destinationName
       startTime
+      attendance
+      hostId
+      maxAttendees
     }
   }
 `;
 
 const CREATE_TRIP_MUTATION = gql`
-  mutation {
+  mutation CreateTrip(
+    $userId: ID!
+    $name: String!
+    $destinationName: String!
+    $destinationPlaceId: String!
+    $startDate: String!
+    $startTime: String!
+    $maxAttendees: Int!
+  ) {
     createTrip(
       input: {
-        name: "Denver Arts Museum Trip"
-        destinationName: "Denver Art Museum"
-        destinationPlaceId: "siuhg983shdgfi"
-        startTime: "Tuesday January 24, 2022 10:00 AM"
+        userId: $userId
+        name: $name
+        destinationName: $destinationName
+        destinationPlaceId: $destinationPlaceId
+        startDate: $startDate
+        startTime: $startTime
+        maxAttendees: $maxAttendees
       }
     ) {
       trip {
@@ -81,6 +95,7 @@ const CREATE_TRIP_MUTATION = gql`
         destinationName
         destinationPlaceId
         startTime
+        maxAttendees
       }
       errors
     }
