@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "../Header/Header";
+import BaseForm from "../BaseForm/BaseForm";
 import LoginForm from "../LoginForm/LoginForm";
+import SignUpForm from "../SignUpForm/SignUpForm";
 import SearchForm from "../SearchForm/SearchForm";
 import MuseumsContainer from "../MuseumsContainer/MuseumsContainer";
 import Footer from "../Footer/Footer";
@@ -46,7 +48,9 @@ function App() {
     <main>
       <Header />
       <Routes>
-        <Route path="/" element={<LoginForm setUser={setUser} />} />
+        <Route path="/" element={<BaseForm setUser={setUser} />} />
+        <Route path="/login" element={<LoginForm setUser={setUser} />} />
+        <Route path="/sign-up" element={<SignUpForm setUser={setUser} />} />
         <Route
           path="/museums"
           element={

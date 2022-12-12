@@ -10,6 +10,49 @@ const USERS_QUERY = gql`
   }
 `;
 
+const USER_QUERY = gql`
+  query User($id: ID!) {
+    user(id: $id) {
+      id
+      name
+      email
+    }
+  }
+`;
+
+const CREATE_USER_MUTATION = gql`
+  mutation CreateUser($name: String!, $email: String!, $password: String!, $passwordConfirmation: String!) {
+    createUser(
+      input: {
+        name: $name
+        email: $email
+        password: $password
+        passwordConfirmation: $passwordConfirmation
+      }
+    ) 
+    {
+      user {
+        id
+        name
+        email
+      }
+      errors
+    }
+  }
+`;
+
+const CREATE_SESSION_QUERY = gql`
+  query CreateSession($email: String!, $password: String!) {
+    createSession(email: $email, password: $password) {
+        confirm
+        user {
+            id
+            name
+        }
+    }
+  }
+`;
+
 const TRIPS_QUERY = gql`
   {
     trips {
@@ -104,6 +147,9 @@ const MUSEUM_QUERY = gql`
 
 export {
   USERS_QUERY,
+  USER_QUERY,
+  CREATE_USER_MUTATION,
+  CREATE_SESSION_QUERY,
   TRIPS_QUERY,
   CREATE_TRIP_MUTATION,
   CREATE_USER_TRIP_MUTATION,
