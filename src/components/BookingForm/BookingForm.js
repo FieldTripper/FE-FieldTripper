@@ -1,29 +1,60 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./BookingForm.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useMutation } from "@apollo/client";
+import { CREATE_TRIP_MUTATION } from "../../queries/queries";
 
 const BookingForm = ({ bookTrip, museumData, user }) => {
   const [startDate, setStartDate] = useState(new Date());
-  console.log("MD", { museumData });
+
+  const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
 
   let [museumValues, setMuseumValues] = useState({
+    // isHost: true,
+    // userName: user.name,
+    // userId: user.id,
     name: "",
     destinationName: "",
-    placeId: "",
-    date: startDate,
-    time: "",
-    people: "",
+    destinationPlaceId: "",
+    startTime: startDate,
+    // time: "",
+    // attendees: "",
+    maxAttendees: "",
   });
 
+  const handleAddTrip = ({
+    // userId,
+    name,
+    destinationName,
+    destinationPlaceId,
+    startTime,
+    // time,
+    // attendees,
+    maxAttendees,
+  }) => {
+    createTrip({
+      variables: {
+        // userId: userId,
+        name: name,
+        destinationName: destinationName,
+        destinationPlaceId: destinationPlaceId,
+        startTime: startTime,
+        // time: time,
+        // attendees: parseInt(attendees),
+        maxAttendees: parseInt(maxAttendees),
+      },
+    });
+  };
+  console.log({ museumValues });
   const checkDestination = (name, fon, fov) => {
     const foundMuseum = museumData.museums.find((museum) => {
       return museum.name === name;
     });
-    if (foundMuseum.placeId !== museumValues.placeId) {
+    if (foundMuseum.placeId !== museumValues.destinationPlaceId) {
       const newMuseum = museumData.museums.find((museum) => {
-        return museumValues.placeId === museum.placeId;
+        return museumValues.destinationPlaceId === museum.placeId;
       });
       setMuseumValues({ ...museumValues, destinationName: newMuseum.name });
     } else {
@@ -31,14 +62,13 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
     }
   };
 
-  console.log("MV", museumValues);
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
 
     setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
-    if (!museumValues.destinationName && museumValues.placeId) {
+    if (!museumValues.destinationName && museumValues.destinationPlaceId) {
       const name = museumData.museums.find((museum) => {
-        return museum.placeId === museumValues.placeId;
+        return museum.placeId === museumValues.destinationPlaceId;
       });
       setMuseumValues({ ...museumValues, destinationName: name.name });
     } else {
@@ -48,11 +78,10 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
         fieldOption.value
       );
     }
-    console.log("pid", fieldOption.value);
   };
 
-  let handleDateChange = (date) => {
-    setMuseumValues({ ...museumValues, ...{ date: date } });
+  let handleDateChange = (startTime) => {
+    setMuseumValues({ ...museumValues, ...{ startTime: startTime } });
   };
 
   return (
@@ -68,7 +97,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
         />
         <select
           className="booking-options"
-          name="placeId"
+          name="destinationPlaceId"
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value="Select a Museum">Select a Museum</option>
@@ -81,14 +110,15 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
 
         <div className="date-picker-styling">
           <DatePicker
-            selected={museumValues.date}
-            onChange={(date) => handleDateChange(date)}
+            selected={museumValues.startTime}
+            onChange={(startTime) => handleDateChange(startTime)}
           />
         </div>
 
-        <select
+        {/* <select
           className="booking-options"
           name="time"
+          value={museumValues.time}
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value={null}>Select a Time</option>
@@ -100,11 +130,11 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
           <option value="3:00pm">3:00pm</option>
           <option value="4:00pm">4:00pm</option>
           <option value="5:00pm">5:00pm</option>
-        </select>
+        </select> */}
 
-        <select
+        {/* <select
           className="booking-options"
-          name="people"
+          name="attendees"
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value={null}>Select the Number of People</option>
@@ -118,14 +148,35 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
-        </select>
+        </select> */}
 
-        <button
-          className="booking-button"
-          onClick={() => bookTrip(museumValues)}
+        <select
+          className="booking-options"
+          name="maxAttendees"
+          onChange={(e) => handleMuseumChange(e)}
         >
-          Book a Field Trip
-        </button>
+          <option value={Number}>
+            Select the Max amount of People at your Event
+          </option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+        <Link to="/saved-trips">
+          <button
+            className="booking-button"
+            onClick={() => handleAddTrip(museumValues)}
+          >
+            Book a Field Trip
+          </button>
+        </Link>
       </form>
     </section>
   );
