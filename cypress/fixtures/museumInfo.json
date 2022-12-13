@@ -6,8 +6,8 @@
             "rating": 4.9,
             "latitude": 39.7526149,
             "longitude": -105.0004503,
-            "price": null,
-            "website": null,
+            "price": 1,
+            "website": "http://www.kirklandmuseum.org/",
             "address": "<span class=\"street-address\">Unnamed Road</span>, <span class=\"locality\">Denver</span>, <span class=\"region\">CO</span> <span class=\"postal-code\">80202</span>, <span class=\"country-name\">USA</span>",
             "totalRatings": 15,
             "separatedHoo": [
