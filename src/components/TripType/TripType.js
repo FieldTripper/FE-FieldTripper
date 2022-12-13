@@ -12,6 +12,9 @@ const TripType = () => {
       <Link to="/existing-trips">
         <button className="trip-join">Join A Trip</button>
       </Link>
+      <Link to="/saved-trips">
+        <button className="trip-join">Your Saved Trips</button>
+      </Link>
     </div>
   );
 };
