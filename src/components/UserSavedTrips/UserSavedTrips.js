@@ -11,15 +11,17 @@ const UserSavedTrips = ({ user }) => {
   console.log({ error });
   console.log({ data });
   console.log("USER IN SAVED TRIPS", user);
+  const onlyUserTrips = data?.trips.filter((trip) => trip.hostId === user.id);
+  // console.log({ onlyUserTrips });
 
   return (
     <div className="saved-trip-container">
-      <div className='page-title'>
-        <p className='user-saved-trips'>Your Saved Field Trips</p>
+      <div className="page-title">
+        <p className="user-saved-trips">Your Saved Field Trips</p>
       </div>
       <QueryResult data={data} error={error} loading={loading}>
         <>
-          {data?.trips.map((trip) => {
+          {onlyUserTrips?.map((trip) => {
             return (
               <UserSavedTripCard
                 attendance={trip.attendance}

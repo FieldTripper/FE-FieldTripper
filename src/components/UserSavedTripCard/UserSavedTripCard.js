@@ -10,7 +10,7 @@ const UserSavedTripCard = ({
   maxAttendees,
   startDate,
   tripName,
-  key,
+  // key,
 }) => {
   const newStartDate1 = startDate.slice(0, -10);
   const newStartDate2 = newStartDate1.split("-");
@@ -108,16 +108,17 @@ const UserSavedTripCard = ({
 
   return (
     <div className="saved-trip-card">
-      <p className='trip-name'>{tripName}</p>
-      <p className='saved-destination'>{destinationName}</p>
-      <p className='saved-trip-info'>
-        <b>Your trip on:</b><br></br> {getDisplayedMonth()} {newStartDate2[2]},{" "}
-        {newStartDate2[0]} starts at <b>{getDisplayedTime()}</b>
+      <p className="trip-name">{tripName}</p>
+      <p className="saved-destination">{destinationName}</p>
+      <p className="saved-trip-info">
+        <b>Your trip on:</b>
+        <br></br> {getDisplayedMonth()} {newStartDate2[2]}, {newStartDate2[0]}{" "}
+        starts at <b>{getDisplayedTime()}</b>
       </p>
-      <p className='attendance'>
+      <p className="attendance">
         {attendance} out of {maxAttendees} people are attending
       </p>
-      <button className='delete-button'>Delete Trip</button>
+      <button className="delete-button">Delete Trip</button>
     </div>
   );
 };
