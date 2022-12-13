@@ -107,6 +107,8 @@ const MUSEUMS_QUERY = gql`
       rating
       latitude
       longitude
+      imageUrl
+      imageDescription
     }
   }
 `;
