@@ -1,5 +1,27 @@
 .saved-trip-container {
   display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
-  height: 70vh;
+  overflow: auto;
+}
+
+.page-title {
+  display: flex;
+  width: 100vw;
+  height: 3vh;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2%;
+
+}
+
+.user-saved-trips {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #03989e;
+  font-size: 130%;
+  margin-bottom: 2%;
 }

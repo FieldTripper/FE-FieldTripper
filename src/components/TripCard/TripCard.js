@@ -3,11 +3,10 @@ import { CREATE_USER_TRIP_MUTATION } from "../../queries/queries";
 import "./TripCard.css";
 
 function TripCard({ trip, user }) {
-
-  const [createUserTrip, { loading, error, data }] = useMutation(
+  const [createUserTrip, { loading, error }] = useMutation(
     CREATE_USER_TRIP_MUTATION
   );
-  // const [deleteTrip, { loading, error, data }] = useMutation(DELETE_TRIP_MUTATION);
+  const [deleteTrip, { data }] = useMutation(DELETE_TRIP_MUTATION);
 
   const newStartDate1 = trip.startTime.slice(0, -10);
   const newStartDate2 = newStartDate1.split("-");
@@ -120,8 +119,7 @@ function TripCard({ trip, user }) {
       >
         Join Trip
       </button>
-      {/* TESTING PURPOSES */}
-      {/* <button onClick={() => deleteTrip({ variables: { id: trip.id } })}>Delete Trip</button> */}
+      <button onClick={() => deleteTrip({ variables: { id: trip.id } })}>Delete Trip</button>
     </article>
   );
 }
