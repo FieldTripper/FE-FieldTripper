@@ -138,6 +138,20 @@ const CREATE_USER_TRIP_MUTATION = gql`
   }
 `;
 
+const DELETE_USER_TRIP_MUTATION = gql`
+  mutation DeleteUserTrip($userId: ID!, $tripId: ID!) {
+    deleteUserTrip(
+      input: {
+        userId: $userId
+        tripId: $tripId
+      }
+    ) 
+      {
+        confirm
+      }
+  }
+`;
+
 const DELETE_TRIP_MUTATION = gql`
   mutation DeleteTrip($id: ID!) {
     deleteTrip(input: { id: $id }) {
@@ -191,6 +205,7 @@ export {
   USER_TRIPS_QUERY,
   CREATE_TRIP_MUTATION,
   CREATE_USER_TRIP_MUTATION,
+  DELETE_USER_TRIP_MUTATION,
   DELETE_TRIP_MUTATION,
   MUSEUMS_QUERY,
   MUSEUM_QUERY,
