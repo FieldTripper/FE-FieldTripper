@@ -29,17 +29,8 @@ function MuseumsContainer({ queryValues, setMuseumData }) {
           <LocationPin data={data} />
         </Map>
         <Link to="/booking-form">
-          <button
-            // primary
-            // onClick={() => handleBookingClick()}
-            // data={data}
-            // bookingForm={<BookingForm sendDataToBooking={data} />}
-            className="go-book-trip"
-          >
-            Book Trip
-          </button>
+          <button className="go-book-trip">Book Trip</button>
         </Link>
-        {/* {console.log({ museumData })} */}
       </QueryResult>
     </section>
   );
