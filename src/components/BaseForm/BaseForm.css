@@ -1,0 +1,17 @@
+.login--button {
+  width: 100px;
+  max-height: 45px;
+  margin: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+.welcome {
+  font-size: 140%;
+  color:  #03989e;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  margin-bottom: 2%;
+}

@@ -117,7 +117,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
           />
         </div>
 
-        <select
+        {/* <select
           className="booking-options"
           name="startTime"
           value={museumValues.startTime}
@@ -132,7 +132,7 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
           <option value="3:00pm">3:00pm</option>
           <option value="4:00pm">4:00pm</option>
           <option value="5:00pm">5:00pm</option>
-        </select>
+        </select> */}
 
         <select
           className="booking-options"
