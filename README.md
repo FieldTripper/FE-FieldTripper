@@ -20,32 +20,40 @@
 - Intro HERE
 
 ## Project Managers
-[Kathleen Brandt](https://github.com/KatBrandt)
+[Kathleen Brandt](https://github.com/KatBrandt)<br>
 [Ash Ringler](https://github.com/AshRing)
 
 ## Contributors
 <b>Back-End Team:</b>
-[Mary Ballantyne](https://github.com/mballantyne3)
-[Andrew Mullins](https://github.com/mullinsand)
+[Mary Ballantyne](https://github.com/mballantyne3) |
+[Andrew Mullins](https://github.com/mullinsand) |
 [A.J. Krumholz](https://github.com/ajkrumholz)
 
 <b>Front-End Team:</b>
-[Dinne Kopelevich](https://github.com/DinneK)
-[Andrew Knapick](https://github.com/Universal-Patois)
-[Matthew Press](https://github.com/MatthewPress)
+[Dinne Kopelevich](https://github.com/DinneK) |
+[Andrew Knapick](https://github.com/Universal-Patois) |
+[Matthew Press](https://github.com/MatthewPress) |
 [Carissa Gross](https://github.com/carissagross)
 
 ## Technologies
 Front-End:
-- React (with hooks)
-- React Router
-- GraphQL
-- Cypress
-- Router
-- CSS
+<p>
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />
+<img src="https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white" />
+<img src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+ </p>
 
 Back-End:
-- GraphQL
+<p>
+<img src="https://img.shields.io/static/v1?message=2.7.4&logo=ruby&style=for-the-badge&label=Ruby&color=darkred&labelColor=crimson)" />
+<img src="https://img.shields.io/static/v1?message=5.2.8.1&logo=rubyonrails&style=for-the-badge&label=Rails&color=crimson&labelColor=darkre" />
+<img src="https://img.shields.io/static/v1?message=14.6&=postgresql&style=for-the-badge&label=Postgresql&color=dodgerblue&labelColor=royalblue&logoColor=white"/>
+<img src="https://img.shields.io/static/v1?style=for-the-badge&label=&logoColor=white&message=GraphQL&logo=graphql&color=teal&labelColor=green"/>
+<img src="https://img.shields.io/static/v1?message=POSTMAN&logo=postman&style=for-the-badge&label=&color=orangered&labelColor=darkorange&logoColor=white" />
+</p>
+
 
 ## Features
 - Features HERE
@@ -65,7 +73,7 @@ BE: GraphQL
 ## Set Up
 
 ## Organizational Resources:
-- [Project architecture](https://www.figma.com/file/7ECXLbUG6sQyWoToqb5YTc/FieldTrippers-Architecture?node-id=0%3A1
+- [Project architecture](https://www.figma.com/file/7ECXLbUG6sQyWoToqb5YTc/FieldTrippers-Architecture?node-id=0%3A1)
 - [FE Project Board](https://github.com/orgs/FieldTripper/projects/1/views/1)
 - [BE Project Board](https://github.com/orgs/FieldTripper/projects/1/views/2)
 - [Wireframe](https://www.figma.com/file/IIUlBXcQv7dP4gOsh8Scq3/FieldTrippers?node-id=0%3A1&t=aL0FNy5YQ3UY2U0i-0)
