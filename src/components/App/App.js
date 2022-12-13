@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { useQuery } from "@apollo/client";
-import { CREATE_TRIP_MUTATION } from "../../queries/queries";
-import QueryResult from "../QueryResult/QueryResult";
+// import { useQuery } from "@apollo/client";
+// import { CREATE_TRIP_MUTATION } from "../../queries/queries";
+// import QueryResult from "../QueryResult/QueryResult";
 import Header from "../Header/Header";
 import BaseForm from "../BaseForm/BaseForm";
 import LoginForm from "../LoginForm/LoginForm";
@@ -16,7 +16,7 @@ import BookingForm from "../BookingForm/BookingForm";
 import About from "../About/About";
 import TripType from "../TripType/TripType";
 import singleMuseumData from "../../testData/singleMuseumData";
-import mockUserSavedTrips from "../../testData/mockUserSavedTrips";
+// import mockUserSavedTrips from "../../testData/mockUserSavedTrips";
 import UserSavedTrips from "../UserSavedTrips/UserSavedTrips";
 import ExistingTrips from "../ExistingTrips/ExistingTrips";
 import "./App.css";
@@ -67,7 +67,10 @@ function App() {
             />
           }
         />
-        <Route path="/trip-type" element={<TripType tripType={TripType} />} />
+        <Route
+          path="/trip-type"
+          element={<TripType tripType={TripType} user={user} />}
+        />
         <Route
           path="/booking-form"
           element={

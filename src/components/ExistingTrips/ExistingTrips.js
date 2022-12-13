@@ -12,12 +12,12 @@ const ExistingTrips = ({ user }) => {
   console.log({ data });
 
   return (
-    <div className="saved-trips page--container column">
-      <div className='join-title'>
-        <p className='join-trip'>Join A Trip</p>
+    <div className="saved-trips">
+      <div className="join-title">
+        <p className="join-trip">Join A Trip</p>
       </div>
       <QueryResult loading={loading} error={error} data={data}>
-        <article className="page--container row">
+        <article className="existing-trip-card-container">
           {data?.trips.map((trip) => {
             return <TripCard key={trip.id} trip={trip} user={user} />;
           })}

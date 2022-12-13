@@ -70,8 +70,8 @@ const TRIPS_QUERY = gql`
 `;
 
 const USER_TRIPS_QUERY = gql`
-  {
-    trip(id: 5) {
+  query trips($userId: ID!) {
+    trips(userId: $userId) {
       id
       name
       destinationPlaceId
