@@ -1,4 +1,6 @@
 import React from "react";
+import { useMutation } from '@apollo/client';
+import { DELETE_TRIP_MUTATION, DELETE_USER_TRIP_MUTATION } from "../../queries/queries";
 import "./UserSavedTripCard.css";
 
 const UserSavedTripCard = ({
@@ -60,6 +62,15 @@ const UserSavedTripCard = ({
   //   console.log("date", newStartDate2[1]);
   // };
 
+  console.log({hostId})
+  const [deleteTrip] = useMutation(DELETE_TRIP_MUTATION);
+  const [deleteUserTrip] = useMutation(DELETE_USER_TRIP_MUTATION);
+
+  const handleDelete = () => {
+    deleteUserTrip({ variables: { userId: 0, tripId: tripId } });
+    deleteTrip({ variables: { id: tripId } });
+  }
+
   return (
     <div className="saved-trip-card">
       <h3>{tripName}</h3>
@@ -68,6 +79,7 @@ const UserSavedTripCard = ({
       <p>
         {attendance} out of {maxAttendees} people are attending.
       </p>
+      <button className="primary--button" onClick={() => handleDelete()}>Delete Trip</button>
     </div>
   );
 };

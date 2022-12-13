@@ -5,7 +5,7 @@ import QueryResult from "../QueryResult/QueryResult";
 import "./UserSavedTrips.css";
 import UserSavedTripCard from "../UserSavedTripCard/UserSavedTripCard";
 
-const UserSavedTrips = () => {
+const UserSavedTrips = ({ user }) => {
   const { loading, error, data } = useQuery(TRIPS_QUERY);
   console.log({ loading });
   console.log({ error });
