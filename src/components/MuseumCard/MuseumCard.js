@@ -7,7 +7,6 @@ function MuseumCard({ data }) {
 
   if (data) {
     cards = data.museums.map((museum) => {
-      console.log({ museum });
       return (
         <Link to={`/museums/${museum.placeId}`}>
           <section key={museum.placeId} className="museums-card">
