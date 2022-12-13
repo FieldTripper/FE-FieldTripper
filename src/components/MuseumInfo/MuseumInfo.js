@@ -14,7 +14,6 @@ function MuseumInfo() {
       placeId: placeId,
     },
   });
-  console.log(data.museum.price)
 
   const formatPrice = (priceNumber) => {
     if (priceNumber === '0') {
