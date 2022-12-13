@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useLazyQuery } from '@apollo/client';
 import { CREATE_SESSION_QUERY } from '../../queries/queries';
+import { manageLocalData } from "../../utilities/utilities";
 import './LoginForm.css';
 
 function LoginForm({ setUser }) {
@@ -14,7 +15,7 @@ function LoginForm({ setUser }) {
 
   useEffect(() => {
     if (data) {
-      setUser(data.createSession.user);
+      manageLocalData('userData', setUser, data.createSession.user);
       navigate("/trip-type");
     } 
   }, [data]);
