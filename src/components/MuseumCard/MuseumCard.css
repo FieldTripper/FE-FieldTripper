@@ -1,7 +1,8 @@
 .museums-card {
   display: flex;
+  border-radius: 12px;
   width: 30vw;
-  height: 20vh;
+  height: 10vh;
   margin: 7%;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +17,10 @@
 }
 
 .museum-image {
-  margin-right: 3%;
+  height: 7vh;
+  margin-right: 5%;
+  border: 4px solid white;
+  border-radius: 10px;
 }
 
 .museum-name-card {

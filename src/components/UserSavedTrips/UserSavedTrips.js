@@ -5,15 +5,18 @@ import QueryResult from "../QueryResult/QueryResult";
 import "./UserSavedTrips.css";
 import UserSavedTripCard from "../UserSavedTripCard/UserSavedTripCard";
 
-const UserSavedTrips = () => {
+const UserSavedTrips = ({ user }) => {
   const { loading, error, data } = useQuery(TRIPS_QUERY);
   console.log({ loading });
   console.log({ error });
   console.log({ data });
+  console.log("USER IN SAVED TRIPS", user);
 
   return (
     <div className="saved-trip-container">
-      <h2>Your Saved Field Trips</h2>
+      <div className='page-title'>
+        <p className='user-saved-trips'>Your Saved Field Trips</p>
+      </div>
       <QueryResult data={data} error={error} loading={loading}>
         <>
           {data?.trips.map((trip) => {
