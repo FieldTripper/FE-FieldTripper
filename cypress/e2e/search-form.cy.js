@@ -1,5 +1,4 @@
-
-describe('search-form', () => {
+describe('search-form page', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/search-form')
   })
@@ -12,25 +11,44 @@ describe('search-form', () => {
 
   it('should see a form with inputs for a city, state and zipcode', () => {
     cy.get('form').should('be.visible')
-    .get('[name="city"]').type('Denver')
-    .get('[name="state"]').type('CO')
-    .get('.zip').should('be.visible')
-    .intercept('https://be-fieldtripper.fly.dev/graphql', {
-      fixture: 'museumData.json'
-    }).as('museumData')
-    .get('.primary--button').contains('Search').first().click()
+    cy.get('[placeholder="Enter City"]').should('be.visible')
+    cy.get('[placeholder="Enter State"]').should('be.visible')
+    cy.get('[placeholder="Zip Code (Optional)"]').should('be.visible')
+    cy.get('.primary--button').contains('Search')
   })
 
-  it('it should visit the museums page after information is filled in the form', () => {
-    cy.intercept('https://be-fieldtripper.fly.dev/graphql', {
-      fixture: 'museum.json'
-    }).as('museum')
-    cy.visit('http://localhost:3000/museums')
-    .get(':nth-child(1)').should('exist')
+  it('should see be able to type in input fields and have those values reflected', () => {
+    cy.get('form').should('be.visible')
+    cy.get('[name="city"]').type('Baltimore')
+    cy.get('[name="city"]').should('have.value', 'Baltimore')
+    cy.get('[name="state"]').type('MD')
+    cy.get('[name="state"]').should('have.value', 'MD')
+    cy.get('.zip').type('21231')
+    cy.get('.zip').should('have.value', '21231')
+  })
+})
+
+  describe('searching for museums', () => {
+    beforeEach(() => {
+      cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
+        if(req.body.operationName === 'Museums') {
+          req.reply({fixture: '../fixtures/museums.json'})
+        }
+      })
+      cy.visit('http://localhost:3000/search-form')
+      cy.get('[name="city"]').type('Denver')
+      cy.get('[name="state"]').type('CO')
+      cy.get('.primary--button').click()
+    })
+
+    it('should see a form with inputs for a city, state and zipcode', () => {
+    
+    
+    })
   })
 
-  //it should show inputs can be typed
 
+ 
   //it should show fetching of info for poorly typed query
 
   // it should show testing for completely wrong typed queries
@@ -38,4 +56,3 @@ describe('search-form', () => {
   // it('should show an error message when data is not retrieved', () => {
   //   cy.get('h2').should('be.visible')
   // })
-})
