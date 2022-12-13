@@ -1,4 +1,55 @@
 .saved-trip-card {
-  border: 2px solid black;
-  height: 15vh;
+  border: 2px solid hsl(0deg 0% 0%);
+  height: 25vh;
+  margin-bottom: 2%;
+  width: 26vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.trip-name {
+  margin-top: 2%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color: #03989e;
+  font-size: 110%;
+  margin-bottom: 2%;
+}
+
+.saved-destination {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 100%;
+  margin-bottom: 2%;
+}
+
+.saved-trip-info {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  margin-bottom: 2%;
+}
+
+.attendance {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  margin-bottom: 5%;
+}
+
+.delete-button {
+  margin-bottom: 2%;
+  background-color: hsl(182deg 96% 32%);
+  border: 2px solid hsl(182deg 96% 32%);
+  color: hsl(0deg 0% 100%);
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 92%;
+  font-weight: 600;
+  text-align: center;
+  transition: all 300ms;
+  width: 9vw;
+  height: 4vh;
 }

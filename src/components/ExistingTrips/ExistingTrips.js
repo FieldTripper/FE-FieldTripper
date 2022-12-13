@@ -13,7 +13,9 @@ const ExistingTrips = ({ user }) => {
 
   return (
     <div className="saved-trips page--container column">
-      <p className='join-trip'>Join A Trip</p>
+      <div className='join-title'>
+        <p className='join-trip'>Join A Trip</p>
+      </div>
       <QueryResult loading={loading} error={error} data={data}>
         <article className="page--container row">
           {data?.trips.map((trip) => {
