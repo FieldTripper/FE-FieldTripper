@@ -109,8 +109,8 @@ const UserSavedTripCard = ({
   };
 
   console.log({hostId})
-  const [deleteTrip] = useMutation(DELETE_TRIP_MUTATION);
   const [deleteUserTrip] = useMutation(DELETE_USER_TRIP_MUTATION);
+  const [deleteTrip] = useMutation(DELETE_TRIP_MUTATION);
 
   const handleDelete = () => {
     deleteUserTrip({ variables: { userId: user.id, tripId: tripId } });
