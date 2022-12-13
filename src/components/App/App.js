@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 // import { useQuery } from "@apollo/client";
 // import { CREATE_TRIP_MUTATION } from "../../queries/queries";
@@ -19,6 +19,7 @@ import singleMuseumData from "../../testData/singleMuseumData";
 // import mockUserSavedTrips from "../../testData/mockUserSavedTrips";
 import UserSavedTrips from "../UserSavedTrips/UserSavedTrips";
 import ExistingTrips from "../ExistingTrips/ExistingTrips";
+import { manageLocalData } from "../../utilities/utilities";
 import "./App.css";
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
   );
   const [museumData, setMuseumData] = useState("");
   // const [userSavedTripData, setUserSavedTripData] = useState("");
+
+  useEffect(() => {
+    manageLocalData('userData', setUser);
+  }, []);
 
   const updateSearch = (values) => {
     setSearchTerms({

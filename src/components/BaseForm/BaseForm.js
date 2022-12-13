@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { USERS_QUERY } from "../../queries/queries";
+import { manageLocalData } from "../../utilities/utilities";
 import QueryResult from "../QueryResult/QueryResult";
 import "./BaseForm.css";
 
@@ -15,7 +16,7 @@ function BaseForm({ setUser }) {
           <Link to="/trip-type">
             <button
               className="primary--button login--button"
-              onClick={() => setUser(data.users[0])}
+              onClick={() => manageLocalData('userData', setUser, data.users[0])}
             >
               See App
             </button>

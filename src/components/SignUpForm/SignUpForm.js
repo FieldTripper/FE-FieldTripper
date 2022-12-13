@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { CREATE_USER_MUTATION } from "../../queries/queries";
+import { manageLocalData } from "../../utilities/utilities";
 import "./SignUpForm.css";
 
 function SignUpForm({ setUser }) {
@@ -17,7 +18,7 @@ function SignUpForm({ setUser }) {
 
   useEffect(() => {
     if (data) {
-      setUser(data.createUser.user);
+      manageLocalData("userData", setUser, data.createUser.user);
       navigate("/trip-type");
     }
   }, [data]);
