@@ -8,9 +8,9 @@ const manageLocalData = (variableName, action, data) => {
   }
   
   if (!data && !parsedData) {
-    action(parsedData);
-  } else if (!data && parsedData) {
     return
+  } else if (!data && parsedData) {
+    action(parsedData);
   } else {
     action(data);
     const stringifiedData = JSON.stringify(data);
