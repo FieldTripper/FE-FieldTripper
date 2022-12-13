@@ -5,6 +5,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  overflow: auto;
 }
 
 .page-title {
@@ -13,6 +14,8 @@
   height: 3vh;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 2%;
+
 }
 
 .user-saved-trips {
