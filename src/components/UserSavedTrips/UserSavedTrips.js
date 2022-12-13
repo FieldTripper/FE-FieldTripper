@@ -7,10 +7,6 @@ import UserSavedTripCard from "../UserSavedTripCard/UserSavedTripCard";
 
 const UserSavedTrips = ({ user }) => {
   const { loading, error, data } = useQuery(TRIPS_QUERY);
-  console.log({ loading });
-  console.log({ error });
-  console.log({ data });
-  console.log("USER IN SAVED TRIPS", user);
 
   return (
     <div className="saved-trip-container">

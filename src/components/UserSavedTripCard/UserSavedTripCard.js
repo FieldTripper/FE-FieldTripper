@@ -132,11 +132,7 @@ const UserSavedTripCard = ({
       <p className='attendance'>
         {attendance} out of {maxAttendees} people are attending
       </p>
-<<<<<<< HEAD
       <button className="primary--button" onClick={() => handleDelete()}>Delete Trip</button>
-=======
-      <button className='delete-button'>Delete Trip</button>
->>>>>>> main
     </div>
   );
 };

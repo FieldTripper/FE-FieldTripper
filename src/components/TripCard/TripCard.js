@@ -6,7 +6,6 @@ function TripCard({ trip, user }) {
   const [createUserTrip, { loading, error }] = useMutation(
     CREATE_USER_TRIP_MUTATION
   );
-  const [deleteTrip, { data }] = useMutation(DELETE_TRIP_MUTATION);
 
   const newStartDate1 = trip.startTime.slice(0, -10);
   const newStartDate2 = newStartDate1.split("-");
@@ -119,7 +118,6 @@ function TripCard({ trip, user }) {
       >
         Join Trip
       </button>
-      <button onClick={() => deleteTrip({ variables: { id: trip.id } })}>Delete Trip</button>
     </article>
   );
 }
