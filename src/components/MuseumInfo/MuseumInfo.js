@@ -1,30 +1,10 @@
 import { useQuery, gql } from "@apollo/client";
 import React from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import QueryResult from "../QueryResult/QueryResult";
 import { MUSEUM_QUERY } from "../../queries/queries";
 import "./MuseumInfo.css";
-
-// const MUSEUM_QUERY = gql`
-//   query Museum($placeId: String!) {
-//     museum(placeId: $placeId) {
-//       placeId
-//       name
-//       rating
-//       latitude
-//       longitude
-//       price
-//       website
-//       address
-//       totalRatings
-//       separatedHoo
-//       combinedHoo
-//       wheelchairAccessibleEntrance
-//       imageUrl
-//       imageDescription
-//     }
-//   }
-// `;
 
 function MuseumInfo() {
   const { placeId } = useParams();
@@ -146,6 +126,9 @@ function MuseumInfo() {
           </>
         )}
       </section>
+      <Link to="/booking-form">
+        <button className="go-book-trip">Book Trip</button>
+      </Link>
     </QueryResult>
   );
 }

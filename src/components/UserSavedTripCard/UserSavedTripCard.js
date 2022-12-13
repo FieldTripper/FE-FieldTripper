@@ -16,11 +16,7 @@ const UserSavedTripCard = ({
   const newStartDate2 = newStartDate1.split("-");
   const newStartTime = startDate.slice(11, -7);
 
-  const finalTripDate = [
-    newStartDate2[1],
-    newStartDate2[2],
-    newStartDate2[0],
-  ].join("/");
+  const finalTripDate = [newStartDate2[1], newStartDate2[2], newStartDate2[0]];
 
   const getDisplayedTime = () => {
     let time;
