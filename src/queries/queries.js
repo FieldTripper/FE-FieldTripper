@@ -21,7 +21,12 @@ const USER_QUERY = gql`
 `;
 
 const CREATE_USER_MUTATION = gql`
-  mutation CreateUser($name: String!, $email: String!, $password: String!, $passwordConfirmation: String!) {
+  mutation CreateUser(
+    $name: String!
+    $email: String!
+    $password: String!
+    $passwordConfirmation: String!
+  ) {
     createUser(
       input: {
         name: $name
@@ -29,8 +34,7 @@ const CREATE_USER_MUTATION = gql`
         password: $password
         passwordConfirmation: $passwordConfirmation
       }
-    ) 
-    {
+    ) {
       user {
         id
         name
@@ -44,12 +48,12 @@ const CREATE_USER_MUTATION = gql`
 const CREATE_SESSION_QUERY = gql`
   query CreateSession($email: String!, $password: String!) {
     createSession(email: $email, password: $password) {
-        confirm
-        user {
-            id
-            name
-            email
-        }
+      confirm
+      user {
+        id
+        name
+        email
+      }
     }
   }
 `;
@@ -70,7 +74,7 @@ const TRIPS_QUERY = gql`
 `;
 
 const USER_TRIPS_QUERY = gql`
-  query trips($userId: ID!) {
+  query trips($userId: Int!) {
     trips(userId: $userId) {
       id
       name
