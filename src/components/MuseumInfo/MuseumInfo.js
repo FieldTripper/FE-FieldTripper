@@ -14,9 +14,10 @@ function MuseumInfo() {
       placeId: placeId,
     },
   });
+  console.log(data.museum.price)
 
   const formatPrice = (priceNumber) => {
-    if (priceNumber === 0) {
+    if (priceNumber === '0') {
       return "Free";
     } else if (priceNumber === 1) {
       return "$";
@@ -27,6 +28,7 @@ function MuseumInfo() {
     } else {
       return "$$$$";
     }
+    
   };
 
   const wheelchairAccessible = (isAccessible) => {

@@ -29,6 +29,12 @@ describe('search-form', () => {
     .get(':nth-child(1)').should('exist')
   })
 
+  //it should show inputs can be typed
+
+  //it should show fetching of info for poorly typed query
+
+  // it should show testing for completely wrong typed queries
+
   // it('should show an error message when data is not retrieved', () => {
   //   cy.get('h2').should('be.visible')
   // })

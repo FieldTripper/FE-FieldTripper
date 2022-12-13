@@ -11,9 +11,9 @@ describe('landing-page', () => {
     .get('.about').should('be.visible')
   })
 
-  it('on page load, should see a welcome message', () => {
-    cy.get('.welcome').contains('Welcome to FieldTrippers!')
-  })
+  // it('on page load, should see a welcome message with the users name', () => {
+  //   cy.get('.welcome').contains('Welcome to FieldTrippers!')
+  // })
 
   it('on page load, should see a button that will take a user to the app', () => {
     cy.get('.primary--button').should('be.visible')

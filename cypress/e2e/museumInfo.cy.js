@@ -15,6 +15,9 @@ describe('museumInfo', () => {
     .get(':nth-child(7)').contains('Wheelchair Accessible: Yes')
     .get(':nth-child(8)').contains('Hours')
   })
+  //website
+//price
+//book trip button
 
   // it('should show a message if no additional details are availble
 })

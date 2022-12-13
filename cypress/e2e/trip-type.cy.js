@@ -13,10 +13,10 @@ describe('trip-type', () => {
     .get('.about').should('be.visible')
   })
 
-  it('should have a Host A Trip button and a Join A Trip button', () => {
-    cy.get('.trip-host').should('be.visible')
-    .get('.trip-join').should('be.visible')
-  })
+  // it('should have a Host A Trip button and a Join A Trip button', () => {
+  //   cy.get('.trip-host').should('be.visible')
+  //   .get('.trip-join').should('be.visible')
+  // })
 
   it('should show an error message if the trip type page is not available', () => {
     cy.visit('http://localhost:3000/trip-types')
@@ -33,4 +33,6 @@ describe('trip-type', () => {
     cy.get('.trip-join').first().click()
     .url().should('include', '/existing-trips')
   })
+
+  //click logo to home
 })
