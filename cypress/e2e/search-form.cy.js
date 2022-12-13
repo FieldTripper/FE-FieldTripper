@@ -28,31 +28,84 @@ describe('search-form page', () => {
   })
 })
 
-  describe('searching for museums', () => {
-    beforeEach(() => {
-      cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
-        if(req.body.operationName === 'Museums') {
-          req.reply({fixture: '../fixtures/museums.json'})
-        }
-      })
-      cy.visit('http://localhost:3000/search-form')
-      cy.get('[name="city"]').type('Denver')
-      cy.get('[name="state"]').type('CO')
-      cy.get('.primary--button').click()
-    })
+describe('searching for museums', () => {
 
-    it('should see a form with inputs for a city, state and zipcode', () => {
-    
-    
+  it('should navigate to page with museums when form is fille out', () => {
+    cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
+      if(req.body.operationName === 'Museums') {
+        req.reply({fixture: '../fixtures/museums.json'})
+      }
     })
+    cy.visit('http://localhost:3000/search-form')
+    cy.get('[name="city"]').type('Denver')
+    cy.get('[name="state"]').type('CO')
+    cy.get('.primary--button').click()
+    cy.get('[href="/museums/ChIJocNwSiZ5bIcRRfsuPp4C400"] > .museums-card > .card-info > .museum-name-card').contains('Union Station Fountains Test')
+    cy.get('[href="/museums/ChIJXwSNg9R-bIcRltbMQ0joT70"] > .museums-card > .card-info > .museum-name-card').contains('Kirkland Museum of Fine & Decorative Art Test')
+  })
+  
+  it('should show an error message when data is not retrieved', () => {
+    cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
+      if(req.body.operationName === 'Museums') {
+        req.reply({
+          statusCode: 500,
+          fixture: '../fixtures/museums.json'
+        })
+      }
+    })
+    cy.visit('http://localhost:3000/search-form')
+    cy.get('[name="city"]').type('Denver')
+    cy.get('[name="state"]').type('CO')
+    cy.get('.primary--button').click()
+    cy.get('h2').contains('Received status code 500 We were not able to retrieve data for you. Try returning to the homepage.')
+    cy.get('.primary--button').contains('Return Home')
   })
 
+  it('should fetch museums if there is only a city', () => {
+    cy.visit('http://localhost:3000/search-form')
+    cy.get('[name="city"]').type('Denver')
+    cy.get('.primary--button').click()
+    cy.get('[href="/museums/ChIJb13H9tx4bIcRPQoWtgSMyKk"] > .museums-card > .card-info > .museum-name-card').contains('National Ballpark Museum')
+  })
 
- 
-  //it should show fetching of info for poorly typed query
+  it('should fetch museums if there is only a state', () => {
+    cy.visit('http://localhost:3000/search-form')
+    cy.get('[name="state"]').type('colorado')
+    cy.get('.primary--button').click()
+    cy.get('[href="/museums/ChIJ_STBjyz4aocRHBczn9CJ-uk"] > .museums-card > .card-info > .museum-name-card').contains('Wire Patch Gold Mine')
+  })
 
-  // it should show testing for completely wrong typed queries
+  it('should return and error if there is only a zipcode', () => {
+    cy.visit('http://localhost:3000/search-form')
+    cy.get('.zip').type('80014')
+    cy.get('.primary--button').click()
+    cy.get('h2').contains('Received status code 500 We were not able to retrieve data for you. Try returning to the homepage.')
+    cy.get('.primary--button').contains('Return Home')
+  })
 
-  // it('should show an error message when data is not retrieved', () => {
-  //   cy.get('h2').should('be.visible')
-  // })
+  it('should fetch museums if city contains with a typo', () => {
+    cy.visit('http://localhost:3000/search-form')
+    cy.get('[name="city"]').type('enver')
+    cy.get('[name="state"]').type('CO')
+    cy.get('.primary--button').click()
+    cy.get('[href="/museums/ChIJb13H9tx4bIcRPQoWtgSMyKk"] > .museums-card > .card-info > .museum-name-card').contains('National Ballpark Museum')
+  })
+
+  it('should fetch museums if state contains a typo', () => {
+    cy.visit('http://localhost:3000/search-form')
+    cy.get('[name="city"]').type('denver')
+    cy.get('[name="state"]').type('calorado')
+    cy.get('.primary--button').click()
+    cy.get('[href="/museums/ChIJb13H9tx4bIcRPQoWtgSMyKk"] > .museums-card > .card-info > .museum-name-card').contains('National Ballpark Museum')
+  })
+
+  it('should return and error if all search fields are incorrectly typed', () => {
+    cy.visit('http://localhost:3000/search-form')
+    cy.get('[name="city"]').type('settle')
+    cy.get('[name="state"]').type('wasningon')
+    cy.get('.primary--button').click()
+    cy.get('h2').contains('Received status code 500 We were not able to retrieve data for you. Try returning to the homepage.')
+    cy.get('.primary--button').contains('Return Home')
+  })
+})
+
