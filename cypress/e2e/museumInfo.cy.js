@@ -29,8 +29,12 @@ describe('museum information page', () => {
     .get(':nth-child(11) > :nth-child(1)').contains('Open 24 hours')
   })
 
+// Currently give an error when testing the click of the booking button
+
   // it('should have a Book Trip button and when clicked should take the user to the booking form page', () => {
   //   cy.get('.go-book-trip').contains('Book Trip')
   //   cy.get('.go-book-trip').click() .url().should('include', '/booking-form')
   // })
+
+  // Add test for if there is an error fetching the museum information
 })
