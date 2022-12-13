@@ -5,10 +5,10 @@ import "./TripCard.css";
 import { DELETE_TRIP_MUTATION } from '../../queries/queries';
 
 function TripCard({ trip, user }) {
-  const [createUserTrip, { loading, error, data }] = useMutation(
+  const [createUserTrip, { loading, error }] = useMutation(
     CREATE_USER_TRIP_MUTATION
   );
-  // const [deleteTrip, { loading, error, data }] = useMutation(DELETE_TRIP_MUTATION);
+  const [deleteTrip, { data }] = useMutation(DELETE_TRIP_MUTATION);
 
   const newStartDate1 = trip.startTime.slice(0, -10);
   const newStartDate2 = newStartDate1.split("-");
