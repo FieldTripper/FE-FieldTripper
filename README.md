@@ -1,5 +1,4 @@
 # FIELDTRIPPERS
-- Screen shots here
 
 ## Table of Contens
 - [Introduction](#introduction)
@@ -56,7 +55,7 @@ Back-End:
 
 
 ## Features
-- Features HERE
+- Features HERE with screen shots!
 
 ## Learning Goals
 - Learn how to work on a large development team and collaborate efficiently and successfully.
