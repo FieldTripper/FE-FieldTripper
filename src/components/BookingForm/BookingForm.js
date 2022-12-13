@@ -6,22 +6,19 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useMutation } from "@apollo/client";
 import { CREATE_TRIP_MUTATION } from "../../queries/queries";
 
-const BookingForm = ({ bookTrip, museumData, user }) => {
+const BookingForm = ({ museumData, user }) => {
   const [newStartDate, setStartDate] = useState(new Date());
 
   const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
   console.log({ user });
 
   let [museumValues, setMuseumValues] = useState({
-    // isHost: true,
-    // userName: user.name,
     userId: user.id,
     name: "",
     destinationName: "",
     destinationPlaceId: "",
     startDate: newStartDate,
     startTime: "",
-    // attendees: "",
     maxAttendees: "",
   });
 
@@ -32,7 +29,6 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
     destinationPlaceId,
     startDate,
     startTime,
-    // attendees,
     maxAttendees,
   }) => {
     createTrip({
@@ -43,7 +39,6 @@ const BookingForm = ({ bookTrip, museumData, user }) => {
         destinationPlaceId: destinationPlaceId,
         startDate: startDate,
         startTime: startTime,
-        // attendees: parseInt(attendees),
         maxAttendees: parseInt(maxAttendees),
       },
     });

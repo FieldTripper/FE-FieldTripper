@@ -6,6 +6,12 @@
     align-items: center;
     overflow-y: auto;
     margin-bottom: 2%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image:
+      linear-gradient(to bottom, #ffffffdb, #ffffffdb),
+      url('../../images/city.png');
 }
 
 h1 {
