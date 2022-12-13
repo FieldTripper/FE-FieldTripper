@@ -50,8 +50,6 @@ function App() {
     });
   };
 
-  // addBooking = (newBooking) => {};
-
   return (
     <main>
       <Header />
@@ -77,7 +75,6 @@ function App() {
               bookTrip={goToBookingForm}
               museumData={museumData}
               user={user}
-              // addBooking={addBooking}
             />
           }
         />
@@ -88,7 +85,12 @@ function App() {
         <Route path="/about" element={<About about={About} />} />
         <Route
           path="/museums/:placeId"
-          element={<MuseumInfo singleMuseumData={singleMuseumData} />}
+          element={
+            <MuseumInfo
+              singleMuseumData={singleMuseumData}
+              bookTrip={goToBookingForm}
+            />
+          }
         />
         <Route path="/existing-trips" element={<ExistingTrips user={user} />} />
         <Route path="/saved-trips" element={<UserSavedTrips user={user} />} />

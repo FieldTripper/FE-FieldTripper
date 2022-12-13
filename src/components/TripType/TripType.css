@@ -15,7 +15,7 @@
     font-size: 130%;
 }
 
-.trip-host, .trip-join {
+.trip-host, .trip-join, .trip-saved {
     margin-bottom: 2%;
     background-color: hsl(182deg 96% 32%);
     border: 2px solid hsl(182deg 96% 32%);
