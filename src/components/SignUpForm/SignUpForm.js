@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { CREATE_USER_MUTATION } from '../../queries/queries';
 import './SignUpForm.css';
@@ -12,25 +12,29 @@ function SignUpForm({ setUser }) {
     passwordConfirmation: ''
   });
   const [createUser, { loading, error, data }] = useMutation(CREATE_USER_MUTATION);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (data) {
+      setUser(data.createUser.user);
+      navigate("/trip-type");
+    } 
+  }, [data]);
 
   const handleChange = (event) => {
     const fieldInput = event.target
     setSignUpValues({ ...signUpValues, [fieldInput.name]: fieldInput.value })
   }
 
-  const handleSubmit = () => {
-    createUser({ variables: { name: signUpValues.name, email: signUpValues.email, password: signUpValues.password, passwordConfirmation: signUpValues.passwordConfirmation } });
-    console.log({loading});
-    console.log({error});
-    console.log({data});
-
-    // setUser(data);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    createUser({ variables: signUpValues });
   }
 
   return (
     <section className="page--container column">
       <h2>Sign Up Form</h2>
-      <form>
+      <form onSubmit={(event) => handleSubmit(event)}>
         <input 
          type="text" 
          name="name"
@@ -55,14 +59,12 @@ function SignUpForm({ setUser }) {
           placeholder="Confirm password"
           onChange={(event) => handleChange(event)}
         />
-        <Link to="/trip-type">
           <button 
             className="primary--button"
-            onClick={() => handleSubmit()}
+            type="submit"
           >
             Sign Up
           </button>
-        </Link>
       </form>
     </section>
   )
