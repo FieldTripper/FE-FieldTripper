@@ -10,6 +10,7 @@ const UserSavedTrips = ({ user }) => {
   console.log({ loading });
   console.log({ error });
   console.log({ data });
+  console.log("USER IN SAVED TRIPS", user);
 
   return (
     <div className="saved-trip-container">
