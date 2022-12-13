@@ -70,6 +70,11 @@ BE: GraphQL
 - Add a restaurant option so a user is able to book a field trip to a museum followed by enjoying a meal at a restaurant near-by.
 
 ## Set Up
+1. Fork and clone [this](https://github.com/FieldTripper/FE-FieldTripper) repo
+2. Type `cd FE-FieldTripper` to move into the root directory
+3. Run `npm install` to install necessary dependencies
+4. Run `npm start`
+5. Copy local url given by running `npm start` and paste it to your browser
 
 ## Organizational Resources:
 - [Project architecture](https://www.figma.com/file/7ECXLbUG6sQyWoToqb5YTc/FieldTrippers-Architecture?node-id=0%3A1)
