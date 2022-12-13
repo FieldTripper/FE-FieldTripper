@@ -7,7 +7,7 @@ const About = () => {
   return (
     <div className="about-page">
       <div className="about-section">
-        <h4 className="created-by">ABOUT</h4>
+        <h4 className="about-by">ABOUT</h4>
         <p className="about-para">
           An application for the kid and life-long learner in all of us. Create
           a field trip or join an already created one and go explore something

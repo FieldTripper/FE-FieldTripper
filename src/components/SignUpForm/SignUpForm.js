@@ -1,46 +1,47 @@
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { useMutation } from '@apollo/client';
-import { CREATE_USER_MUTATION } from '../../queries/queries';
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useMutation } from "@apollo/client";
+import { CREATE_USER_MUTATION } from "../../queries/queries";
 import { manageLocalData } from "../../utilities/utilities";
-import './SignUpForm.css';
+import "./SignUpForm.css";
 
 function SignUpForm({ setUser }) {
   const [signUpValues, setSignUpValues] = useState({
-    name: '',
-    email: '',
-    password: '',
-    passwordConfirmation: ''
+    name: "",
+    email: "",
+    password: "",
+    passwordConfirmation: "",
   });
-  const [createUser, { loading, error, data }] = useMutation(CREATE_USER_MUTATION);
+  const [createUser, { loading, error, data }] =
+    useMutation(CREATE_USER_MUTATION);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (data) {
-      manageLocalData('userData', setUser, data.createUser.user);
+      manageLocalData("userData", setUser, data.createUser.user);
       navigate("/trip-type");
-    } 
+    }
   }, [data]);
 
   const handleChange = (event) => {
-    const fieldInput = event.target
-    setSignUpValues({ ...signUpValues, [fieldInput.name]: fieldInput.value })
-  }
+    const fieldInput = event.target;
+    setSignUpValues({ ...signUpValues, [fieldInput.name]: fieldInput.value });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     createUser({ variables: signUpValues });
-  }
+  };
 
   return (
     <section className="page--container column">
-      <h2>Sign Up Form</h2>
+      <h2 className="sign-up">Sign Up Form</h2>
       <form onSubmit={(event) => handleSubmit(event)}>
-        <input 
-         type="text" 
-         name="name"
-         placeholder="Enter your name"
-         onChange={(event) => handleChange(event)}
+        <input
+          type="text"
+          name="name"
+          placeholder="Enter your name"
+          onChange={(event) => handleChange(event)}
         />
         <input
           type="email"
@@ -60,15 +61,12 @@ function SignUpForm({ setUser }) {
           placeholder="Confirm password"
           onChange={(event) => handleChange(event)}
         />
-          <button 
-            className="primary--button"
-            type="submit"
-          >
-            Sign Up
-          </button>
+        <button className="primary--button" type="submit">
+          Sign Up
+        </button>
       </form>
     </section>
-  )
+  );
 }
 
 export default SignUpForm;

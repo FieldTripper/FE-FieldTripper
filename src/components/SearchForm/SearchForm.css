@@ -6,6 +6,20 @@ form {
     align-items: center;
 }
 
+.search-housing {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-museums {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color:#03989e;
+    margin-bottom: 1%;
+}
+
 .zip {
     width: 15%;
     margin-bottom: 2%;
