@@ -13,6 +13,7 @@ const UserSavedTripCard = ({
   startDate,
   tripName,
   key,
+  user
 }) => {
   const newStartDate1 = startDate.slice(0, -10);
   const newStartDate2 = newStartDate1.split("-");
@@ -113,8 +114,11 @@ const UserSavedTripCard = ({
   const [deleteUserTrip] = useMutation(DELETE_USER_TRIP_MUTATION);
 
   const handleDelete = () => {
-    deleteUserTrip({ variables: { userId: 0, tripId: tripId } });
-    deleteTrip({ variables: { id: tripId } });
+    deleteUserTrip({ variables: { userId: user.id, tripId: tripId } });
+
+    if (hostId === user.id) {
+      deleteTrip({ variables: { id: tripId } });
+    }
   }
 
   return (

@@ -29,6 +29,7 @@ const UserSavedTrips = ({ user }) => {
                 startDate={trip.startTime}
                 tripName={trip.name}
                 key={trip.destinationPlaceId}
+                user={user}
               />
             );
           })}
