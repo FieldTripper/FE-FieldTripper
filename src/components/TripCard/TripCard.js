@@ -9,6 +9,7 @@ function TripCard({ trip, user }) {
     CREATE_USER_TRIP_MUTATION
   );
   // const [deleteTrip, { loading, error, data }] = useMutation(DELETE_TRIP_MUTATION);
+  console.log("data in trip card", data);
 
   const newStartDate1 = trip.startTime.slice(0, -10);
   const newStartDate2 = newStartDate1.split("-");

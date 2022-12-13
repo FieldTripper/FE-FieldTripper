@@ -1,12 +1,12 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { TRIPS_QUERY } from "../../queries/queries";
+import { USER_TRIPS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
 import "./UserSavedTrips.css";
 import UserSavedTripCard from "../UserSavedTripCard/UserSavedTripCard";
 
 const UserSavedTrips = ({ user }) => {
-  const { loading, error, data } = useQuery(TRIPS_QUERY);
+  const { loading, error, data } = useQuery(USER_TRIPS_QUERY);
   console.log({ loading });
   console.log({ error });
   console.log({ data });
