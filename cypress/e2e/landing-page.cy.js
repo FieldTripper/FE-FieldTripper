@@ -16,8 +16,6 @@ describe('landing-page', () => {
     cy.get('.welcome').contains('Welcome to FieldTrippers!')
   })
 
-
-  // Will 'see app' button be removed with login feature implemented?
   it('should have a button for Login, Sign Up, and See App', () => {
     cy.get('.primary--button').contains('See App')
     cy.get('[href="/login"] > .primary--button').contains('Login')
@@ -29,7 +27,6 @@ describe('landing-page', () => {
     .url().should('include', '/About')
   })
 
-  // Will 'see app' button be removed with login feature implemented?
   it('should click the See App button and be taken to the trip-type page', () => {
     cy.get('.primary--button').first().click()
     .url().should('include', '/trip-type')
