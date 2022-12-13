@@ -125,10 +125,10 @@ function MuseumInfo() {
             )}
           </>
         )}
+        <Link to="/booking-form">
+          <button className="go-book-trip">Book Trip</button>
+        </Link>
       </section>
-      <Link to="/booking-form">
-        <button className="go-book-trip">Book Trip</button>
-      </Link>
     </QueryResult>
   );
 }

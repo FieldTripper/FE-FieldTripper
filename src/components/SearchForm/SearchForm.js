@@ -12,38 +12,41 @@ function SearchForm({ updateSearch }) {
 
   return (
     <section className="page--container column">
-      <form>
-        <input
-          type="text"
-          name="city"
-          placeholder="Enter City"
-          onChange={(event) => handleChange(event)}
-          value={values.city}
-        />
-        <input
-          type="text"
-          name="state"
-          placeholder="Enter State"
-          onChange={(event) => handleChange(event)}
-          value={values.state}
-        />
-        <input
-          className="zip"
-          type="text"
-          name="zipCode"
-          placeholder="Zip Code (Optional)"
-          onChange={(event) => handleChange(event)}
-          value={values.zipCode}
-        />
-        <Link to="/museums">
-          <button
-            className="primary--button search--button"
-            onClick={() => updateSearch(values)}
-          >
-            Search
-          </button>
-        </Link>
-      </form>
+      <div className="search-housing">
+        <h2 className="search-museums">Search Museums</h2>
+        <form>
+          <input
+            type="text"
+            name="city"
+            placeholder="Enter City"
+            onChange={(event) => handleChange(event)}
+            value={values.city}
+          />
+          <input
+            type="text"
+            name="state"
+            placeholder="Enter State"
+            onChange={(event) => handleChange(event)}
+            value={values.state}
+          />
+          <input
+            className="zip"
+            type="text"
+            name="zipCode"
+            placeholder="Zip Code (Optional)"
+            onChange={(event) => handleChange(event)}
+            value={values.zipCode}
+          />
+          <Link to="/museums">
+            <button
+              className="primary--button search--button"
+              onClick={() => updateSearch(values)}
+            >
+              Search
+            </button>
+          </Link>
+        </form>
+      </div>
     </section>
   );
 }

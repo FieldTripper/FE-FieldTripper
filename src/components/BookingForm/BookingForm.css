@@ -1,7 +1,7 @@
 .booking-page {
   display: flex;
   width: 100vw;
-  height: 60vh;
+  height: 70vh;
   flex-direction: column;
   align-items: center;
 }
@@ -12,6 +12,7 @@
   color: #03989e;
   font-size: 130%;
   margin-bottom: 2%;
+  margin-top: 5%;
 }
 
 .name-your-trip {

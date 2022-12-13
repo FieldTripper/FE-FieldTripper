@@ -3,11 +3,11 @@
 }
 
 .location-pin {
- filter: invert(36%) sepia(94%) saturate(976%) hue-rotate(149deg) brightness(95%) contrast(103%);
+ filter: invert(30%) sepia(59%) saturate(1338%) hue-rotate(330deg) brightness(107%) contrast(100%);
  height: 5vh;
 }
 
 .map-location-name {
-  color: #00989e;
+  color: #ea4336;
   font-size: 1.5vh;
 }
