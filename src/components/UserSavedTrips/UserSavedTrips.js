@@ -1,25 +1,27 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { TRIPS_QUERY } from "../../queries/queries";
+import { USER_TRIPS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
 import "./UserSavedTrips.css";
 import UserSavedTripCard from "../UserSavedTripCard/UserSavedTripCard";
 
 const UserSavedTrips = ({ user }) => {
-  const { loading, error, data } = useQuery(TRIPS_QUERY);
+  const { loading, error, data } = useQuery(USER_TRIPS_QUERY);
   console.log({ loading });
   console.log({ error });
   console.log({ data });
   console.log("USER IN SAVED TRIPS", user);
+  const onlyUserTrips = data?.trips.filter((trip) => trip.hostId === user.id);
+  // console.log({ onlyUserTrips });
 
   return (
     <div className="saved-trip-container">
-      <div className='page-title'>
-        <p className='user-saved-trips'>Your Saved Field Trips</p>
+      <div className="page-title">
+        <p className="user-saved-trips">Your Saved Field Trips</p>
       </div>
       <QueryResult data={data} error={error} loading={loading}>
         <>
-          {data?.trips.map((trip) => {
+          {onlyUserTrips?.map((trip) => {
             return (
               <UserSavedTripCard
                 attendance={trip.attendance}

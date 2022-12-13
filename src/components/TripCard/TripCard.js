@@ -2,7 +2,7 @@ import { useMutation } from "@apollo/client";
 import { CREATE_USER_TRIP_MUTATION } from "../../queries/queries";
 import "./TripCard.css";
 
-import { DELETE_TRIP_MUTATION } from '../../queries/queries';
+import { DELETE_TRIP_MUTATION } from "../../queries/queries";
 
 function TripCard({ trip, user }) {
   const [createUserTrip, { loading, error }] = useMutation(
@@ -121,7 +121,9 @@ function TripCard({ trip, user }) {
       >
         Join Trip
       </button>
-      <button onClick={() => deleteTrip({ variables: { id: trip.id } })}>Delete Trip</button>
+      <button onClick={() => deleteTrip({ variables: { id: trip.id } })}>
+        Delete Trip
+      </button>
     </article>
   );
 }
