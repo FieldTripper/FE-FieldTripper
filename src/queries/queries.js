@@ -25,6 +25,21 @@ const TRIPS_QUERY = gql`
   }
 `;
 
+const USER_TRIPS_QUERY = gql`
+  {
+    trip(id: 5) {
+      id
+      name
+      destinationPlaceId
+      destinationName
+      startTime
+      attendance
+      hostId
+      maxAttendees
+    }
+  }
+`;
+
 const CREATE_TRIP_MUTATION = gql`
   mutation CreateTrip(
     $userId: ID!
@@ -120,6 +135,7 @@ const MUSEUM_QUERY = gql`
 export {
   USERS_QUERY,
   TRIPS_QUERY,
+  USER_TRIPS_QUERY,
   CREATE_TRIP_MUTATION,
   CREATE_USER_TRIP_MUTATION,
   DELETE_TRIP_MUTATION,
