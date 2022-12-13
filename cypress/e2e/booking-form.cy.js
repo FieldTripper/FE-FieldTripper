@@ -48,7 +48,12 @@ describe('booking form page', () => {
     // cy.get('[name="destinationPlaceId"]').select('Union Station Fountains Test')
     // cy.get('.react-datepicker__input-container > input').select('12/25/2022')
     // cy.get('[name="maxAttendees"]').select('2')
-    // cy.get('.booking-button').click()
+    // cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
+    //     req.reply({fixture: '../fixtures/savedTrips.json'})
+    // })
+    // cy.get('.booking-button').click()  
+    // cy.visit('http://localhost:3000/saved-trips')
+
   })
 
   it('should display an error message if there is an issue with booking your trip', () => {
