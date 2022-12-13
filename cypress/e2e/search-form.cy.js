@@ -1,4 +1,5 @@
 describe('search-form page', () => {
+
   beforeEach(() => {
     cy.visit('http://localhost:3000/search-form')
   })
@@ -30,7 +31,7 @@ describe('search-form page', () => {
 
 describe('searching for museums', () => {
 
-  it('should navigate to page with museums when form is fille out', () => {
+  it('should navigate to page with museums when form is filled out', () => {
     cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
       if(req.body.operationName === 'Museums') {
         req.reply({fixture: '../fixtures/museums.json'})
@@ -75,12 +76,11 @@ describe('searching for museums', () => {
     cy.get('[href="/museums/ChIJ_STBjyz4aocRHBczn9CJ-uk"] > .museums-card > .card-info > .museum-name-card').contains('Wire Patch Gold Mine')
   })
 
-  it('should return and error if there is only a zipcode', () => {
+  it('should fetch museums if there is only a zipcode', () => {
     cy.visit('http://localhost:3000/search-form')
     cy.get('.zip').type('80014')
     cy.get('.primary--button').click()
-    cy.get('h2').contains('Received status code 500 We were not able to retrieve data for you. Try returning to the homepage.')
-    cy.get('.primary--button').contains('Return Home')
+    cy.get('.museum-name-card').contains('Melvin Schoolhouse Museum & Library')
   })
 
   it('should fetch museums if city contains with a typo', () => {

@@ -56,7 +56,7 @@ const CREATE_SESSION_QUERY = gql`
 
 const TRIPS_QUERY = gql`
   {
-    trips {
+   trips {
       id
       name
       destinationPlaceId
