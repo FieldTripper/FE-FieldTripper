@@ -6,7 +6,6 @@ import { CREATE_TRIP_MUTATION } from "../../queries/mutations";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./BookingForm.css";
-import { valueToObjectRepresentation } from "@apollo/client/utilities";
 
 const BookingForm = ({ museumData, user }) => {
   let [tripValues, setTripValues] = useState({
