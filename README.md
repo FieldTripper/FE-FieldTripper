@@ -16,7 +16,7 @@
 - [Project Repot](#project-repo)
 
 ## Introduction
-- Intro HERE
+Why should kids have all the fun? FieldTrippers is the social gathering while you learn app for adults. Create or join already existing field trips, simply enter a location and a list museums will be available for you to choose from. A host can limit the number of people on their trip to allow for smaller gatherings. A user can choose to join any field trip that isn't full.
 
 ## Project Managers
 [Kathleen Brandt](https://github.com/KatBrandt)<br>
