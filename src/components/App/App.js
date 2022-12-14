@@ -30,6 +30,7 @@ function App() {
   const [museumData, setMuseumData] = useState([]);
 
   useEffect(() => {
+    localStorage.clear();
     manageLocalData("userData", setUser);
     manageLocalData("searchTerms", setSearchTerms);
     manageLocalData("museumData", setMuseumData);
@@ -82,7 +83,7 @@ function App() {
         <Route path="/saved-trips" element={<UserSavedTrips user={user} />} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
-      <Footer />
+      <Footer user={user} />
     </main>
   );
 }

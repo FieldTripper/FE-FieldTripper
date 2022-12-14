@@ -20,6 +20,7 @@ function SearchForm({ updateSearch }) {
       setWarning("Sorry, you need to fill in both City and State")
     } else {
       updateSearch(values);
+      setWarning("")
       navigate("/museums");
     }
   }
