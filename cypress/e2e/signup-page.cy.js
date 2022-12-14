@@ -12,7 +12,7 @@ describe('sign up form page', () => {
     cy.get('[placeholder="Enter your email"]').should('be.visible')
     cy.get('[placeholder="Choose a password"]').should('be.visible')
     cy.get('[placeholder="Confirm password"]').should('be.visible')
-    cy.get('.primary--button').contains('Sign Up')
+    cy.get('.sign-up-button').contains('Sign Up')
   })
 
   it("should be able to type in the inputs and have the value relfected on the page", () => {

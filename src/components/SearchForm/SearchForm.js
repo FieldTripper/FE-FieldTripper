@@ -16,12 +16,12 @@ function SearchForm({ updateSearch }) {
   const validateSearch = (event) => {
     event.preventDefault();
 
-    if (!values.city || !values.state) {
-      setWarning("Sorry, you need to fill in both City and State")
-    } else {
+    if (values.city || values.state || values.zipCode) {
       updateSearch(values);
-      setWarning("")
+      setWarning("");
       navigate("/museums");
+    } else {
+      setWarning("Sorry, you need to fill in both City and State");
     }
   }
 
@@ -49,7 +49,7 @@ function SearchForm({ updateSearch }) {
             className="zip"
             type="text"
             name="zipCode"
-            placeholder="Zip Code (optional)"
+            placeholder="Zip Code (Optional)"
             onChange={(event) => handleChange(event)}
             value={values.zipCode}
           />

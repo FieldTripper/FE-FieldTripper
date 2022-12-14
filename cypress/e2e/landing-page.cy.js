@@ -7,10 +7,6 @@ describe('landing-page', () => {
     cy.get('.header')
       .get('.logo').should('have.attr', 'src').should('include', 'static/media/logo.d30f603c2c51e7ffdf98.png')
       .get('.footer').should('be.visible')
-      .get('.home').should('be.visible')
-      .get('.footer-saved-trips').should('be.visible')
-      .get('.footer-join-a-trip').should('be.visible')
-      .get('.footer-host-a-trip').should('be.visible')
       .get('.footer-about').should('be.visible')
   })
 
