@@ -10,8 +10,8 @@
     right: 0;
 }
 
-.about,
-.home {
+.footer-about,
+.home, .footer-saved-trips, .footer-join-a-trip, .footer-host-a-trip {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     font-size: 90%;
