@@ -30,35 +30,17 @@ const BookingForm = ({ museumData, user }) => {
     });
   };
 
-  const checkDestination = (name, fon, fov) => {
-    const foundMuseum = museumData.museums.find((museum) => {
-      return museum.name === name;
-    });
-    if (foundMuseum.placeId !== museumValues.destinationPlaceId) {
-      const newMuseum = museumData.museums.find((museum) => {
-        return museumValues.destinationPlaceId === museum.placeId;
-      });
-      setMuseumValues({ ...museumValues, destinationName: newMuseum.name });
-    } else {
-      setMuseumValues({ ...museumValues, [fon]: fov });
-    }
-  };
-
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
-
-    setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
-    if (!museumValues.destinationName && museumValues.destinationPlaceId) {
-      const name = museumData.museums.find((museum) => {
+    if (fieldOption.name === "destinationPlaceId") {
+      console.log("if")
+      const place = museumData.museums.find((museum) => {
         return museum.placeId === museumValues.destinationPlaceId;
       });
-      setMuseumValues({ ...museumValues, destinationName: name.name });
+      console.log({place});
+      setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value, destinationName: place.name });
     } else {
-      checkDestination(
-        museumValues.destinationName,
-        fieldOption.name,
-        fieldOption.value
-      );
+      setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
     }
   };
 
