@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import SignOut from "../SignOut/SignOut";
 import './Footer.css'
 
-const Footer = ({ user }) => {
+const Footer = ({ user, setUser }) => {
     if (Object.keys(user).length) {
         return (
             <div className='footer'>
@@ -20,6 +21,7 @@ const Footer = ({ user }) => {
                 <Link style={{ textDecoration: 'none' }} to='/About'>
                     <p className='footer-about'>ABOUT</p>
                 </Link>
+                <SignOut setUser={setUser} />
             </div>
         )
     } else {
