@@ -19,7 +19,7 @@ import "./App.css";
 
 function App() {
   const [user, setUser] = useState({});
-  const [values, setSearchTerms] = useState({
+  const [searchTerms, setSearchTerms] = useState({
     city: "",
     state: "",
     zipCode: "",
@@ -50,7 +50,7 @@ function App() {
           path="/museums"
           element={
             <MuseumsContainer
-              queryValues={values}
+              searchTerms={searchTerms}
               updateSearch={updateSearch}
               setMuseumData={setMuseumData}
             />

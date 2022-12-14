@@ -9,12 +9,12 @@ import LocationPin from "../LocationPin/LocationPin";
 import { manageLocalData } from "../../utilities/utilities";
 import "./MuseumsContainer.css";
 
-function MuseumsContainer({ queryValues, setMuseumData }) {
+function MuseumsContainer({ searchTerms, setMuseumData }) {
   const { loading, error, data } = useQuery(MUSEUMS_QUERY, {
     variables: {
-      city: queryValues.city,
-      state: queryValues.state,
-      zipcode: queryValues.zipCode,
+      city: searchTerms.city,
+      state: searchTerms.state,
+      zipcode: searchTerms.zipCode,
     },
   });
 
