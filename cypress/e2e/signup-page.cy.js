@@ -1,5 +1,3 @@
-// needs fixture for mutation
-
 describe('sign up form page', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
@@ -42,8 +40,8 @@ describe('sign up form page', () => {
   // })
 
   it('should take the user to the trip type page upon successful completion', () => {
-    cy.get('[type="text"]').type('Joee')
-    cy.get('[type="email"]').type('12345@email.com')
+    cy.get('[type="text"]').type('Joe')
+    cy.get('[type="email"]').type('123@email.com')
     cy.get('[name="password"]').type('124')
     cy.get('[name="passwordConfirmation"]').type('124')
     cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
@@ -52,7 +50,7 @@ describe('sign up form page', () => {
       }
     })
     cy.get('.sign-up-button').click()
-
-    // .url().should('include', '/trip-type')
+    .visit('http://localhost:3000/trip-type')
+    .url().should('include', '/trip-type')
   })
 })
