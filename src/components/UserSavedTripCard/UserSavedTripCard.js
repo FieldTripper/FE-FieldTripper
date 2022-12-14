@@ -9,7 +9,7 @@ const UserSavedTripCard = ({ trip, user }) => {
   const [deleteUserTrip] = useMutation(DELETE_USER_TRIP_MUTATION);
 
   const handleDelete = () => {
-    deleteUserTrip({ variables: { userId: user.id, tripId: trip.tripId }, refetchQueries: [
+    deleteUserTrip({ variables: { userId: user.id, tripId: trip.id }, refetchQueries: [
       {query: USER_TRIPS_QUERY},
       'UserTrips'
     ] });
@@ -20,7 +20,7 @@ const UserSavedTripCard = ({ trip, user }) => {
 
   return (
     <div className="saved-trip-card">
-      <p className="trip-name">{trip.tripName}</p>
+      <p className="trip-name">{trip.name}</p>
       <p className="saved-destination">{trip.destinationName}</p>
       <p className="saved-trip-info">
         <b>Your trip on: </b>
