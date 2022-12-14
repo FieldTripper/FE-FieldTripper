@@ -5,8 +5,16 @@ import TripCard from "../TripCard/TripCard";
 import "./ExistingTrips.css";
 
 const ExistingTrips = ({ user }) => {
-  const { loading, error, data } = useQuery(TRIPS_QUERY);
-  console.log({ data });
+  const userId = Number(user.id);
+  const tripException = "excludeUser";
+  const { loading, error, data } = useQuery(TRIPS_QUERY, {
+    variables: {
+      userId,
+      tripException,
+    },
+    fetchPolicy: "no-cache",
+    nextFetchPolicy: "no-cache",
+  });
 
   return (
     <div className="saved-trips">

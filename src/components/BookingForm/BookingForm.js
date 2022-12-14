@@ -27,9 +27,13 @@ const BookingForm = ({ museumData, user }) => {
     const fieldOption = e.target;
     if (fieldOption.name === "destinationPlaceId") {
       let selectedMuseum = museumData.find((museum) => {
-        return museum.placeId === fieldOption.value
-      })
-      setTripValues({ ...tripValues, [fieldOption.name]: fieldOption.value, destinationName: selectedMuseum.name});
+        return museum.placeId === fieldOption.value;
+      });
+      setTripValues({
+        ...tripValues,
+        [fieldOption.name]: fieldOption.value,
+        destinationName: selectedMuseum.name,
+      });
     } else {
       setTripValues({ ...tripValues, [fieldOption.name]: fieldOption.value });
     }
@@ -38,22 +42,22 @@ const BookingForm = ({ museumData, user }) => {
   const handleAddTrip = (e) => {
     e.preventDefault();
 
-    const isTripValid = Object.keys(tripValues).every(property => tripValues[property] !== "")
+    const isTripValid = Object.keys(tripValues).every(
+      (property) => tripValues[property] !== ""
+    );
 
     if (!isTripValid) {
-      setWarning("Please fill in all fields")
+      setWarning("Please fill in all fields");
     } else {
       createTrip({
         variables: {
           ...tripValues,
-          maxAttendees: parseInt(tripValues.maxAttendees)
-        }, refetchQueries: [
-          {query: USER_TRIPS_QUERY},
-          'UserTrips'
-        ]
+          maxAttendees: parseInt(tripValues.maxAttendees),
+        },
+        refetchQueries: [{ query: USER_TRIPS_QUERY }, "UserTrips"],
       });
-      setWarning("")
-      navigate("/saved-trips")
+      setWarning("");
+      navigate("/saved-trips");
     }
   };
 
@@ -86,7 +90,9 @@ const BookingForm = ({ museumData, user }) => {
         <div className="date-picker-styling">
           <DatePicker
             selected={tripValues.startDate}
-            onChange={(startDate) => setTripValues({ ...tripValues, startDate: startDate })}
+            onChange={(startDate) =>
+              setTripValues({ ...tripValues, startDate: startDate })
+            }
           />
         </div>
 
@@ -137,10 +143,7 @@ const BookingForm = ({ museumData, user }) => {
           <option value="14">14</option>
           <option value="15">15</option>
         </select>
-        <button
-          className="booking-button"
-          type="submit"
-        >
+        <button className="booking-button" type="submit">
           Book a Field Trip
         </button>
       </form>

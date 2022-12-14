@@ -1,7 +1,7 @@
-import { useMutation } from '@apollo/client';
+import { useMutation } from "@apollo/client";
 import { DELETE_USER_TRIP_MUTATION } from "../../queries/mutations";
 import { USER_TRIPS_QUERY } from "../../queries/queries";
-import { formatDates } from '../../utilities/utilities';
+import { formatDates } from "../../utilities/utilities";
 import "./UserSavedTripCard.css";
 
 const UserSavedTripCard = ({
@@ -13,16 +13,16 @@ const UserSavedTripCard = ({
   maxAttendees,
   startDate,
   tripName,
-  user
+  user,
 }) => {
   const [deleteUserTrip] = useMutation(DELETE_USER_TRIP_MUTATION);
 
   const handleDelete = () => {
-    deleteUserTrip({ variables: { userId: user.id, tripId: tripId }, refetchQueries: [
-      {query: USER_TRIPS_QUERY},
-      'UserTrips'
-    ] });
-  }
+    deleteUserTrip({
+      variables: { userId: user.id, tripId: tripId },
+      refetchQueries: [{ query: USER_TRIPS_QUERY }, "UserTrips"],
+    });
+  };
 
   const returnedDate = formatDates(startDate, "MMMM D, YYYY");
   const returnedTime = formatDates(startDate, "h:mmA");
@@ -33,14 +33,16 @@ const UserSavedTripCard = ({
       <p className="saved-destination">{destinationName}</p>
       <p className="saved-trip-info">
         <b>Your trip on: </b>
-        {returnedDate} 
+        {returnedDate}
         <br></br>
-         starts at <b>{returnedTime}</b>
+        starts at <b>{returnedTime}</b>
       </p>
       <p className="attendance">
         {attendance} out of {maxAttendees} people are attending
       </p>
-      <button className="primary--button" onClick={() => handleDelete()}>Delete Trip</button>
+      <button className="primary--button" onClick={() => handleDelete()}>
+        Delete Trip
+      </button>
     </div>
   );
 };

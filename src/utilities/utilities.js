@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
 const manageLocalData = (variableName, action, data) => {
   let retrievedData;
@@ -8,9 +8,9 @@ const manageLocalData = (variableName, action, data) => {
     retrievedData = localStorage.getItem(`${variableName}`);
     parsedData = JSON.parse(retrievedData);
   }
-  
+
   if (!data && !parsedData) {
-    return
+    return;
   } else if (!data && parsedData) {
     action(parsedData);
   } else {
@@ -18,13 +18,10 @@ const manageLocalData = (variableName, action, data) => {
     const stringifiedData = JSON.stringify(data);
     localStorage.setItem(`${variableName}`, stringifiedData);
   }
-}
+};
 
 const formatDates = (providedDate, providedFormat) => {
-  return dayjs(providedDate).format(providedFormat)
-}
+  return dayjs(providedDate).format(providedFormat);
+};
 
-export {
-  manageLocalData,
-  formatDates
-}
+export { manageLocalData, formatDates };
