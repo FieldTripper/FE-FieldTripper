@@ -4,6 +4,7 @@ import { useLazyQuery } from "@apollo/client";
 import { CREATE_SESSION_QUERY } from "../../queries/queries";
 import { manageLocalData } from "../../utilities/utilities";
 import "./LoginForm.css";
+import PropTypes from 'prop-types';
 
 function LoginForm({ setUser }) {
   const [loginValues, setLoginValues] = useState({

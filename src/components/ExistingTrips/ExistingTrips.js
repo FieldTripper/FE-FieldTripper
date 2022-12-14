@@ -3,6 +3,7 @@ import { TRIPS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
 import TripCard from "../TripCard/TripCard";
 import "./ExistingTrips.css";
+import PropTypes from 'prop-types';
 
 const ExistingTrips = ({ user }) => {
   const { loading, error, data } = useQuery(TRIPS_QUERY);

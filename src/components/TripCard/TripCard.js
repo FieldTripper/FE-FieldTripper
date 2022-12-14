@@ -2,6 +2,7 @@ import { useMutation } from "@apollo/client";
 import { CREATE_USER_TRIP_MUTATION } from "../../queries/mutations";
 import { formatDates } from "../../utilities/utilities";
 import "./TripCard.css";
+import PropTypes from 'prop-types';
 
 function TripCard({ trip, user }) {
   const [createUserTrip] = useMutation(CREATE_USER_TRIP_MUTATION);

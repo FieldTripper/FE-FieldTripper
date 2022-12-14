@@ -8,6 +8,7 @@ import Map from "../Map/Map";
 import LocationPin from "../LocationPin/LocationPin";
 import { manageLocalData } from "../../utilities/utilities";
 import "./MuseumsContainer.css";
+import PropTypes from 'prop-types';
 
 function MuseumsContainer({ searchTerms, setMuseumData }) {
   const { loading, error, data } = useQuery(MUSEUMS_QUERY, {

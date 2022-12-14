@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SignOut from "../SignOut/SignOut";
-import './Footer.css'
+import './Footer.css';
+import PropTypes from 'prop-types';
 
 const Footer = ({ user, setUser }) => {
     if (Object.keys(user).length) {

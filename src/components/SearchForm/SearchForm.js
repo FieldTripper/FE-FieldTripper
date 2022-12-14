@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SearchForm.css";
+import PropTypes from 'prop-types';
 
 function SearchForm({ updateSearch }) {
   const [values, setValues] = useState({ city: "", state: "", zipCode: "" });

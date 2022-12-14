@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import Image from "../../images/location-pin.png"
+import Image from "../../images/location-pin.png";
 import "./LocationPin.css";
+import PropTypes from 'prop-types';
 
-const LocationPin = ({name, placeId}) => {
+const LocationPin = ({ name, placeId }) => {
 
   return (
     <div className="location-box">

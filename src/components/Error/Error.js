@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Error.css';
+import PropTypes from 'prop-types';
 
 function Error({ errorMessage }) {
   return (
