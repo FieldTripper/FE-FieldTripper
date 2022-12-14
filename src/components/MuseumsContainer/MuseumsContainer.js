@@ -5,6 +5,7 @@ import QueryResult from "../QueryResult/QueryResult";
 import MuseumCard from "../MuseumCard/MuseumCard";
 import Map from "../Map/Map";
 import LocationPin from "../LocationPin/LocationPin";
+import { manageLocalData } from "../../utilities/utilities";
 import "./MuseumsContainer.css";
 import { MUSEUMS_QUERY } from "../../queries/queries";
 
@@ -18,7 +19,9 @@ function MuseumsContainer({ queryValues, setMuseumData }) {
   });
 
   useEffect(() => {
-    setMuseumData(data);
+    if (data) {
+      manageLocalData("museumData", setMuseumData, data.museums)
+    }
   }, [data]);
 
   return (

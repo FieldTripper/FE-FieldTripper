@@ -7,77 +7,37 @@ import { useMutation } from "@apollo/client";
 import { CREATE_TRIP_MUTATION } from "../../queries/queries";
 
 const BookingForm = ({ museumData, user }) => {
-  const [newStartDate, setStartDate] = useState(new Date());
-
-  const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
-  console.log({ user });
-
   let [museumValues, setMuseumValues] = useState({
     userId: user.id,
     name: "",
     destinationName: "",
     destinationPlaceId: "",
-    startDate: newStartDate,
+    startDate: new Date(),
     startTime: "",
     maxAttendees: "",
   });
 
-  const handleAddTrip = ({
-    userId,
-    name,
-    destinationName,
-    destinationPlaceId,
-    startDate,
-    startTime,
-    maxAttendees,
-  }) => {
+  const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
+
+  const handleAddTrip = () => {
     createTrip({
       variables: {
-        userId: userId,
-        name: name,
-        destinationName: destinationName,
-        destinationPlaceId: destinationPlaceId,
-        startDate: startDate,
-        startTime: startTime,
-        maxAttendees: parseInt(maxAttendees),
+        ...museumValues,
+        maxAttendees: parseInt(museumValues.maxAttendees)
       },
     });
-  };
-  console.log({ museumValues });
-  const checkDestination = (name, fon, fov) => {
-    const foundMuseum = museumData.museums.find((museum) => {
-      return museum.name === name;
-    });
-    if (foundMuseum.placeId !== museumValues.destinationPlaceId) {
-      const newMuseum = museumData.museums.find((museum) => {
-        return museumValues.destinationPlaceId === museum.placeId;
-      });
-      setMuseumValues({ ...museumValues, destinationName: newMuseum.name });
-    } else {
-      setMuseumValues({ ...museumValues, [fon]: fov });
-    }
   };
 
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
-
-    setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
-    if (!museumValues.destinationName && museumValues.destinationPlaceId) {
-      const name = museumData.museums.find((museum) => {
-        return museum.placeId === museumValues.destinationPlaceId;
-      });
-      setMuseumValues({ ...museumValues, destinationName: name.name });
+    if (fieldOption.name === "destinationPlaceId") {
+      let selectedMuseum = museumData.find((museum) => {
+        return museum.placeId === fieldOption.value
+      })
+      setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value, destinationName: selectedMuseum.name});
     } else {
-      checkDestination(
-        museumValues.destinationName,
-        fieldOption.name,
-        fieldOption.value
-      );
+      setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
     }
-  };
-
-  let handleDateChange = (startDate) => {
-    setMuseumValues({ ...museumValues, ...{ startDate: startDate } });
   };
 
   return (
@@ -98,7 +58,7 @@ const BookingForm = ({ museumData, user }) => {
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value="Select a Museum">Select a Museum</option>
-          {museumData.museums.map((museum) => (
+          {museumData.map((museum) => (
             <option key={museum.name} value={museum.placeId}>
               {museum.name}
             </option>
@@ -108,7 +68,7 @@ const BookingForm = ({ museumData, user }) => {
         <div className="date-picker-styling">
           <DatePicker
             selected={museumValues.startDate}
-            onChange={(startDate) => handleDateChange(startDate)}
+            onChange={(startDate) => setMuseumValues({ ...museumValues, startDate: startDate })}
           />
         </div>
 
@@ -162,7 +122,7 @@ const BookingForm = ({ museumData, user }) => {
         <Link to="/saved-trips">
           <button
             className="booking-button"
-            onClick={() => handleAddTrip(museumValues)}
+            onClick={() => handleAddTrip()}
           >
             Book a Field Trip
           </button>
