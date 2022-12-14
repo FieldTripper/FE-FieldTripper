@@ -1,3 +1,5 @@
+import dayjs from 'dayjs';
+
 const manageLocalData = (variableName, action, data) => {
   let retrievedData;
   let parsedData;
@@ -18,6 +20,11 @@ const manageLocalData = (variableName, action, data) => {
   }
 }
 
+const formatDates = (providedDate, providedFormat) => {
+  return dayjs(providedDate).format(providedFormat)
+}
+
 export {
-  manageLocalData
+  manageLocalData,
+  formatDates
 }

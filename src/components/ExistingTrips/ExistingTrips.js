@@ -1,4 +1,3 @@
-import React from "react";
 import { useQuery } from "@apollo/client";
 import { TRIPS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
@@ -7,9 +6,6 @@ import "./ExistingTrips.css";
 
 const ExistingTrips = ({ user }) => {
   const { loading, error, data } = useQuery(TRIPS_QUERY);
-  console.log({ loading });
-  console.log({ error });
-  console.log({ data });
 
   return (
     <div className="saved-trips">

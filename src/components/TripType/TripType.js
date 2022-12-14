@@ -1,6 +1,5 @@
-import React from "react";
-import "./TripType.css";
 import { Link } from "react-router-dom";
+import "./TripType.css";
 
 const TripType = (user) => {
   return (

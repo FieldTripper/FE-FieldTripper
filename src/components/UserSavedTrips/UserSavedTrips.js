@@ -1,9 +1,8 @@
-import React from "react";
 import { useQuery } from "@apollo/client";
 import { USER_TRIPS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
-import "./UserSavedTrips.css";
 import UserSavedTripCard from "../UserSavedTripCard/UserSavedTripCard";
+import "./UserSavedTrips.css";
 
 const UserSavedTrips = ({ user }) => {
   const userId = Number(user.id);
@@ -11,6 +10,8 @@ const UserSavedTrips = ({ user }) => {
     variables: {
       userId,
     },
+    fetchPolicy: 'no-cache',
+    nextFetchPolicy: 'no-cache',
   });
 
   return (
@@ -20,22 +21,24 @@ const UserSavedTrips = ({ user }) => {
       </div>
       <QueryResult data={data} error={error} loading={loading}>
         <>
-          {data?.trips.map((trip, index) => {
-            return (
-              <UserSavedTripCard
-                attendance={trip.attendance}
-                destinationName={trip.destinationName}
-                destinationPlaceId={trip.destinationPlaceId}
-                hostId={trip.hostId}
-                tripId={trip.id}
-                maxAttendees={trip.maxAttendees}
-                startDate={trip.startTime}
-                tripName={trip.name}
-                key={index}
-                user={user}
-              />
-            );
-          })}
+          {
+            data?.trips.map((trip, index) => {
+              return (
+                <UserSavedTripCard
+                  attendance={trip.attendance}
+                  destinationName={trip.destinationName}
+                  destinationPlaceId={trip.destinationPlaceId}
+                  hostId={trip.hostId}
+                  tripId={trip.id}
+                  maxAttendees={trip.maxAttendees}
+                  startDate={trip.startTime}
+                  tripName={trip.name}
+                  user={user}
+                  key={index}
+                />
+              );
+            })
+          }
         </>
       </QueryResult>
     </div>

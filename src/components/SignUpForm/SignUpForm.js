@@ -1,7 +1,7 @@
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { CREATE_USER_MUTATION } from "../../queries/queries";
+import { CREATE_USER_MUTATION } from "../../queries/mutations";
 import { manageLocalData } from "../../utilities/utilities";
 import "./SignUpForm.css";
 

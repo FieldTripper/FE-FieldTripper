@@ -1,4 +1,3 @@
-import React from "react";
 import Error from '../Error/Error';
 
 const QueryResult = ({loading, error, data, children}) => {

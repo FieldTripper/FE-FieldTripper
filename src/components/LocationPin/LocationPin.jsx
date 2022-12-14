@@ -1,6 +1,6 @@
-import "./LocationPin.css";
-import Image from "../../images/location-pin.png"
 import { Link } from "react-router-dom";
+import Image from "../../images/location-pin.png"
+import "./LocationPin.css";
 
 const LocationPin = ({name, placeId}) => {
 
