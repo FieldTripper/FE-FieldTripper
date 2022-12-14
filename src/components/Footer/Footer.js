@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SignOut from "../SignOut/SignOut";
-import './Footer.css'
+import './Footer.css';
+import PropTypes from 'prop-types';
 
 const Footer = ({ user, setUser }) => {
     if (Object.keys(user).length) {
@@ -34,4 +35,14 @@ const Footer = ({ user, setUser }) => {
         )
     }
 }
-export default Footer
+export default Footer;
+
+Footer.propTypes = {
+    user: PropTypes.shape({
+      __typename: PropTypes.string,
+      id: PropTypes.string,
+      name: PropTypes.string,
+      email: PropTypes.string,
+    }).isRequired,
+    setUser: PropTypes.func.isRequired,
+  };

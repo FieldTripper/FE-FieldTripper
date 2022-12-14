@@ -21,7 +21,7 @@
   margin-bottom: 1%;
 }
 
-sign-out--button.:hover {
+.sign-out--button:hover {
   cursor: pointer;
   background-color: #03989e;
   color: white;

@@ -3,6 +3,7 @@ import { TRIPS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
 import TripCard from "../TripCard/TripCard";
 import "./ExistingTrips.css";
+import PropTypes from 'prop-types';
 
 const ExistingTrips = ({ user }) => {
   const { loading, error, data } = useQuery(TRIPS_QUERY);
@@ -25,3 +26,12 @@ const ExistingTrips = ({ user }) => {
   );
 };
 export default ExistingTrips;
+
+ExistingTrips.propTypes = {
+  user: PropTypes.shape({
+    __typename: PropTypes.string,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
+  }).isRequired
+};

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './Error.css';
+import PropTypes from 'prop-types';
 
 function Error({ errorMessage }) {
   return (
@@ -13,3 +14,7 @@ function Error({ errorMessage }) {
 }
 
 export default Error;
+
+Error.propTypes = {
+  errorMessage: PropTypes.string.isRequired,
+};
