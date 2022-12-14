@@ -102,3 +102,7 @@ input:focus {
   -webkit-box-shadow:0 0 3px 3px #03989e;
   box-shadow:0 0 3px 3px #03989e;
 }
+
+.warning-message {
+  color: red;
+}

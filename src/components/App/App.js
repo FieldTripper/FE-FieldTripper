@@ -12,7 +12,6 @@ import MuseumInfo from "../MuseumInfo/MuseumInfo";
 import BookingForm from "../BookingForm/BookingForm";
 import About from "../About/About";
 import TripType from "../TripType/TripType";
-import singleMuseumData from "../../testData/singleMuseumData";
 import UserSavedTrips from "../UserSavedTrips/UserSavedTrips";
 import ExistingTrips from "../ExistingTrips/ExistingTrips";
 import { manageLocalData } from "../../utilities/utilities";
@@ -20,7 +19,7 @@ import "./App.css";
 
 function App() {
   const [user, setUser] = useState({});
-  const [values, setSearchTerms] = useState({
+  const [searchTerms, setSearchTerms] = useState({
     city: "",
     state: "",
     zipCode: "",
@@ -40,14 +39,6 @@ function App() {
     manageLocalData("searchTerms", setSearchTerms, values)
   };
 
-  const goToBookingForm = (values) => {
-    setSearchTerms({
-      museum: values.museum,
-      time: values.time,
-      people: values.people,
-    });
-  };
-
   return (
     <main>
       <Header />
@@ -59,7 +50,7 @@ function App() {
           path="/museums"
           element={
             <MuseumsContainer
-              queryValues={values}
+              searchTerms={searchTerms}
               updateSearch={updateSearch}
               setMuseumData={setMuseumData}
             />
@@ -67,13 +58,12 @@ function App() {
         />
         <Route
           path="/trip-type"
-          element={<TripType tripType={TripType} user={user} />}
+          element={<TripType user={user} />}
         />
         <Route
           path="/booking-form"
           element={
             <BookingForm
-              bookTrip={goToBookingForm}
               museumData={museumData}
               user={user}
             />
@@ -83,21 +73,16 @@ function App() {
           path="/search-form"
           element={<SearchForm updateSearch={updateSearch} />}
         />
-        <Route path="/about" element={<About about={About} />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/museums/:placeId"
-          element={
-            <MuseumInfo
-              singleMuseumData={singleMuseumData}
-              bookTrip={goToBookingForm}
-            />
-          }
+          element={<MuseumInfo />}
         />
         <Route path="/existing-trips" element={<ExistingTrips user={user} />} />
         <Route path="/saved-trips" element={<UserSavedTrips user={user} />} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
-      <Footer />
+      <Footer user={user} />
     </main>
   );
 }

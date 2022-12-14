@@ -65,8 +65,6 @@ const USER_TRIPS_QUERY = gql`
   }
 `;
 
-
-
 const MUSEUMS_QUERY = gql`
   query Museums($city: String!, $state: String!, $zipcode: String!) {
     museums(city: $city, state: $state, zipcode: $zipcode) {

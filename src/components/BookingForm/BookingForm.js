@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { USER_TRIPS_QUERY } from "../../queries/queries";
 import { CREATE_TRIP_MUTATION } from "../../queries/mutations";
@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./BookingForm.css";
 
 const BookingForm = ({ museumData, user }) => {
-  let [museumValues, setMuseumValues] = useState({
+  let [tripValues, setTripValues] = useState({
     userId: user.id,
     name: "",
     destinationName: "",
@@ -17,43 +17,57 @@ const BookingForm = ({ museumData, user }) => {
     startTime: "",
     maxAttendees: "",
   });
+  const [warning, setWarning] = useState("");
 
   const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
 
-  const handleAddTrip = () => {
-    createTrip({
-      variables: {
-        ...museumValues,
-        maxAttendees: parseInt(museumValues.maxAttendees)
-      }, refetchQueries: [
-        {query: USER_TRIPS_QUERY},
-        'UserTrips'
-      ]
-    });
-  };
+  const navigate = useNavigate();
 
-  let handleMuseumChange = (e) => {
+  const handleMuseumChange = (e) => {
     const fieldOption = e.target;
     if (fieldOption.name === "destinationPlaceId") {
       let selectedMuseum = museumData.find((museum) => {
         return museum.placeId === fieldOption.value
       })
-      setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value, destinationName: selectedMuseum.name});
+      setTripValues({ ...tripValues, [fieldOption.name]: fieldOption.value, destinationName: selectedMuseum.name});
     } else {
-      setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
+      setTripValues({ ...tripValues, [fieldOption.name]: fieldOption.value });
+    }
+  };
+
+  const handleAddTrip = (e) => {
+    e.preventDefault();
+
+    const isTripValid = Object.keys(tripValues).every(property => tripValues[property] !== "")
+
+    if (!isTripValid) {
+      setWarning("Sorry, you must enter all fields in order to create a trip.")
+    } else {
+      createTrip({
+        variables: {
+          ...tripValues,
+          maxAttendees: parseInt(tripValues.maxAttendees)
+        }, refetchQueries: [
+          {query: USER_TRIPS_QUERY},
+          'UserTrips'
+        ]
+      });
+      setWarning("")
+      navigate("/saved-trips")
     }
   };
 
   return (
     <section className="booking-page">
       <p className="book-trip">Book a Field Trip</p>
-      <form className="booking-form">
+      <p className="warning-message">{warning}</p>
+      <form className="booking-form" onSubmit={(e) => handleAddTrip(e)}>
         <input
           className="name-your-trip"
           type="text"
           placeholder="Name your trip"
           name="name"
-          value={museumValues.name}
+          value={tripValues.name}
           onChange={(e) => handleMuseumChange(e)}
         />
         <select
@@ -71,15 +85,15 @@ const BookingForm = ({ museumData, user }) => {
 
         <div className="date-picker-styling">
           <DatePicker
-            selected={museumValues.startDate}
-            onChange={(startDate) => setMuseumValues({ ...museumValues, startDate: startDate })}
+            selected={tripValues.startDate}
+            onChange={(startDate) => setTripValues({ ...tripValues, startDate: startDate })}
           />
         </div>
 
         <select
           className="booking-options"
           name="startTime"
-          value={museumValues.startTime}
+          value={tripValues.startTime}
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value={null}>Select a Time</option>
@@ -123,14 +137,12 @@ const BookingForm = ({ museumData, user }) => {
           <option value="14">14</option>
           <option value="15">15</option>
         </select>
-        <Link to="/saved-trips">
-          <button
-            className="booking-button"
-            onClick={() => handleAddTrip()}
-          >
-            Book a Field Trip
-          </button>
-        </Link>
+        <button
+          className="booking-button"
+          type="submit"
+        >
+          Book a Field Trip
+        </button>
       </form>
     </section>
   );
