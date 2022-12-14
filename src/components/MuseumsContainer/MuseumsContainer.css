@@ -1,7 +1,15 @@
-.page--container {
-    overflow-y: auto;
+.museum-container {
+    height: 70vh;
     width: 100vw;
-    height: 100vh;
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image:
+        linear-gradient(to bottom, #ffffffdb, #ffffffdb),
+        url('../../images/city.png');
+    justify-content: space-around;
+    overflow: scroll;
 }
 
 .go-book-trip {
@@ -19,3 +27,11 @@
     width: 18vw;
     height: 5vh;
 }
+
+@media only screen and (min-width:50px) and (max-width:574px) {
+    .museum-container {
+      flex-direction: column;
+      align-items: center;
+      height: 350vh;
+    }
+  }

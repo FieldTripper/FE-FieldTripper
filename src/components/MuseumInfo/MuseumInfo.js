@@ -112,9 +112,14 @@ function MuseumInfo() {
               </h3>
             )}
 
-            <h3>
-              <b>Hours:</b>
-            </h3>
+            {data.museum.combinedHoo && data.museum.combinedHoo.length > 0 ? (
+              <h3>
+                <b>Hours:</b>
+              </h3>
+            ) : (
+              <></>
+            )}
+
             {data.museum.combinedHoo && (
               <p>
                 {data.museum.combinedHoo.map((day) => (

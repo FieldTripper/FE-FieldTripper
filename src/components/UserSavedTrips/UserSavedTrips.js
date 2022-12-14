@@ -16,7 +16,7 @@ const UserSavedTrips = ({ user }) => {
   return (
     <div className="saved-trip-container">
       <div className="page-title">
-        <p className="user-saved-trips">Your Saved Field Trips</p>
+        <h2 className="user-saved-trips">Your Saved Field Trips</h2>
       </div>
       <QueryResult data={data} error={error} loading={loading}>
         <>

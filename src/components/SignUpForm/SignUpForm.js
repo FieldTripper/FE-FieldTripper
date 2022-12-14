@@ -38,30 +38,34 @@ function SignUpForm({ setUser }) {
       <h2 className="sign-up">Sign Up Form</h2>
       <form onSubmit={(event) => handleSubmit(event)}>
         <input
+          className="sign-up-input"
           type="text"
           name="name"
           placeholder="Enter your name"
           onChange={(event) => handleChange(event)}
         />
         <input
+          className="sign-up-input"
           type="email"
           name="email"
           placeholder="Enter your email"
           onChange={(event) => handleChange(event)}
         />
         <input
+          className="sign-up-input"
           type="password"
           name="password"
           placeholder="Choose a password"
           onChange={(event) => handleChange(event)}
         />
         <input
+          className="sign-up-input"
           type="password"
           name="passwordConfirmation"
           placeholder="Confirm password"
           onChange={(event) => handleChange(event)}
         />
-        <button className="primary--button" type="submit">
+        <button className="sign-up-button" type="submit">
           Sign Up
         </button>
       </form>
