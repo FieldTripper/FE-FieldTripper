@@ -61,8 +61,7 @@ describe('booking form page', () => {
         req.reply({fixture: '../fixtures/savedTrips.json'})
     })
     cy.get('.booking-button').click()  
-    cy.visit('http://localhost:3000/saved-trips')
-
+    cy.visit('http://localhost:3000/saved-trips').url().should('include', '/saved-trips')
   })
 
   it('should display an error message if there is an issue with booking your trip', () => {
@@ -72,14 +71,33 @@ describe('booking form page', () => {
     cy.get('.react-datepicker__day--025').click()
     cy.get('[name="startTime"]').select('8:00am')
     cy.get('[name="maxAttendees"]').select('2')
+    cy.get('.booking-button').click()
     cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
         req.reply({
           statusCode: 500,
           fixture: '../fixtures/savedTrips.json'
         })
     })
+    cy.visit('http://localhost:3000/saved-trips')
+    cy.get('.page--container > h2').contains('Received status code 500 We were not able to retrieve data for you. Try returning to the homepage.')
+  })
+
+  it('should display an error message if there is an issue with booking your trip', () => {
+    cy.get('.name-your-trip').type('My Trip 1')
+    cy.get('[name="destinationPlaceId"]').select('Union Station Fountains Test')
+    cy.get('.react-datepicker__input-container > input').click()
+    cy.get('.react-datepicker__day--025').click()
+    cy.get('[name="startTime"]').select('8:00am')
+    cy.get('[name="maxAttendees"]').select('2')
     cy.get('.booking-button').click()
-    cy.get('.page--container > h2').contains('Response not successful: Received status code 500 We were not able to retrieve data for you. Try returning to the homepage.')
+    cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
+        req.reply({
+          forceNetworkError: true,
+          fixture: '../fixtures/savedTrips.json'
+        })
+    })
+    cy.visit('http://localhost:3000/saved-trips')
+    cy.get('.page--container > h2').contains('Failed to fetch We were not able to retrieve data for you. Try returning to the homepage.')
   })
 })
 

@@ -45,7 +45,7 @@ describe('saved trips error handling', () => {
     cy.get('.saved-trip-container > p').contains(`You don't have any trips planned, yet. Why not try hosting or joining a trip?`)
   })
 
-  it('should show a message if there is an error fetching the saved trips', () => {
+  it('should show a message if there is an 500 error fetching the saved trips', () => {
     cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
         req.reply({
           statusCode: 500,
@@ -54,5 +54,16 @@ describe('saved trips error handling', () => {
     })
     cy.visit('http://localhost:3000/saved-trips')
     cy.get('.page--container > h2').contains('Response not successful: Received status code 500 We were not able to retrieve data for you. Try returning to the homepage.')
+  })
+
+  it('should show a message if there is an error fetching the saved trips', () => {
+    cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
+        req.reply({
+          forceNetworkError: true,
+          fixture: '../fixtures/savedTrips.json'
+        })
+    })
+    cy.visit('http://localhost:3000/saved-trips')
+    cy.get('.page--container > h2').contains('Failed to fetch We were not able to retrieve data for you. Try returning to the homepage')
   })
 })

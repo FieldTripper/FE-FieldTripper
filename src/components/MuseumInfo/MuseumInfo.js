@@ -62,8 +62,8 @@ function MuseumInfo() {
       <section className="museum-info-container">
         {loading ? (
           <p>Please Wait</p>
-        ) : (
-          <>
+          ) : (
+            <>
             <h1>{data.museum.name}</h1>
             <br></br>
             {data.museum.website && (

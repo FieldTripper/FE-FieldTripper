@@ -1,0 +1,12 @@
+{
+  "mutation": {
+    "createUser": {
+      "input": {
+        "name": "Joee",
+        "email": "12345@email.com",
+        "password": "124",
+        "passwordConfirmation": "124"
+      }
+    }
+  }
+}

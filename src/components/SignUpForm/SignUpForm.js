@@ -22,7 +22,7 @@ function SignUpForm({ setUser }) {
       manageLocalData("userData", setUser, data.createUser.user);
       navigate("/trip-type");
     } else if (data) {
-      setWarning("Sorry, we were not able to sign you up. Please try again later.")
+      setWarning("Sorry, we were not able to sign you up. Please make sure both passwords are typed correctly and try again.")
     }
   }, [data]);
 
