@@ -1,0 +1,13 @@
+.login-form {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  color:#03989e;
+  margin-bottom: 2%;
+  margin-top: 5%
+}
+
+.login-form-input {
+  margin-top: 1%;
+  height: 15%;
+  margin-bottom: 1%;
+}

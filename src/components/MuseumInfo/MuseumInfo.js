@@ -16,7 +16,7 @@ function MuseumInfo() {
   });
 
   const formatPrice = (priceNumber) => {
-    if (priceNumber === 0) {
+    if (priceNumber === '0') {
       return "Free";
     } else if (priceNumber === 1) {
       return "$";
@@ -27,6 +27,7 @@ function MuseumInfo() {
     } else {
       return "$$$$";
     }
+    
   };
 
   const wheelchairAccessible = (isAccessible) => {
@@ -111,9 +112,14 @@ function MuseumInfo() {
               </h3>
             )}
 
-            <h3>
-              <b>Hours:</b>
-            </h3>
+            {data.museum.combinedHoo && data.museum.combinedHoo.length > 0 ? (
+              <h3>
+                <b>Hours:</b>
+              </h3>
+            ) : (
+              <></>
+            )}
+
             {data.museum.combinedHoo && (
               <p>
                 {data.museum.combinedHoo.map((day) => (

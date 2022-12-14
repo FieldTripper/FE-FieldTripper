@@ -1,7 +1,25 @@
 .sign-up {
   font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    color:#03989e;
-    margin-top: 5%;
-    margin-bottom: 1%;
+  font-weight: 600;
+  color:#03989e;
+  margin-top: 5%;
+  margin-bottom: 1%;
+}
+
+.sign-up-input {
+  margin-bottom: 1%;
+}
+
+.sign-up-button {
+  background-color: #03989e;
+  border: 2px solid #03989e;
+  color: white;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 92%;
+  font-weight: 600;
+  text-align: center;
+  transition: all 300ms;
+  width: 18vw;
+  height: 4vh;
 }

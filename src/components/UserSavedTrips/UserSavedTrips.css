@@ -20,7 +20,7 @@
   height: 3vh;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
 
 }
 
@@ -31,4 +31,19 @@
   font-size: 130%;
   margin-bottom: 2%;
   margin-top: 6%;
+}
+
+@media only screen and (min-width:50px) and (max-width:574px) {
+  .user-saved-trips {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #03989e;
+    font-size: 130%;
+    margin-bottom: 2%;
+    margin-top: 6%;
+  }
+
+  .page-title {
+    margin-bottom: 10%;
+  }
 }
