@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #03989e;
+    color: #00676b;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -22,8 +22,8 @@
 
 .trip-host, .trip-join, .trip-saved {
     margin-bottom: 2%;
-    background-color: hsl(182deg 96% 32%);
-    border: 2px solid hsl(182deg 96% 32%);
+    background-color: #00676b;
+    border: 2px solid #00676b;
     color: hsl(0deg 0% 100%);
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
@@ -34,3 +34,15 @@
     width: 20vw;
     height: 5vh;
 }
+
+.trip-host:hover, .trip-join:hover, .trip-saved:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #00676b;
+    border: 2px solid #00676b;
+  }
+  
+  .primary--button:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(4px)
+  }
