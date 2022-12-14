@@ -46,6 +46,9 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^11.2.0"
+    "@cypress/code-coverage": "^3.10.0",
+    "babel-plugin-istanbul": "^6.1.1",
+    "cypress": "^11.2.0",
+    "nyc": "^15.1.0"
   }
 }

@@ -1,7 +1,7 @@
 describe('about page', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
-    cy.get('.footer-about').click()
+    cy.get('[href="/About"] > .footer-about').click()
   })
 
   it('should show an About title and a description', () => {
@@ -19,6 +19,4 @@ describe('about page', () => {
     .get('.creators > :nth-child(6)').contains('Andrew Mullins')
     .get('.creators > :nth-child(7)').contains('Matthew Press')
   })
-
-  //add tests for links to gitHub and LinkedIn for each member
 })

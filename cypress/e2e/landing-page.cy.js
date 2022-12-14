@@ -5,13 +5,12 @@ describe('landing-page', () => {
 
   it('on page load, should see a header with a logo, and a footer with Home and About links', () => {
     cy.get('.header')
-      .get('.logo').should('have.attr', 'src').should('include', 'static/media/logo.d30f603c2c51e7ffdf98.png')
+      .get('.logo').should('have.attr', 'src').should('include', '/static/media/logo.593f0f29cc596a374ea9.png')
       .get('.footer').should('be.visible')
       .get('.footer-about').should('be.visible')
   })
 
-  // Add username to welcome message
-  it('on page load, should see a welcome message with the users name', () => {
+  it('on page load, should see a welcome message', () => {
     cy.get('.welcome').contains('Welcome to FieldTrippers!')
   })
 
