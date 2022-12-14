@@ -58,7 +58,7 @@ function App() {
         />
         <Route
           path="/trip-type"
-          element={<TripType tripType={TripType} user={user} />}
+          element={<TripType user={user} />}
         />
         <Route
           path="/booking-form"
@@ -73,7 +73,7 @@ function App() {
           path="/search-form"
           element={<SearchForm updateSearch={updateSearch} />}
         />
-        <Route path="/about" element={<About about={About} />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/museums/:placeId"
           element={<MuseumInfo />}
