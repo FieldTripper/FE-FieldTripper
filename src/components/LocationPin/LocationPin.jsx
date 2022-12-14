@@ -15,4 +15,9 @@ const LocationPin = ({ name, placeId }) => {
   )
 }
 
-export default LocationPin
+export default LocationPin;
+
+LocationPin.propTypes = {
+  name: PropTypes.string.isRequired,
+  placeId: PropTypes.string.isRequired,
+};

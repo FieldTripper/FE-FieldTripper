@@ -40,3 +40,9 @@ import PropTypes from 'prop-types';
   }
 
 export default Map; 
+
+Map.propTypes = {
+  data: PropTypes.shape({
+    museums: PropTypes.arrayOf(PropTypes.object)
+  }),
+};

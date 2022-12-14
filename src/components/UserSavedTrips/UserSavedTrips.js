@@ -27,14 +27,7 @@ const UserSavedTrips = ({ user }) => {
               ? data?.trips.map((trip, index) => {
                   return (
                     <UserSavedTripCard
-                      attendance={trip.attendance}
-                      destinationName={trip.destinationName}
-                      destinationPlaceId={trip.destinationPlaceId}
-                      hostId={trip.hostId}
-                      tripId={trip.id}
-                      maxAttendees={trip.maxAttendees}
-                      startDate={trip.startTime}
-                      tripName={trip.name}
+                      trip={trip} 
                       user={user}
                       key={index}
                     />
@@ -49,3 +42,12 @@ const UserSavedTrips = ({ user }) => {
 };
 
 export default UserSavedTrips;
+
+UserSavedTrips.propTypes = {
+  user: PropTypes.shape({
+    __typename: PropTypes.string,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
+  }).isRequired,
+};

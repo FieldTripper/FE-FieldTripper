@@ -30,3 +30,23 @@ function TripCard({ trip, user }) {
 }
 
 export default TripCard;
+
+TripCard.propTypes = {
+  trip: PropTypes.shape({
+    __typename: PropTypes.string,
+    attendance: PropTypes.number,
+    destinationName: PropTypes.string,
+    destinationPlaceId: PropTypes.string,
+    hostId: PropTypes.string,
+    id: PropTypes.string,
+    maxAttendees: PropTypes.number,
+    name: PropTypes.string,
+    startTime: PropTypes.string,
+  }).isRequired,
+  user: PropTypes.shape({
+    __typename: PropTypes.string,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
+  }).isRequired,
+};

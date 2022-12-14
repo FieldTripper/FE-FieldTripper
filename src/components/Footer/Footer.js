@@ -35,4 +35,14 @@ const Footer = ({ user, setUser }) => {
         )
     }
 }
-export default Footer
+export default Footer;
+
+Footer.propTypes = {
+    user: PropTypes.shape({
+      __typename: PropTypes.string,
+      id: PropTypes.string,
+      name: PropTypes.string,
+      email: PropTypes.string,
+    }).isRequired,
+    setUser: PropTypes.func.isRequired,
+  };

@@ -67,3 +67,7 @@ function SearchForm({ updateSearch }) {
 }
 
 export default SearchForm;
+
+SearchForm.propTypes = {
+  updateSearch: PropTypes.func.isRequired,
+};

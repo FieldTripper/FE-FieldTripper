@@ -76,7 +76,7 @@ const BookingForm = ({ museumData, user }) => {
           name="destinationPlaceId"
           onChange={(e) => handleMuseumChange(e)}
         >
-          <option value="Select a Museum">Select a Museum</option>
+          <option value={null}>Select a Museum</option>
           {museumData.map((museum) => (
             <option key={museum.name} value={museum.placeId}>
               {museum.name}
@@ -119,7 +119,7 @@ const BookingForm = ({ museumData, user }) => {
           name="maxAttendees"
           onChange={(e) => handleMuseumChange(e)}
         >
-          <option value={Number}>
+          <option value={null}>
             Select the Max amount of People at your Event
           </option>
           <option value="1">1</option>
@@ -150,3 +150,13 @@ const BookingForm = ({ museumData, user }) => {
 };
 
 export default BookingForm;
+
+BookingForm.propTypes = {
+  museumData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  user: PropTypes.shape({
+    __typename: PropTypes.string,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
+  }).isRequired
+};

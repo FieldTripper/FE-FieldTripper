@@ -26,3 +26,12 @@ const ExistingTrips = ({ user }) => {
   );
 };
 export default ExistingTrips;
+
+ExistingTrips.propTypes = {
+  user: PropTypes.shape({
+    __typename: PropTypes.string,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
+  }).isRequired
+};

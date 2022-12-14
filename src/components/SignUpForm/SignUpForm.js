@@ -87,3 +87,7 @@ function SignUpForm({ setUser }) {
 }
 
 export default SignUpForm;
+
+SignUpForm.propTypes = {
+  setUser: PropTypes.func.isRequired,
+};

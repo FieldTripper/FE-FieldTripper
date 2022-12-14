@@ -50,3 +50,11 @@ function MuseumsContainer({ searchTerms, setMuseumData }) {
 }
 
 export default MuseumsContainer;
+
+MuseumsContainer.propTypes = {
+  searchTerms: PropTypes.shape({
+    city: PropTypes.string,
+    state: PropTypes.string,
+    zipcode: PropTypes.string,
+  }).isRequired,
+};

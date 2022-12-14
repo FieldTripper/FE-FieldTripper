@@ -24,3 +24,16 @@ function MuseumCard({ museum }) {
 }
 
 export default MuseumCard;
+
+MuseumCard.propTypes = {
+  museum: PropTypes.shape({
+    __typename: PropTypes.string,
+    imageDescription: PropTypes.string,
+    imageUrl: PropTypes.string,
+    latitude: PropTypes.number,
+    longitude: PropTypes.number,
+    name: PropTypes.string,
+    placeId: PropTypes.string,
+    rating: PropTypes.number,
+  }).isRequired,
+};
