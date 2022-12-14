@@ -17,7 +17,7 @@
 .join-trip {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    color: #03989e;
+    color: #00676b;
     font-size: 130%;
     margin-bottom: 2%;
 }
@@ -44,8 +44,8 @@ p {
 }
 
 button {
-    background-color: #03989e;
-    border: 2px solid #03989e;
+    background-color: #00676b;
+    border: 2px solid #00676b;
     color: white;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
@@ -61,7 +61,7 @@ button {
 button:hover {
     cursor: pointer;
     background-color: white;
-    color: #03989e;
+    color: #00676b;
 }
 
 button:active {
