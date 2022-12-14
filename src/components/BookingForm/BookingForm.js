@@ -84,8 +84,10 @@ const BookingForm = ({ museumData, user }) => {
           ))}
         </select>
 
-        <div className="date-picker-styling">
+        <div className='date-picker-styling'>
           <DatePicker
+            input type='calendar'
+            aria-label='calendar'
             selected={tripValues.startDate}
             onChange={(startDate) => setTripValues({ ...tripValues, startDate: startDate })}
           />
@@ -94,6 +96,7 @@ const BookingForm = ({ museumData, user }) => {
         <select
           className="booking-options"
           name="startTime"
+          aria-label='choose-time'
           value={tripValues.startTime}
           onChange={(e) => handleMuseumChange(e)}
         >
@@ -117,6 +120,7 @@ const BookingForm = ({ museumData, user }) => {
         <select
           className="booking-options"
           name="maxAttendees"
+          aria-label='choose-number-of-attendees'
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value={null}>

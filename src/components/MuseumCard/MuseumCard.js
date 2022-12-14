@@ -14,7 +14,7 @@ function MuseumCard({ museum }) {
             <img
               className="museum-image"
               src={museum.imageUrl}
-              alt={museum.imageDescription}
+              alt={`a picture of ${museum.imageDescription}`}
             />
           </section>
         </Link>
