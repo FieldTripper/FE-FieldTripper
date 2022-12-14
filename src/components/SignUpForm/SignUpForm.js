@@ -14,12 +14,15 @@ function SignUpForm({ setUser }) {
   });
   const [createUser, { loading, error, data }] =
     useMutation(CREATE_USER_MUTATION);
+  const [warning, setWarning] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (data) {
+    if (data && data.createUser.user) {
       manageLocalData("userData", setUser, data.createUser.user);
       navigate("/trip-type");
+    } else if (data) {
+      setWarning("Sorry, we were not able to sign you up. Please try again later.")
     }
   }, [data]);
 
@@ -30,12 +33,21 @@ function SignUpForm({ setUser }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createUser({ variables: signUpValues });
+
+    const isSignUpValid = Object.keys(signUpValues).every(property => signUpValues[property] !== "");
+
+    if (!isSignUpValid) {
+      setWarning("Please fill in all fields");
+    } else {
+      createUser({ variables: signUpValues });
+      setWarning("");
+    }
   };
 
   return (
     <section className="page--container column">
       <h2 className="sign-up">Sign Up Form</h2>
+      <p className="warning-message">{warning}</p>
       <form onSubmit={(event) => handleSubmit(event)}>
         <input
           className="sign-up-input"

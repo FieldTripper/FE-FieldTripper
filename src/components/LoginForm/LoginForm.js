@@ -12,12 +12,15 @@ function LoginForm({ setUser }) {
   });
   const [loginUser, { loading, error, data }] =
     useLazyQuery(CREATE_SESSION_QUERY);
+  const [warning, setWarning] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (data) {
+    if (data && data.createSession.user) {
       manageLocalData("userData", setUser, data.createSession.user);
       navigate("/trip-type");
+    } else if (data) {
+      setWarning("Sorry, the information you provided does not seem to match any user in our system.")
     }
   }, [data]);
 
@@ -28,12 +31,22 @@ function LoginForm({ setUser }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    loginUser({ variables: loginValues });
+
+    const isLoginValid = Object.keys(loginValues).every(property => loginValues[property] !== "");
+
+    if (!isLoginValid) {
+      setWarning("Please fill in all fields");
+    } else {
+      loginUser({ variables: loginValues });
+      setWarning("");
+    }
+    
   };
 
   return (
     <section className="page--container column">
       <h2 className="login-form">Login Form</h2>
+      <p className="warning-message">{warning}</p>
       <form onSubmit={(event) => handleSubmit(event)}>
         <input
           className="login-form-input"
