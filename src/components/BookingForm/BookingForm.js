@@ -41,7 +41,7 @@ const BookingForm = ({ museumData, user }) => {
     const isTripValid = Object.keys(tripValues).every(property => tripValues[property] !== "")
 
     if (!isTripValid) {
-      setWarning("Sorry, you must enter all fields in order to create a trip.")
+      setWarning("Please fill in all fields")
     } else {
       createTrip({
         variables: {
