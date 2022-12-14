@@ -87,6 +87,7 @@ BE: GraphQL
 ## Future Extentsions
 - Global State Management
 - Add a restaurant option so a user is able to book a field trip to a museum followed by enjoying a meal at a restaurant near-by.
+- Allow for users to search for trips based on friends' trips or by interest.
 
 ## Wins
 - Thoroughly seperating concerns, so that logic and rendering stayed in seperate containers and components for the most part.
