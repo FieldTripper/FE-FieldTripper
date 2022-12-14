@@ -31,7 +31,7 @@ const BookingForm = ({ museumData, user }) => {
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
     if (fieldOption.name === "destinationPlaceId") {
-      let selectedMuseum = museumData.museums.find((museum) => {
+      let selectedMuseum = museumData.find((museum) => {
         return museum.placeId === fieldOption.value
       })
       setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value, destinationName: selectedMuseum.name});
@@ -58,7 +58,7 @@ const BookingForm = ({ museumData, user }) => {
           onChange={(e) => handleMuseumChange(e)}
         >
           <option value="Select a Museum">Select a Museum</option>
-          {museumData.museums.map((museum) => (
+          {museumData.map((museum) => (
             <option key={museum.name} value={museum.placeId}>
               {museum.name}
             </option>

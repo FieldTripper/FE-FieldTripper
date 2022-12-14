@@ -28,18 +28,17 @@ function App() {
   const [errorMessage, setErrorMessage] = useState(
     "404: This page does not exist."
   );
-  const [museumData, setMuseumData] = useState("");
+  const [museumData, setMuseumData] = useState([]);
 
   useEffect(() => {
+    // localStorage.clear()
     manageLocalData("userData", setUser);
+    manageLocalData("searchTerms", setSearchTerms);
+    manageLocalData("museumData", setMuseumData);
   }, []);
 
   const updateSearch = (values) => {
-    setSearchTerms({
-      city: values.city,
-      state: values.state,
-      zipCode: values.zipCode,
-    });
+    manageLocalData("searchTerms", setSearchTerms, values)
   };
 
   const goToBookingForm = (values) => {
