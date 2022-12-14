@@ -82,7 +82,7 @@ function App() {
         <Route path="/saved-trips" element={<UserSavedTrips user={user} />} />
         <Route path="*" element={<Error errorMessage={errorMessage} />} />
       </Routes>
-      <Footer user={user} />
+      <Footer user={user} setUser={setUser} />
     </main>
   );
 }
