@@ -64,7 +64,7 @@ FE: GraphQL
 BE: GraphQL
 
 ## Deployed Link
-- Deployed Link HERE
+- [FieldTripper on Vercel](https://fe-field-tripper-ftfe.vercel.app/)
 
 ## Future Extentsions
 - Add a restaurant option so a user is able to book a field trip to a museum followed by enjoying a meal at a restaurant near-by.
