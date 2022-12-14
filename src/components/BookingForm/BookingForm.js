@@ -8,10 +8,6 @@ import { CREATE_TRIP_MUTATION } from "../../queries/queries";
 
 const BookingForm = ({ museumData, user }) => {
   const [newStartDate, setStartDate] = useState(new Date());
-
-  const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
-  console.log({ user });
-
   let [museumValues, setMuseumValues] = useState({
     userId: user.id,
     name: "",
@@ -21,29 +17,19 @@ const BookingForm = ({ museumData, user }) => {
     startTime: "",
     maxAttendees: "",
   });
+  console.log({ museumValues });
 
-  const handleAddTrip = ({
-    userId,
-    name,
-    destinationName,
-    destinationPlaceId,
-    startDate,
-    startTime,
-    maxAttendees,
-  }) => {
+  const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
+
+  const handleAddTrip = () => {
     createTrip({
       variables: {
-        userId: userId,
-        name: name,
-        destinationName: destinationName,
-        destinationPlaceId: destinationPlaceId,
-        startDate: startDate,
-        startTime: startTime,
-        maxAttendees: parseInt(maxAttendees),
+        ...museumValues,
+        maxAttendees: parseInt(museumValues.maxAttendees)
       },
     });
   };
-  console.log({ museumValues });
+
   const checkDestination = (name, fon, fov) => {
     const foundMuseum = museumData.museums.find((museum) => {
       return museum.name === name;
@@ -76,10 +62,6 @@ const BookingForm = ({ museumData, user }) => {
     }
   };
 
-  let handleDateChange = (startDate) => {
-    setMuseumValues({ ...museumValues, ...{ startDate: startDate } });
-  };
-
   return (
     <section className="booking-page">
       <p className="book-trip">Book a Field Trip</p>
@@ -108,7 +90,7 @@ const BookingForm = ({ museumData, user }) => {
         <div className="date-picker-styling">
           <DatePicker
             selected={museumValues.startDate}
-            onChange={(startDate) => handleDateChange(startDate)}
+            onChange={(startDate) => setMuseumValues({ ...museumValues, startDate: startDate })}
           />
         </div>
 
@@ -162,7 +144,7 @@ const BookingForm = ({ museumData, user }) => {
         <Link to="/saved-trips">
           <button
             className="booking-button"
-            onClick={() => handleAddTrip(museumValues)}
+            onClick={() => handleAddTrip()}
           >
             Book a Field Trip
           </button>
