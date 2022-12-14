@@ -1,8 +1,7 @@
-import React from "react";
 import { useMutation } from '@apollo/client';
-import { DELETE_TRIP_MUTATION, DELETE_USER_TRIP_MUTATION } from "../../queries/queries";
-import "./UserSavedTripCard.css";
+import { DELETE_USER_TRIP_MUTATION } from "../../queries/queries";
 import { USER_TRIPS_QUERY } from "../../queries/queries";
+import "./UserSavedTripCard.css";
 
 const UserSavedTripCard = ({
   attendance,
@@ -13,9 +12,9 @@ const UserSavedTripCard = ({
   maxAttendees,
   startDate,
   tripName,
-  user,
-  getUserTrips
+  user
 }) => {
+  console.log({startDate})
   const newStartDate1 = startDate.slice(0, -10);
   const newStartDate2 = newStartDate1.split("-");
   const newStartTime = startDate.slice(11, -7);
@@ -110,17 +109,13 @@ const UserSavedTripCard = ({
     return `${month}`;
   };
 
-  console.log({hostId})
   const [deleteUserTrip] = useMutation(DELETE_USER_TRIP_MUTATION);
-  const [deleteTrip] = useMutation(DELETE_TRIP_MUTATION);
 
   const handleDelete = () => {
     deleteUserTrip({ variables: { userId: user.id, tripId: tripId }, refetchQueries: [
-      {query: USER_TRIPS_QUERY}, // DocumentNode object parsed with gql
-      'UserTrips' // Query name
+      {query: USER_TRIPS_QUERY},
+      'UserTrips'
     ] });
-    // getUserTrips();
-    console.log("deleted");
   }
 
   return (

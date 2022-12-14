@@ -25,8 +25,8 @@ const BookingForm = ({ museumData, user }) => {
         ...museumValues,
         maxAttendees: parseInt(museumValues.maxAttendees)
       }, refetchQueries: [
-        {query: USER_TRIPS_QUERY}, // DocumentNode object parsed with gql
-        'UserTrips' // Query name
+        {query: USER_TRIPS_QUERY},
+        'UserTrips'
       ]
     });
   };

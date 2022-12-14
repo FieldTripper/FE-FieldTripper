@@ -31,7 +31,6 @@ function App() {
   const [museumData, setMuseumData] = useState([]);
 
   useEffect(() => {
-    // localStorage.clear()
     manageLocalData("userData", setUser);
     manageLocalData("searchTerms", setSearchTerms);
     manageLocalData("museumData", setMuseumData);
