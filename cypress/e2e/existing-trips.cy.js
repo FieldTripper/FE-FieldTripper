@@ -16,4 +16,12 @@ describe ('existing trips page', () => {
     it('should have a Join button and a Delete button', () => {
       
     })
+
+    it('should only be able to join a trip if the user is not already attending', () => {
+
+    })
+
+    it('should only be able to remove the user from another users trip if they are attending that trip', () => {
+      
+    })
 })
