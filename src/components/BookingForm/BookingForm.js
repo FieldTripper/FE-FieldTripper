@@ -6,6 +6,7 @@ import { CREATE_TRIP_MUTATION } from "../../queries/mutations";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./BookingForm.css";
+import PropTypes from 'prop-types';
 
 const BookingForm = ({ museumData, user }) => {
   let [tripValues, setTripValues] = useState({
@@ -27,9 +28,13 @@ const BookingForm = ({ museumData, user }) => {
     const fieldOption = e.target;
     if (fieldOption.name === "destinationPlaceId") {
       let selectedMuseum = museumData.find((museum) => {
-        return museum.placeId === fieldOption.value
-      })
-      setTripValues({ ...tripValues, [fieldOption.name]: fieldOption.value, destinationName: selectedMuseum.name});
+        return museum.placeId === fieldOption.value;
+      });
+      setTripValues({
+        ...tripValues,
+        [fieldOption.name]: fieldOption.value,
+        destinationName: selectedMuseum.name,
+      });
     } else {
       setTripValues({ ...tripValues, [fieldOption.name]: fieldOption.value });
     }
@@ -38,22 +43,22 @@ const BookingForm = ({ museumData, user }) => {
   const handleAddTrip = (e) => {
     e.preventDefault();
 
-    const isTripValid = Object.keys(tripValues).every(property => tripValues[property] !== "")
+    const isTripValid = Object.keys(tripValues).every(
+      (property) => tripValues[property] !== ""
+    );
 
     if (!isTripValid) {
-      setWarning("Please fill in all fields")
+      setWarning("Please fill in all fields");
     } else {
       createTrip({
         variables: {
           ...tripValues,
-          maxAttendees: parseInt(tripValues.maxAttendees)
-        }, refetchQueries: [
-          {query: USER_TRIPS_QUERY},
-          'UserTrips'
-        ]
+          maxAttendees: parseInt(tripValues.maxAttendees),
+        },
+        refetchQueries: [{ query: USER_TRIPS_QUERY }, "UserTrips"],
       });
-      setWarning("")
-      navigate("/saved-trips")
+      setWarning("");
+      navigate("/saved-trips");
     }
   };
 
@@ -75,7 +80,7 @@ const BookingForm = ({ museumData, user }) => {
           name="destinationPlaceId"
           onChange={(e) => handleMuseumChange(e)}
         >
-          <option value="Select a Museum">Select a Museum</option>
+          <option value={null}>Select a Museum</option>
           {museumData.map((museum) => (
             <option key={museum.name} value={museum.placeId}>
               {museum.name}
@@ -83,16 +88,21 @@ const BookingForm = ({ museumData, user }) => {
           ))}
         </select>
 
-        <div className="date-picker-styling">
+        <div className='date-picker-styling'>
           <DatePicker
+            input type='calendar'
+            aria-label='calendar'
             selected={tripValues.startDate}
-            onChange={(startDate) => setTripValues({ ...tripValues, startDate: startDate })}
+            onChange={(startDate) =>
+              setTripValues({ ...tripValues, startDate: startDate })
+            }
           />
         </div>
 
         <select
           className="booking-options"
           name="startTime"
+          aria-label='choose-time'
           value={tripValues.startTime}
           onChange={(e) => handleMuseumChange(e)}
         >
@@ -116,9 +126,10 @@ const BookingForm = ({ museumData, user }) => {
         <select
           className="booking-options"
           name="maxAttendees"
+          aria-label='choose-number-of-attendees'
           onChange={(e) => handleMuseumChange(e)}
         >
-          <option value={Number}>
+          <option value={null}>
             Select the Max amount of People at your Event
           </option>
           <option value="1">1</option>
@@ -137,10 +148,7 @@ const BookingForm = ({ museumData, user }) => {
           <option value="14">14</option>
           <option value="15">15</option>
         </select>
-        <button
-          className="booking-button"
-          type="submit"
-        >
+        <button className="booking-button" type="submit">
           Book a Field Trip
         </button>
       </form>
@@ -149,3 +157,13 @@ const BookingForm = ({ museumData, user }) => {
 };
 
 export default BookingForm;
+
+BookingForm.propTypes = {
+  museumData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  user: PropTypes.shape({
+    __typename: PropTypes.string,
+    id: PropTypes.string,
+    name: PropTypes.string,
+    email: PropTypes.string,
+  }).isRequired
+};

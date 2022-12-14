@@ -120,13 +120,13 @@ function MuseumInfo() {
             )}
 
             {data.museum.combinedHoo && (
-              <p>
+              <article>
                 {data.museum.combinedHoo.map((day) => (
                   <p className="hours" key={day}>
                     {day}
                   </p>
                 ))}
-              </p>
+              </article>
             )}
           </>
         )}

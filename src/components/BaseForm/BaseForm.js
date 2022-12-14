@@ -4,6 +4,7 @@ import { USERS_QUERY } from "../../queries/queries";
 import { manageLocalData } from "../../utilities/utilities";
 import QueryResult from "../QueryResult/QueryResult";
 import "./BaseForm.css";
+import PropTypes from 'prop-types';
 
 function BaseForm({ setUser }) {
   const { loading, error, data } = useQuery(USERS_QUERY);
@@ -39,3 +40,7 @@ function BaseForm({ setUser }) {
 }
 
 export default BaseForm;
+
+BaseForm.propTypes = {
+  setUser: PropTypes.func.isRequired
+};

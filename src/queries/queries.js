@@ -20,8 +20,6 @@ const USER_QUERY = gql`
   }
 `;
 
-
-
 const CREATE_SESSION_QUERY = gql`
   query CreateSession($email: String!, $password: String!) {
     createSession(email: $email, password: $password) {
@@ -36,8 +34,8 @@ const CREATE_SESSION_QUERY = gql`
 `;
 
 const TRIPS_QUERY = gql`
-  {
-   trips {
+  query Trips($userId: Int!, $tripException: String!) {
+    trips(userId: $userId, tripException: $tripException) {
       id
       name
       destinationPlaceId
