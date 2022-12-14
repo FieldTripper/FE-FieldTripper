@@ -1,5 +1,3 @@
-// need fixture for mutation
-
 describe('login page', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
@@ -29,9 +27,30 @@ describe('login page', () => {
   })
 
   it("should show a message if the incorrect login information is submitted", () => {
-    cy.get('[type="email"]').type('123email.com')
+    cy.get('[type="email"]').type('123demail@dfgsdf.com')
       .get('[type="password"]').type('123')
       .get('.primary--button').click()
-    //test for message
+      cy.get('.warning-message').contains('Sorry, the information you provided does not seem to match any user in our system.')
+  })
+
+  it('should return a message if all fields are not filled out', () => {
+    cy.get('[type="email"]').type('123demail@dfgsdf.com')
+    .get('.primary--button').click()
+    cy.get('.warning-message').contains('Please fill in all fields')
+  })
+
+  it('should take the user to the trip types page upon successful log in', () => {
+    cy.get('[type="email"]').type('123@email.com')
+      .get('[type="password"]').type('123')
+      .get('.primary--button').click()
+      .url().should('include', '/trip-type')
+  })
+
+  it('should be taken back to the landing page when the sign out button is clicked', () => {
+    cy.get('[type="email"]').type('123@email.com')
+      .get('[type="password"]').type('123')
+      .get('.primary--button').click()
+      cy.get('.sign-out--button').click()
+      .url().should('include', '/')
   })
 })

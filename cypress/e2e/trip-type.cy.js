@@ -3,13 +3,11 @@ describe('trip-type page', () => {
     cy.visit('http://localhost:3000/trip-type')
   })
 
-  it('on page load, should have a header with a logo and a footer with Home and About Links', () => {
+  it('on page load, should have a header with a footer and an About link', () => {
     cy.get('.header').should('be.visible')
     cy.get('.choose-trip').contains('Choose Your Trip Type')
-    .get('.logo').should('have.attr', 'src').should('include', 'static/media/logo.d30f603c2c51e7ffdf98.png')
     .get('.footer').should('be.visible')
-    .get('.home').should('be.visible')
-    .get('.about').should('be.visible')
+    .get('.footer-about').should('be.visible').contains('ABOUT')
   })
 
   it('should have a Host A Trip button, Join A Trip button, and Your Saved Trips button', () => {
@@ -38,10 +36,6 @@ describe('trip-type page', () => {
     cy.get('.trip-saved').click().url().should('include', '/saved-trips')
   })
  
-  it('should take the user back to the landing page when the Home nav link is clicked', () => {
-    cy.get('.home').click().url().should('include', '/')
-  })
-
   it('should take the user back to the landing page is the application icon is clicked', () => {
     cy.get('.logo').click().url().should('include', '/')
   })

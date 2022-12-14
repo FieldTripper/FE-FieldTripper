@@ -40,7 +40,6 @@ function BaseForm({ setUser }) {
 }
 
 export default BaseForm;
-
 BaseForm.propTypes = {
   setUser: PropTypes.func.isRequired,
 };
