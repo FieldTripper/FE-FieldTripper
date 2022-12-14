@@ -22,7 +22,7 @@ function MuseumsContainer({ queryValues, setMuseumData }) {
   }, [data]);
 
   return (
-    <section className="page--container row">
+    <section className="museum-container">
       <QueryResult error={error} loading={loading} data={data}>
         <MuseumCard data={data} />
         <Map data={data}>
