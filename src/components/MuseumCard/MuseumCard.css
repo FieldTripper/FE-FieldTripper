@@ -6,7 +6,7 @@
   margin: 7%;
   align-items: center;
   justify-content: space-between;
-  background-color: #03989ead;
+  background-color: #00676b;
   box-shadow: 6px 3px 3px grey;
 }
 
@@ -27,12 +27,14 @@
   margin-bottom: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
+  color: white;
 }
 
 h4 {
   margin-bottom: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  color: white;
 }
 
 @media only screen and (min-width:50px) and (max-width:574px) {
