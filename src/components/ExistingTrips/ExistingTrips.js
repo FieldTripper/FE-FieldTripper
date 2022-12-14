@@ -6,7 +6,16 @@ import "./ExistingTrips.css";
 import PropTypes from 'prop-types';
 
 const ExistingTrips = ({ user }) => {
-  const { loading, error, data } = useQuery(TRIPS_QUERY);
+  const userId = Number(user.id);
+  const tripException = "excludeUser";
+  const { loading, error, data } = useQuery(TRIPS_QUERY, {
+    variables: {
+      userId,
+      tripException,
+    },
+    fetchPolicy: "no-cache",
+    nextFetchPolicy: "no-cache",
+  });
 
   return (
     <div className="saved-trips">
@@ -15,11 +24,9 @@ const ExistingTrips = ({ user }) => {
       </div>
       <QueryResult loading={loading} error={error} data={data}>
         <article className="existing-trip-card-container">
-          {
-            data?.trips.map((trip) => {
-              return <TripCard key={trip.id} trip={trip} user={user} />;
-            })
-          }
+          {data?.trips.map((trip) => {
+            return <TripCard key={trip.id} trip={trip} user={user} />;
+          })}
         </article>
       </QueryResult>
     </div>
