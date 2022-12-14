@@ -12,7 +12,6 @@ import MuseumInfo from "../MuseumInfo/MuseumInfo";
 import BookingForm from "../BookingForm/BookingForm";
 import About from "../About/About";
 import TripType from "../TripType/TripType";
-import singleMuseumData from "../../testData/singleMuseumData";
 import UserSavedTrips from "../UserSavedTrips/UserSavedTrips";
 import ExistingTrips from "../ExistingTrips/ExistingTrips";
 import { manageLocalData } from "../../utilities/utilities";
@@ -40,14 +39,6 @@ function App() {
     manageLocalData("searchTerms", setSearchTerms, values)
   };
 
-  const goToBookingForm = (values) => {
-    setSearchTerms({
-      museum: values.museum,
-      time: values.time,
-      people: values.people,
-    });
-  };
-
   return (
     <main>
       <Header />
@@ -73,7 +64,6 @@ function App() {
           path="/booking-form"
           element={
             <BookingForm
-              bookTrip={goToBookingForm}
               museumData={museumData}
               user={user}
             />
@@ -86,12 +76,7 @@ function App() {
         <Route path="/about" element={<About about={About} />} />
         <Route
           path="/museums/:placeId"
-          element={
-            <MuseumInfo
-              singleMuseumData={singleMuseumData}
-              bookTrip={goToBookingForm}
-            />
-          }
+          element={<MuseumInfo />}
         />
         <Route path="/existing-trips" element={<ExistingTrips user={user} />} />
         <Route path="/saved-trips" element={<UserSavedTrips user={user} />} />
