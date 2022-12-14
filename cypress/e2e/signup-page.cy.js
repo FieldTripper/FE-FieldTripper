@@ -49,8 +49,7 @@ describe('sign up form page', () => {
         req.reply({fixture: '../fixtures/createUserMutation.json'})
       }
     })
-    cy.get('.sign-up-button').click()
-    // .visit('http://localhost:3000/trip-type')
-    // .url().should('include', '/trip-type')
+    .visit('http://localhost:3000/trip-type')
+    .url().should('include', '/trip-type')
   })
 })
