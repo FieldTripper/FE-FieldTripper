@@ -1,0 +1,26 @@
+{
+  "data": {
+    "trips": [
+      {
+        "id": "2",
+        "name": "Trip 9",
+        "destinationName": "Museum of Apollo",
+        "destinationPlaceId": "5678",
+        "startTime": "2022-12-12T03:58:19Z",
+        "attendance": "1",
+        "hostId": "5",
+        "maxAttendees": "6"
+      },
+      {
+        "id": "2",
+        "name": "My Trip 1",
+        "destinationName": "Union Station Fountains Test",
+        "destinationPlaceId": "5678",
+        "startTime": "2022-12-12T03:58:19Z",
+        "attendance": "1",
+        "hostId": "5",
+        "maxAttendees": "2"
+      }
+    ]
+  }
+}

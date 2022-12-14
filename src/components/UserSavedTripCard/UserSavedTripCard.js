@@ -32,10 +32,12 @@ const UserSavedTripCard = ({
       <p className="trip-name">{tripName}</p>
       <p className="saved-destination">{destinationName}</p>
       <p className="saved-trip-info">
-        <b>Your trip on: </b>
-        {returnedDate} 
+        <b className='break1'>Your trip on: </b>
+          <span>
+            {returnedDate} 
+          </span>
         <br></br>
-         starts at <b>{returnedTime}</b>
+         <span>starts at</span> <b className='break2'>{returnedTime}</b>
       </p>
       <p className="attendance">
         {attendance} out of {maxAttendees} people are attending

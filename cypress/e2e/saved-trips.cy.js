@@ -15,13 +15,23 @@ describe('saved trips page', () => {
 
   it('should have the trip name, museum name, trip date, number of people attending, and Delete Trip button on the cards', () => {
     cy.get(':nth-child(2) > .trip-name').contains('Trip 3')
-    cy.get(':nth-child(2) > .saved-trip-info').contains('Your trip on: December 12, 2022 starts at undefined')
+    cy.get(':nth-child(2) > .saved-destination').contains('Museum of Hades')
+    cy.get(':nth-child(2) > .saved-trip-info').should('be.visible')
+    cy.get(':nth-child(2) > .saved-trip-info > .break1').contains('Your trip on:')
+    cy.get(':nth-child(2) > .saved-trip-info > span').contains('December 11, 2022')
+    cy.get(':nth-child(2) > .saved-trip-info > :nth-child(4)').contains('starts at')
+    cy.get(':nth-child(2) > .saved-trip-info > .break2').contains('9:58PM')
     cy.get(':nth-child(2) > .attendance').contains('5 out of 10 people are attending')
-    cy.get(':nth-child(2) > .delete-button').contains('Delete Trip')
+    cy.get(':nth-child(2) > .primary--button').contains('Delete Trip')
   })
 
-  // Needs to be tested
   it('should remove the trip when the Delete Trip button is clicked', () => {
-    cy.get(':nth-child(2) > .delete-button').click()
+    cy.get(':nth-child(2) > .primary--button').click()
+    cy.intercept('POST', 'https://be-fieldtripper.fly.dev/graphql', (req) => {
+      if(req.body.operationName === 'DeleteUserTrip' || 'UserTrips') {
+        req.reply({fixture: '../fixtures/savedTripsMutation.json'})
+      }
+    })
+    cy.visit('http://localhost:3000/saved-trips')
   })
 })
