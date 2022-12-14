@@ -74,7 +74,7 @@ const TRIPS_QUERY = gql`
 `;
 
 const USER_TRIPS_QUERY = gql`
-  query trips($userId: Int!) {
+  query UserTrips($userId: Int!) {
     trips(userId: $userId) {
       id
       name

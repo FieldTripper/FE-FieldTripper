@@ -1,5 +1,5 @@
-import React from "react";
-import { useQuery } from "@apollo/client";
+import React, { useEffect } from "react";
+import { useLazyQuery } from "@apollo/client";
 import { USER_TRIPS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
 import "./UserSavedTrips.css";
@@ -7,11 +7,24 @@ import UserSavedTripCard from "../UserSavedTripCard/UserSavedTripCard";
 
 const UserSavedTrips = ({ user }) => {
   const userId = Number(user.id);
-  const { loading, error, data } = useQuery(USER_TRIPS_QUERY, {
+  const [ getUserTrips, { loading, error, data }] = useLazyQuery(USER_TRIPS_QUERY, {
     variables: {
       userId,
     },
+    fetchPolicy: 'no-cache',
+    nextFetchPolicy: 'no-cache',
   });
+  console.log({data})
+
+  const getUserTripsWrapped = () => {
+    console.log('Calling get user trips...')
+    getUserTrips()
+  }
+
+  useEffect(() => {
+    console.log("Calling get user trips from useEffect");
+    getUserTrips();
+  }, [])
 
   return (
     <div className="saved-trip-container">
@@ -33,6 +46,7 @@ const UserSavedTrips = ({ user }) => {
                 tripName={trip.name}
                 key={index}
                 user={user}
+                getUserTrips={getUserTripsWrapped}
               />
             );
           })}
