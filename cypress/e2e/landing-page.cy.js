@@ -11,12 +11,15 @@ describe('landing-page', () => {
     .get('.about').should('be.visible')
   })
 
-  it('on page load, should see a welcome message', () => {
+// Add username to welcome message
+  it('on page load, should see a welcome message with the users name', () => {
     cy.get('.welcome').contains('Welcome to FieldTrippers!')
   })
 
-  it('on page load, should see a button that will take a user to the app', () => {
-    cy.get('.primary--button').should('be.visible')
+  it('should have a button for Login, Sign Up, and See App', () => {
+    cy.get('.primary--button').contains('See App')
+    cy.get('[href="/login"] > .primary--button').contains('Login')
+    cy.get('[href="/sign-up"] > .primary--button').contains('Sign Up')
   })
 
   it('should click About and be taken to the about page', () => {
@@ -27,5 +30,13 @@ describe('landing-page', () => {
   it('should click the See App button and be taken to the trip-type page', () => {
     cy.get('.primary--button').first().click()
     .url().should('include', '/trip-type')
+  })
+
+  it('should click the Login button and be taken to the login page', () => {
+    cy.get('[href="/login"] > .primary--button').click().url().should('include', '/login')
+  })
+
+  it('should click the Sign Up button and be taken to the sign up page', () => {
+    cy.get('[href="/sign-up"] > .primary--button').click().url().should('include', "/sign-up")
   })
 })
