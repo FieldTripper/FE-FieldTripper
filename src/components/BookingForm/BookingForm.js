@@ -7,17 +7,15 @@ import { useMutation } from "@apollo/client";
 import { CREATE_TRIP_MUTATION } from "../../queries/queries";
 
 const BookingForm = ({ museumData, user }) => {
-  const [newStartDate, setStartDate] = useState(new Date());
   let [museumValues, setMuseumValues] = useState({
     userId: user.id,
     name: "",
     destinationName: "",
     destinationPlaceId: "",
-    startDate: newStartDate,
+    startDate: new Date(),
     startTime: "",
     maxAttendees: "",
   });
-  console.log({ museumValues });
 
   const [createTrip] = useMutation(CREATE_TRIP_MUTATION);
 
@@ -33,12 +31,10 @@ const BookingForm = ({ museumData, user }) => {
   let handleMuseumChange = (e) => {
     const fieldOption = e.target;
     if (fieldOption.name === "destinationPlaceId") {
-      console.log("if")
-      const place = museumData.museums.find((museum) => {
-        return museum.placeId === museumValues.destinationPlaceId;
-      });
-      console.log({place});
-      setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value, destinationName: place.name });
+      let selectedMuseum = museumData.museums.find((museum) => {
+        return museum.placeId === fieldOption.value
+      })
+      setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value, destinationName: selectedMuseum.name});
     } else {
       setMuseumValues({ ...museumValues, [fieldOption.name]: fieldOption.value });
     }
