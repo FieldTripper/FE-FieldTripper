@@ -20,7 +20,7 @@ const UserSavedTrips = ({ user }) => {
       </div>
       <QueryResult data={data} error={error} loading={loading}>
         <>
-          {data?.trips.map((trip) => {
+          {data?.trips.map((trip, index) => {
             return (
               <UserSavedTripCard
                 attendance={trip.attendance}
@@ -31,7 +31,7 @@ const UserSavedTrips = ({ user }) => {
                 maxAttendees={trip.maxAttendees}
                 startDate={trip.startTime}
                 tripName={trip.name}
-                key={trip.destinationPlaceId}
+                key={index}
                 user={user}
               />
             );
