@@ -4,7 +4,7 @@ import "./BookingForm.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useMutation } from "@apollo/client";
-import { CREATE_TRIP_MUTATION } from "../../queries/queries";
+import { CREATE_TRIP_MUTATION, USER_TRIPS_QUERY } from "../../queries/queries";
 
 const BookingForm = ({ museumData, user }) => {
   let [museumValues, setMuseumValues] = useState({
@@ -24,7 +24,10 @@ const BookingForm = ({ museumData, user }) => {
       variables: {
         ...museumValues,
         maxAttendees: parseInt(museumValues.maxAttendees)
-      },
+      }, refetchQueries: [
+        {query: USER_TRIPS_QUERY}, // DocumentNode object parsed with gql
+        'UserTrips' // Query name
+      ]
     });
   };
 
