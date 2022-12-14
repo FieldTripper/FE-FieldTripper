@@ -5,7 +5,6 @@ import { manageLocalData } from "../../utilities/utilities";
 import QueryResult from "../QueryResult/QueryResult";
 import "./BaseForm.css";
 import PropTypes from "prop-types";
-
 function BaseForm({ setUser }) {
   const { loading, error, data } = useQuery(USERS_QUERY);
 
