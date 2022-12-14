@@ -15,7 +15,7 @@ const About = () => {
         </p>
       </div>
       <div className="created-by">
-        <h4>CREATED BY</h4>
+        <h4 className="created-by">CREATED BY</h4>
       </div>
       <div className="creators">
         <div className="creator">
