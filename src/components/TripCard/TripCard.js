@@ -4,13 +4,8 @@ import { formatDates } from "../../utilities/utilities";
 import "./TripCard.css";
 
 function TripCard({ trip, user }) {
-  const [createUserTrip, { loading, error, data }] = useMutation(
-    CREATE_USER_TRIP_MUTATION
-  );
-  console.log({loading})
-  console.log({error})
-  console.log({data})
-  
+  const [createUserTrip] = useMutation(CREATE_USER_TRIP_MUTATION);
+
   const returnedDate = formatDates(trip.startTime, "MMMM D, YYYY");
   const returnedTime = formatDates(trip.startTime, "h:mmA")
   
@@ -22,8 +17,7 @@ function TripCard({ trip, user }) {
         This trip on: {returnedDate} starts at: {returnedTime}
       </p>
       <button
-        onClick={() =>
-          createUserTrip({
+        onClick={() => createUserTrip({
             variables: { userId: user.id, tripId: trip.id, isHost: false },
           })
         }
