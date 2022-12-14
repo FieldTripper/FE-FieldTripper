@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useQuery, gql, useLazyQuery } from "@apollo/client";
+import React, { useEffect } from "react";
+import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { MUSEUMS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
@@ -27,6 +27,15 @@ function MuseumsContainer({ queryValues, setMuseumData }) {
   return (
     <section className="museum-container">
       <QueryResult error={error} loading={loading} data={data}>
+        <article>
+          {
+            data?.museums.map((museum, index) => {
+              return (
+                <MuseumCard key={index} museum={museum} />
+              )
+            })
+          }
+        </article>
         <MuseumCard data={data} />
         <Map data={data}>
           <LocationPin data={data} />
