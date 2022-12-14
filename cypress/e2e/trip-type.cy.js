@@ -41,4 +41,8 @@ describe('trip-type page', () => {
   it('should take the user back to the landing page when the Home nav link is clicked', () => {
     cy.get('.home').click().url().should('include', '/')
   })
+
+  it('should take the user back to the landing page is the application icon is clicked', () => {
+    cy.get('.logo').click().url().should('include', '/')
+  })
 })
