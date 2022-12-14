@@ -6,6 +6,7 @@ import "./ExistingTrips.css";
 
 const ExistingTrips = ({ user }) => {
   const { loading, error, data } = useQuery(TRIPS_QUERY);
+  console.log({ data });
 
   return (
     <div className="saved-trips">
@@ -14,11 +15,9 @@ const ExistingTrips = ({ user }) => {
       </div>
       <QueryResult loading={loading} error={error} data={data}>
         <article className="existing-trip-card-container">
-          {
-            data?.trips.map((trip) => {
-              return <TripCard key={trip.id} trip={trip} user={user} />;
-            })
-          }
+          {data?.trips.map((trip) => {
+            return <TripCard key={trip.id} trip={trip} user={user} />;
+          })}
         </article>
       </QueryResult>
     </div>
