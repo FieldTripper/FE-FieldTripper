@@ -21,13 +21,12 @@
   flex-direction: row;
   justify-content: center;
   margin-bottom: 4%;
-
 }
 
 .user-saved-trips {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
-  color: #03989e;
+  color: #00676b;
   font-size: 130%;
   margin-bottom: 2%;
   margin-top: 6%;

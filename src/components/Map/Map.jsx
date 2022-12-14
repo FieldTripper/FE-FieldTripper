@@ -1,6 +1,7 @@
 import GoogleMapReact from "google-map-react";
 import LocationPin from "../LocationPin/LocationPin";
 import "./Map.css";
+import PropTypes from 'prop-types';
 
  const Map = ({ data }) => {
 
@@ -39,3 +40,9 @@ import "./Map.css";
   }
 
 export default Map; 
+
+Map.propTypes = {
+  data: PropTypes.shape({
+    museums: PropTypes.arrayOf(PropTypes.object)
+  }),
+};
