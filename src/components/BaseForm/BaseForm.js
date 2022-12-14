@@ -13,6 +13,7 @@ function BaseForm({ setUser }) {
       <QueryResult data={data} error={error} loading={loading}>
         <p className='welcome'>Welcome to FieldTrippers!</p>
         <form>
+        <label>You can also choose to "See App" without having an account.</label>
           <Link to="/trip-type">
             <button
               className="primary--button login--button"

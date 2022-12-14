@@ -22,22 +22,24 @@ const UserSavedTrips = ({ user }) => {
       <QueryResult data={data} error={error} loading={loading}>
         <>
           {
-            data?.trips.map((trip, index) => {
-              return (
-                <UserSavedTripCard
-                  attendance={trip.attendance}
-                  destinationName={trip.destinationName}
-                  destinationPlaceId={trip.destinationPlaceId}
-                  hostId={trip.hostId}
-                  tripId={trip.id}
-                  maxAttendees={trip.maxAttendees}
-                  startDate={trip.startTime}
-                  tripName={trip.name}
-                  user={user}
-                  key={index}
-                />
-              );
-            })
+            data && data.trips.length
+              ? data?.trips.map((trip, index) => {
+                  return (
+                    <UserSavedTripCard
+                      attendance={trip.attendance}
+                      destinationName={trip.destinationName}
+                      destinationPlaceId={trip.destinationPlaceId}
+                      hostId={trip.hostId}
+                      tripId={trip.id}
+                      maxAttendees={trip.maxAttendees}
+                      startDate={trip.startTime}
+                      tripName={trip.name}
+                      user={user}
+                      key={index}
+                    />
+                  );
+                })
+              : <p>You don't have any trips planned, yet. Why not try hosting or joining a trip?</p>
           }
         </>
       </QueryResult>
