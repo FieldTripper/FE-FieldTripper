@@ -1,9 +1,8 @@
-import { useQuery, gql } from "@apollo/client";
-import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-import QueryResult from "../QueryResult/QueryResult";
+import { useQuery, gql } from "@apollo/client";
 import { MUSEUM_QUERY } from "../../queries/queries";
+import QueryResult from "../QueryResult/QueryResult";
 import "./MuseumInfo.css";
 
 function MuseumInfo() {

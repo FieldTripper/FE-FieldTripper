@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useQuery, gql, useLazyQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
+import { MUSEUMS_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
 import MuseumCard from "../MuseumCard/MuseumCard";
 import Map from "../Map/Map";
 import LocationPin from "../LocationPin/LocationPin";
 import { manageLocalData } from "../../utilities/utilities";
 import "./MuseumsContainer.css";
-import { MUSEUMS_QUERY } from "../../queries/queries";
 
 function MuseumsContainer({ queryValues, setMuseumData }) {
   const { loading, error, data } = useQuery(MUSEUMS_QUERY, {

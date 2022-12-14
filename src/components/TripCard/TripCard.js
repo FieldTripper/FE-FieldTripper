@@ -1,5 +1,5 @@
 import { useMutation } from "@apollo/client";
-import { CREATE_USER_TRIP_MUTATION } from "../../queries/queries";
+import { CREATE_USER_TRIP_MUTATION } from "../../queries/mutations";
 import "./TripCard.css";
 
 function TripCard({ trip, user }) {

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./BookingForm.css";
+import { useMutation } from "@apollo/client";
+import { USER_TRIPS_QUERY } from "../../queries/queries";
+import { CREATE_TRIP_MUTATION } from "../../queries/mutations";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useMutation } from "@apollo/client";
-import { CREATE_TRIP_MUTATION, USER_TRIPS_QUERY } from "../../queries/queries";
+import "./BookingForm.css";
 
 const BookingForm = ({ museumData, user }) => {
   let [museumValues, setMuseumValues] = useState({

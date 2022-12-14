@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useLazyQuery } from "@apollo/client";
 import { CREATE_SESSION_QUERY } from "../../queries/queries";
 import { manageLocalData } from "../../utilities/utilities";
