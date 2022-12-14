@@ -1,7 +1,7 @@
 .footer {
     width: 100vw;
     height: 10%;
-    background-color: #03989e;
+    background-color: #00676b;
     position: absolute;
     display: flex;
     align-items: center;
@@ -14,6 +14,6 @@
 .home, .footer-saved-trips, .footer-join-a-trip, .footer-host-a-trip {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 90%;
+    font-size: 94%;
     color: white;
 }
