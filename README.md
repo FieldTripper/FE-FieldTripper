@@ -20,7 +20,7 @@
 - [Project Repot](#project-repo)
 
 ## Introduction
-Why should kids have all the fun? FieldTrippers is the social gathering while you learn app for adults. FieldTrippers employs GraphQL and Apollo for a fast streamlined experience and permits the user to create or join already existing field trips with a few quick clicks. Simply enter a location and a list museums will be available for you to choose from. A host can limit the number of people on their trip to allow for smaller gatherings and a user can choose to join any field trip that isn't full. 
+Why should kids have all the fun? FieldTrippers is the social gathering while you learn app for adults. FieldTrippers employs GraphQL and Apollo for a fast, streamlined experience and permits the user to create or join already existing field trips with a few quick clicks. Simply enter a location and a list museums will be available for you to choose from. A host can limit the number of people on their trip to allow for smaller gatherings and a user can choose to join any field trip that isn't full. 
 
 ## Project Managers
 [Kathleen Brandt](https://github.com/KatBrandt)<br>
@@ -65,13 +65,13 @@ Back-End:
 |---------------|-----------------|
 <img src="https://user-images.githubusercontent.com/63877492/207713203-95d65b37-8d20-476f-851d-30cdfffbbf7d.png" width=100%>|<p align="center"><br/><img src="https://user-images.githubusercontent.com/63877492/207713677-0f17e80c-9c5b-4d0d-b0d5-14bf2e2dfcd6.png" width=77%></p>
 <img src="https://user-images.githubusercontent.com/63877492/207714122-967d1047-9c98-44e8-917b-02505e223d13.png" width=100%>|<p align="center"><br/><img src="https://user-images.githubusercontent.com/63877492/207714313-64b0ef2b-b110-49a3-a474-ef97dcd50ba1.png" width=77%></p>
-- Users can signup for an account or simply explore the application, local storage gives to user the ability to explore the app even through refresh.
-- Users can search for museum near them or by any location within the US, by city, state or zipcode.
+- Users can signup for an account or simply explore the application, local storage gives users the ability to explore the app even through refresh.
+- Users can search for museums near them or by any location within the US, by city, state or zipcode.
 - Users can see museum deatails to help them decide what kind adventure they would like to have.
 - Users can see a list of trips they are not a part of and join any trip that isn't full or create their own trips and invite others.
 - 100% Lighthouse accessibility score.
 - Mobile friendly views.
-- Utilizes GraphQL and Apollow for a fast easy to navigate application.
+- Utilizes GraphQL and Apollo for a fast, easy to navigate application.
 - Adopts third party libraries, such as Day.js, Google-Map-React and DatePicker.js to provide pre-tested functionality.
 - Implements seperation of concerns to ensure the components used to render do just that and logic is seperated. 
 
@@ -86,8 +86,8 @@ BE: GraphQL
 
 ## Future Extentsions
 - Global State Management
-- Add a restaurant option so a user is able to book a field trip to a museum followed by enjoying a meal at a restaurant near-by.
-- Allow for users to search for trips based on friends' trips or by interest.
+- Add a restaurant option so users are able to book a field trip to a museum followed by enjoying a meal at a restaurant near-by.
+- Allow users to search for trips based on friends' trips or by interest.
 - Show users who is hosting each trip.
 
 ## Wins
