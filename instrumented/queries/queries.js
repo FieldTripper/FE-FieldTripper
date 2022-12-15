@@ -1,10 +1,10 @@
-function cov_11lmegurmt() {
-  var path = "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/queries/queries.js";
-  var hash = "3682540a4ff9c03ed097765e299cfc69a9efd465";
+function cov_2c8zrgkpov() {
+  var path = "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/queries/queries.js";
+  var hash = "593517ba19eee333849fc55d30dcb7c6e35d8f59";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
-    path: "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/queries/queries.js",
+    path: "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/queries/queries.js",
     statementMap: {
       "0": {
         start: {
@@ -91,7 +91,7 @@ function cov_11lmegurmt() {
     f: {},
     b: {},
     _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    hash: "3682540a4ff9c03ed097765e299cfc69a9efd465"
+    hash: "593517ba19eee333849fc55d30dcb7c6e35d8f59"
   };
   var coverage = global[gcv] || (global[gcv] = {});
   if (!coverage[path] || coverage[path].hash !== hash) {
@@ -100,15 +100,15 @@ function cov_11lmegurmt() {
   var actualCoverage = coverage[path];
   {
     // @ts-ignore
-    cov_11lmegurmt = function () {
+    cov_2c8zrgkpov = function () {
       return actualCoverage;
     };
   }
   return actualCoverage;
 }
-cov_11lmegurmt();
+cov_2c8zrgkpov();
 import { gql } from "@apollo/client";
-const USERS_QUERY = (cov_11lmegurmt().s[0]++, gql`
+const USERS_QUERY = (cov_2c8zrgkpov().s[0]++, gql`
   {
     users {
       id
@@ -117,7 +117,7 @@ const USERS_QUERY = (cov_11lmegurmt().s[0]++, gql`
     }
   }
 `);
-const USER_QUERY = (cov_11lmegurmt().s[1]++, gql`
+const USER_QUERY = (cov_2c8zrgkpov().s[1]++, gql`
   query User($id: ID!) {
     user(id: $id) {
       id
@@ -126,7 +126,7 @@ const USER_QUERY = (cov_11lmegurmt().s[1]++, gql`
     }
   }
 `);
-const CREATE_SESSION_QUERY = (cov_11lmegurmt().s[2]++, gql`
+const CREATE_SESSION_QUERY = (cov_2c8zrgkpov().s[2]++, gql`
   query CreateSession($email: String!, $password: String!) {
     createSession(email: $email, password: $password) {
       confirm
@@ -138,7 +138,7 @@ const CREATE_SESSION_QUERY = (cov_11lmegurmt().s[2]++, gql`
     }
   }
 `);
-const TRIPS_QUERY = (cov_11lmegurmt().s[3]++, gql`
+const TRIPS_QUERY = (cov_2c8zrgkpov().s[3]++, gql`
   query Trips($userId: Int!, $tripException: String!) {
     trips(userId: $userId, tripException: $tripException) {
       id
@@ -152,7 +152,7 @@ const TRIPS_QUERY = (cov_11lmegurmt().s[3]++, gql`
     }
   }
 `);
-const USER_TRIPS_QUERY = (cov_11lmegurmt().s[4]++, gql`
+const USER_TRIPS_QUERY = (cov_2c8zrgkpov().s[4]++, gql`
   query UserTrips($userId: Int!) {
     trips(userId: $userId) {
       id
@@ -166,7 +166,7 @@ const USER_TRIPS_QUERY = (cov_11lmegurmt().s[4]++, gql`
     }
   }
 `);
-const MUSEUMS_QUERY = (cov_11lmegurmt().s[5]++, gql`
+const MUSEUMS_QUERY = (cov_2c8zrgkpov().s[5]++, gql`
   query Museums($city: String!, $state: String!, $zipcode: String!) {
     museums(city: $city, state: $state, zipcode: $zipcode) {
       placeId
@@ -179,7 +179,7 @@ const MUSEUMS_QUERY = (cov_11lmegurmt().s[5]++, gql`
     }
   }
 `);
-const MUSEUM_QUERY = (cov_11lmegurmt().s[6]++, gql`
+const MUSEUM_QUERY = (cov_2c8zrgkpov().s[6]++, gql`
   query Museum($placeId: String!) {
     museum(placeId: $placeId) {
       placeId

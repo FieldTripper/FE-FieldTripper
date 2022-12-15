@@ -1,6 +1,6 @@
 {
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/Header/Header.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/Header/Header.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/Header/Header.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/Header/Header.js",
     "statementMap": {
       "0": {
         "start": {
@@ -59,10 +59,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "efc5e3d33274d1f595b1deab39c669ca6083d597"
+    "hash": "ab38e91da1383607505778548300fa9961e21a8c"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/queries/queries.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/queries/queries.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/queries/queries.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/queries/queries.js",
     "statementMap": {
       "0": {
         "start": {
@@ -149,10 +149,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "3682540a4ff9c03ed097765e299cfc69a9efd465"
+    "hash": "593517ba19eee333849fc55d30dcb7c6e35d8f59"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/utilities/utilities.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/utilities/utilities.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/utilities/utilities.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/utilities/utilities.js",
     "statementMap": {
       "0": {
         "start": {
@@ -559,10 +559,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "00a974b6f9620474ef6b022fb25a9889fb689f10"
+    "hash": "9f3f8bae163eff6cdd046439d626f6b591b5f887"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/Error/Error.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/Error/Error.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/Error/Error.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/Error/Error.js",
     "statementMap": {
       "0": {
         "start": {
@@ -613,18 +613,18 @@
     },
     "branchMap": {},
     "s": {
-      "0": 18,
+      "0": 20,
       "1": 137
     },
     "f": {
-      "0": 18
+      "0": 20
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "872b721bd6707d7be6e02e0224a19a90719604a5"
+    "hash": "d05546a57cd058d7c898902222eb786af22453ab"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/QueryResult/QueryResult.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/QueryResult/QueryResult.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/QueryResult/QueryResult.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/QueryResult/QueryResult.js",
     "statementMap": {
       "0": {
         "start": {
@@ -835,73 +835,73 @@
     },
     "s": {
       "0": 137,
-      "1": 290,
+      "1": 292,
       "2": 138,
-      "3": 152,
+      "3": 154,
       "4": 138,
-      "5": 14,
-      "6": 14
+      "5": 16,
+      "6": 16
     },
     "f": {
-      "0": 290
+      "0": 292
     },
     "b": {
       "0": [
         138,
-        152
+        154
       ],
       "1": [
         138,
-        14
+        16
       ],
       "2": [
-        14,
+        16,
         0
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0c519188513e008a38d21ef25166405578ea7cb3"
+    "hash": "fe1675282b7220da0034e43b94b7b07522def6a6"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/BaseForm/BaseForm.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/BaseForm/BaseForm.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/BaseForm/BaseForm.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/BaseForm/BaseForm.js",
     "statementMap": {
       "0": {
         "start": {
-          "line": 10,
+          "line": 9,
           "column": 35
         },
         "end": {
-          "line": 10,
+          "line": 9,
           "column": 56
         }
       },
       "1": {
         "start": {
-          "line": 12,
+          "line": 11,
           "column": 2
         },
         "end": {
-          "line": 39,
+          "line": 38,
           "column": 4
         }
       },
       "2": {
         "start": {
-          "line": 24,
+          "line": 23,
           "column": 16
         },
         "end": {
-          "line": 24,
+          "line": 23,
           "column": 67
         }
       },
       "3": {
         "start": {
-          "line": 43,
+          "line": 42,
           "column": 0
         },
         "end": {
-          "line": 45,
+          "line": 44,
           "column": 2
         }
       }
@@ -911,49 +911,49 @@
         "name": "BaseForm",
         "decl": {
           "start": {
-            "line": 9,
+            "line": 8,
             "column": 9
           },
           "end": {
-            "line": 9,
+            "line": 8,
             "column": 17
           }
         },
         "loc": {
           "start": {
-            "line": 9,
+            "line": 8,
             "column": 31
           },
           "end": {
-            "line": 40,
+            "line": 39,
             "column": 1
           }
         },
-        "line": 9
+        "line": 8
       },
       "1": {
         "name": "(anonymous_1)",
         "decl": {
           "start": {
-            "line": 23,
+            "line": 22,
             "column": 23
           },
           "end": {
-            "line": 23,
+            "line": 22,
             "column": 24
           }
         },
         "loc": {
           "start": {
-            "line": 24,
+            "line": 23,
             "column": 16
           },
           "end": {
-            "line": 24,
+            "line": 23,
             "column": 67
           }
         },
-        "line": 24
+        "line": 23
       }
     },
     "branchMap": {},
@@ -969,10 +969,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "401fba6596d2d53a28b1fc04c0cff84765e1a8c4"
+    "hash": "df3841a313c04c2369bb14e9c1b80bc246493206"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/LoginForm/LoginForm.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/LoginForm/LoginForm.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/LoginForm/LoginForm.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/LoginForm/LoginForm.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1632,10 +1632,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "0f47c2c79671cc6de7267bb457339a90d52884f2"
+    "hash": "8022b97c1808828076ad3ea15c20363c573fdc1d"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/queries/mutations.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/queries/mutations.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/queries/mutations.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/queries/mutations.js",
     "statementMap": {
       "0": {
         "start": {
@@ -1700,10 +1700,10 @@
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "eb01e31c358c4d4d14baa98da98184e22e9bda04"
+    "hash": "c7a28e46263273e460eed7668170c1009a0822e9"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/SignUpForm/SignUpForm.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/SignUpForm/SignUpForm.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/SignUpForm/SignUpForm.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/SignUpForm/SignUpForm.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2435,10 +2435,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "92da392ffc236d0ce883df911c843c00b1a1cd84"
+    "hash": "2be10b6cd65131e12e3706289c74a7f4e2c4c74d"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/SearchForm/SearchForm.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/SearchForm/SearchForm.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/SearchForm/SearchForm.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/SearchForm/SearchForm.js",
     "statementMap": {
       "0": {
         "start": {
@@ -2927,10 +2927,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "a835bc134249f1e50eeb6e043bfd8266adb26662"
+    "hash": "67804cbd36b585b1c835cfeb45be156c5a6f0635"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/MuseumCard/MuseumCard.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/MuseumCard/MuseumCard.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/MuseumCard/MuseumCard.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/MuseumCard/MuseumCard.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3053,10 +3053,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "a7e2af5bb15ae65687866bbe06770a3078d30732"
+    "hash": "cff9755ad86bc5d1950ba044adb80184ebc4686e"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/LocationPin/LocationPin.jsx": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/LocationPin/LocationPin.jsx",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/LocationPin/LocationPin.jsx": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/LocationPin/LocationPin.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3118,18 +3118,18 @@
     "branchMap": {},
     "s": {
       "0": 137,
-      "1": 404,
+      "1": 424,
       "2": 137
     },
     "f": {
-      "0": 404
+      "0": 424
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "422e501688b84ee7367e0535c38f5820a5b5c2dd"
+    "hash": "016554992b5a40cfa1f408c04182c815c36ced70"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/Map/Map.jsx": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/Map/Map.jsx",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/Map/Map.jsx": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/Map/Map.jsx",
     "statementMap": {
       "0": {
         "start": {
@@ -3246,10 +3246,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "7093e5d3c2aea5b2f2d831f78eb743dfd15c58d5"
+    "hash": "b5db7ead434240d9e4670748182d92690df0a4de"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/MuseumsContainer/MuseumsContainer.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/MuseumsContainer/MuseumsContainer.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/MuseumsContainer/MuseumsContainer.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/MuseumsContainer/MuseumsContainer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3455,10 +3455,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "4ee58a29a35d3fbd6a311ad79b1540f21086f39b"
+    "hash": "7753df1fbf508c2dfd8dd184874f63d853023d83"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/SignOut/SignOut.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/SignOut/SignOut.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/SignOut/SignOut.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/SignOut/SignOut.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3622,10 +3622,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "5b3732b24f09a912b462b0a4339677ef6c52b27b"
+    "hash": "4e77ede95496aee69c9edec9e90fdcd045a65f7a"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/Footer/Footer.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/Footer/Footer.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/Footer/Footer.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/Footer/Footer.js",
     "statementMap": {
       "0": {
         "start": {
@@ -3759,10 +3759,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "336076d5a99f7cb033b7bf628ba893a2c559cedf"
+    "hash": "305d2487deb7ef854214c13c937a09fd1bf0d9d5"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/MuseumInfo/MuseumInfo.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/MuseumInfo/MuseumInfo.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/MuseumInfo/MuseumInfo.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/MuseumInfo/MuseumInfo.js",
     "statementMap": {
       "0": {
         "start": {
@@ -4918,10 +4918,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "5a4fff81778212978e9c71df4a32625bb0b01b4b"
+    "hash": "9a5d33508b1c87b2294f7110c0bd345f0c62073e"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/BookingForm/BookingForm.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/BookingForm/BookingForm.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/BookingForm/BookingForm.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/BookingForm/BookingForm.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5645,10 +5645,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "50400dd8b824c5e90db03cb9779ba097d19b1cde"
+    "hash": "cac3805128c8dd58df0b275b9a4f70f0c9b624ce"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/About/About.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/About/About.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/About/About.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/About/About.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5707,10 +5707,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "6a141f28ce6c87374629b02315a5c95354483bc3"
+    "hash": "827e0142279e6ac14a346c20110ee9a68fcaf3ef"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/TripType/TripType.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/TripType/TripType.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/TripType/TripType.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/TripType/TripType.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5769,10 +5769,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "d3375992530716b08843cf0aa3143402010b2d4c"
+    "hash": "8464d57c5b90185d6eaadd8283dba03a6ac3a2ef"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/UserSavedTripCard/UserSavedTripCard.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/UserSavedTripCard/UserSavedTripCard.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/UserSavedTripCard/UserSavedTripCard.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/UserSavedTripCard/UserSavedTripCard.js",
     "statementMap": {
       "0": {
         "start": {
@@ -5958,10 +5958,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "6ea41634d843d35bbdafb4dc49e84e4ee4b24353"
+    "hash": "43a56889421902b20a6f89f173d74361e387f2e2"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/UserSavedTrips/UserSavedTrips.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/UserSavedTrips/UserSavedTrips.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/UserSavedTrips/UserSavedTrips.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/UserSavedTrips/UserSavedTrips.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6150,31 +6150,31 @@
     },
     "s": {
       "0": 137,
-      "1": 52,
-      "2": 52,
-      "3": 52,
+      "1": 53,
+      "2": 53,
+      "3": 53,
       "4": 27,
       "5": 137
     },
     "f": {
-      "0": 52,
+      "0": 53,
       "1": 27
     },
     "b": {
       "0": [
         10,
-        42
+        43
       ],
       "1": [
-        52,
+        53,
         12
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "084473e2ff5a19c2ce52883a6cbf9f12627ed768"
+    "hash": "e3de5edd3416b1a184c9a5d3b82560cb45f1c977"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/TripCard/TripCard.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/TripCard/TripCard.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/TripCard/TripCard.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/TripCard/TripCard.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6302,10 +6302,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "a80f7f62a86bf456cf0eefcaef5a614730e22f93"
+    "hash": "b97dc7b7908815566d8bdcf84e6247360654d69f"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/ExistingTrips/ExistingTrips.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/ExistingTrips/ExistingTrips.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/ExistingTrips/ExistingTrips.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/ExistingTrips/ExistingTrips.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6431,23 +6431,23 @@
     "branchMap": {},
     "s": {
       "0": 137,
-      "1": 8,
-      "2": 8,
-      "3": 8,
-      "4": 8,
+      "1": 9,
+      "2": 9,
+      "3": 9,
+      "4": 9,
       "5": 6,
       "6": 137
     },
     "f": {
-      "0": 8,
+      "0": 9,
       "1": 6
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "b33e42a363d83f8067b0889e874714b265f9bb30"
+    "hash": "f3ba556a9dc70bad53926e73ea44a798a13d626e"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/App/App.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/components/App/App.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/App/App.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/components/App/App.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6655,10 +6655,10 @@
     },
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "33125514a34fa543f9e1d1037a5b6efee0d4b8f0"
+    "hash": "d451e40830e9d12c68a2b2e988811cd8dec5286c"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/reportWebVitals.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/reportWebVitals.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/reportWebVitals.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/reportWebVitals.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6890,10 +6890,10 @@
       ]
     },
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "cccad638aef95294a84207b8a601db98cc35b91a"
+    "hash": "0e239fa3b778b25357bf22a52b1473c62b6e444e"
   },
-  "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/index.js": {
-    "path": "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/index.js",
+  "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/index.js": {
+    "path": "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/index.js",
     "statementMap": {
       "0": {
         "start": {
@@ -6958,6 +6958,6 @@
     "f": {},
     "b": {},
     "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    "hash": "326bbd4d797d891fa8ec7884134f2d787bbc4a8a"
+    "hash": "ee935f51a4d4112278ff85305ec82b7885554b70"
   }
 }

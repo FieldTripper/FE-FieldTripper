@@ -1,10 +1,10 @@
-function cov_6sm0ndhyw() {
-  var path = "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/testData/mockUserSavedTrips.js";
-  var hash = "4d45a9271b506677cb251abf0c6153ec05564766";
+function cov_3koxsok6j() {
+  var path = "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/testData/mockUserSavedTrips.js";
+  var hash = "96cfb2e1e4d2d193160b9e280d54c8484424453c";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
-    path: "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/testData/mockUserSavedTrips.js",
+    path: "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/testData/mockUserSavedTrips.js",
     statementMap: {
       "0": {
         start: {
@@ -25,7 +25,7 @@ function cov_6sm0ndhyw() {
     f: {},
     b: {},
     _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    hash: "4d45a9271b506677cb251abf0c6153ec05564766"
+    hash: "96cfb2e1e4d2d193160b9e280d54c8484424453c"
   };
   var coverage = global[gcv] || (global[gcv] = {});
   if (!coverage[path] || coverage[path].hash !== hash) {
@@ -34,14 +34,14 @@ function cov_6sm0ndhyw() {
   var actualCoverage = coverage[path];
   {
     // @ts-ignore
-    cov_6sm0ndhyw = function () {
+    cov_3koxsok6j = function () {
       return actualCoverage;
     };
   }
   return actualCoverage;
 }
-cov_6sm0ndhyw();
-const mockUserSavedTrips = (cov_6sm0ndhyw().s[0]++, {
+cov_3koxsok6j();
+const mockUserSavedTrips = (cov_3koxsok6j().s[0]++, {
   savedTrips: [{
     tripName: "Billie's Field Trip",
     destinationName: "Golden West Native American Art",

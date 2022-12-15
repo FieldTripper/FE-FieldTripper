@@ -1,10 +1,10 @@
-function cov_1sgezpmwcq() {
-  var path = "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/utilities/utilities.js";
-  var hash = "00a974b6f9620474ef6b022fb25a9889fb689f10";
+function cov_2hiddgg7td() {
+  var path = "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/utilities/utilities.js";
+  var hash = "9f3f8bae163eff6cdd046439d626f6b591b5f887";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
-    path: "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/utilities/utilities.js",
+    path: "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/utilities/utilities.js",
     statementMap: {
       "0": {
         start: {
@@ -381,7 +381,7 @@ function cov_1sgezpmwcq() {
       "4": [0, 0]
     },
     _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    hash: "00a974b6f9620474ef6b022fb25a9889fb689f10"
+    hash: "9f3f8bae163eff6cdd046439d626f6b591b5f887"
   };
   var coverage = global[gcv] || (global[gcv] = {});
   if (!coverage[path] || coverage[path].hash !== hash) {
@@ -390,55 +390,55 @@ function cov_1sgezpmwcq() {
   var actualCoverage = coverage[path];
   {
     // @ts-ignore
-    cov_1sgezpmwcq = function () {
+    cov_2hiddgg7td = function () {
       return actualCoverage;
     };
   }
   return actualCoverage;
 }
-cov_1sgezpmwcq();
+cov_2hiddgg7td();
 import dayjs from "dayjs";
-cov_1sgezpmwcq().s[0]++;
+cov_2hiddgg7td().s[0]++;
 const manageLocalData = (variableName, action, data) => {
-  cov_1sgezpmwcq().f[0]++;
+  cov_2hiddgg7td().f[0]++;
   let retrievedData;
   let parsedData;
-  cov_1sgezpmwcq().s[1]++;
+  cov_2hiddgg7td().s[1]++;
   if (localStorage.getItem(`${variableName}`)) {
-    cov_1sgezpmwcq().b[0][0]++;
-    cov_1sgezpmwcq().s[2]++;
+    cov_2hiddgg7td().b[0][0]++;
+    cov_2hiddgg7td().s[2]++;
     retrievedData = localStorage.getItem(`${variableName}`);
-    cov_1sgezpmwcq().s[3]++;
+    cov_2hiddgg7td().s[3]++;
     parsedData = JSON.parse(retrievedData);
   } else {
-    cov_1sgezpmwcq().b[0][1]++;
+    cov_2hiddgg7td().b[0][1]++;
   }
-  cov_1sgezpmwcq().s[4]++;
-  if ((cov_1sgezpmwcq().b[2][0]++, !data) && (cov_1sgezpmwcq().b[2][1]++, !parsedData)) {
-    cov_1sgezpmwcq().b[1][0]++;
-    cov_1sgezpmwcq().s[5]++;
+  cov_2hiddgg7td().s[4]++;
+  if ((cov_2hiddgg7td().b[2][0]++, !data) && (cov_2hiddgg7td().b[2][1]++, !parsedData)) {
+    cov_2hiddgg7td().b[1][0]++;
+    cov_2hiddgg7td().s[5]++;
     return;
   } else {
-    cov_1sgezpmwcq().b[1][1]++;
-    cov_1sgezpmwcq().s[6]++;
-    if ((cov_1sgezpmwcq().b[4][0]++, !data) && (cov_1sgezpmwcq().b[4][1]++, parsedData)) {
-      cov_1sgezpmwcq().b[3][0]++;
-      cov_1sgezpmwcq().s[7]++;
+    cov_2hiddgg7td().b[1][1]++;
+    cov_2hiddgg7td().s[6]++;
+    if ((cov_2hiddgg7td().b[4][0]++, !data) && (cov_2hiddgg7td().b[4][1]++, parsedData)) {
+      cov_2hiddgg7td().b[3][0]++;
+      cov_2hiddgg7td().s[7]++;
       action(parsedData);
     } else {
-      cov_1sgezpmwcq().b[3][1]++;
-      cov_1sgezpmwcq().s[8]++;
+      cov_2hiddgg7td().b[3][1]++;
+      cov_2hiddgg7td().s[8]++;
       action(data);
-      const stringifiedData = (cov_1sgezpmwcq().s[9]++, JSON.stringify(data));
-      cov_1sgezpmwcq().s[10]++;
+      const stringifiedData = (cov_2hiddgg7td().s[9]++, JSON.stringify(data));
+      cov_2hiddgg7td().s[10]++;
       localStorage.setItem(`${variableName}`, stringifiedData);
     }
   }
 };
-cov_1sgezpmwcq().s[11]++;
+cov_2hiddgg7td().s[11]++;
 const formatDates = (providedDate, providedFormat) => {
-  cov_1sgezpmwcq().f[1]++;
-  cov_1sgezpmwcq().s[12]++;
+  cov_2hiddgg7td().f[1]++;
+  cov_2hiddgg7td().s[12]++;
   return dayjs(providedDate).format(providedFormat);
 };
 export { manageLocalData, formatDates };

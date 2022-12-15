@@ -1,10 +1,10 @@
-function cov_29yxr4v1ob() {
-  var path = "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/testData/userData.js";
-  var hash = "abfb4ba3c10ec2464d88c2382a54b0e2110757a9";
+function cov_12a2kt55xn() {
+  var path = "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/testData/userData.js";
+  var hash = "d608c0b411f28a5155c26fd7bc96e854f0a9eb22";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
-    path: "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/testData/userData.js",
+    path: "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/testData/userData.js",
     statementMap: {
       "0": {
         start: {
@@ -25,7 +25,7 @@ function cov_29yxr4v1ob() {
     f: {},
     b: {},
     _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    hash: "abfb4ba3c10ec2464d88c2382a54b0e2110757a9"
+    hash: "d608c0b411f28a5155c26fd7bc96e854f0a9eb22"
   };
   var coverage = global[gcv] || (global[gcv] = {});
   if (!coverage[path] || coverage[path].hash !== hash) {
@@ -34,14 +34,14 @@ function cov_29yxr4v1ob() {
   var actualCoverage = coverage[path];
   {
     // @ts-ignore
-    cov_29yxr4v1ob = function () {
+    cov_12a2kt55xn = function () {
       return actualCoverage;
     };
   }
   return actualCoverage;
 }
-cov_29yxr4v1ob();
-const userData = (cov_29yxr4v1ob().s[0]++, {
+cov_12a2kt55xn();
+const userData = (cov_12a2kt55xn().s[0]++, {
   user: {
     "id": 2,
     "name": "Mary",

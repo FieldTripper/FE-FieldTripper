@@ -1,10 +1,10 @@
-function cov_2murmeigs8() {
-  var path = "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/testData/singleMuseumData.js";
-  var hash = "e875f5ba71bdcb885c681ed540d55023ede47725";
+function cov_1235cjlpg2() {
+  var path = "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/testData/singleMuseumData.js";
+  var hash = "66692a79510b1bf95554f04af5ab001e2e81691c";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
-    path: "/Users/Andrew/turing/mod4/project/FE-FieldTripper/src/testData/singleMuseumData.js",
+    path: "/Users/dinnekopelevich/turing/mod_4_projects/FE-FieldTripper/src/testData/singleMuseumData.js",
     statementMap: {
       "0": {
         start: {
@@ -25,7 +25,7 @@ function cov_2murmeigs8() {
     f: {},
     b: {},
     _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
-    hash: "e875f5ba71bdcb885c681ed540d55023ede47725"
+    hash: "66692a79510b1bf95554f04af5ab001e2e81691c"
   };
   var coverage = global[gcv] || (global[gcv] = {});
   if (!coverage[path] || coverage[path].hash !== hash) {
@@ -34,14 +34,14 @@ function cov_2murmeigs8() {
   var actualCoverage = coverage[path];
   {
     // @ts-ignore
-    cov_2murmeigs8 = function () {
+    cov_1235cjlpg2 = function () {
       return actualCoverage;
     };
   }
   return actualCoverage;
 }
-cov_2murmeigs8();
-const singleMuseumData = (cov_2murmeigs8().s[0]++, {
+cov_1235cjlpg2();
+const singleMuseumData = (cov_1235cjlpg2().s[0]++, {
   museum: {
     placeId: "ChIJb13H9tx4bIcRPQoWtgSMyKk",
     name: "National Ballpark Museum",
