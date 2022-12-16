@@ -85,7 +85,6 @@ BE: GraphQL
 - [FieldTripper on Vercel](https://fe-field-tripper-ftfe.vercel.app/)
 
 ## Future Extentsions
-- Global State Management
 - Add a restaurant option so users are able to book a field trip to a museum followed by enjoying a meal at a restaurant near-by.
 - Allow users to search for trips based on friends' trips or by interest.
 - Show users who is hosting each trip.
