@@ -23,17 +23,15 @@ const UserSavedTripCard = ({ trip, user }) => {
       <p className="trip-name">{trip.name}</p>
       <p className="saved-destination">{trip.destinationName}</p>
       <p className="saved-trip-info">
-        <b className='break1'>Your trip on: </b>
-          <span>
-            {returnedDate} 
-          </span>
+        <b className="break1">Your trip on: </b>
+        <span>{returnedDate}</span>
         <br></br>
-         <span>starts at</span> <b className='break2'>{returnedTime}</b>
+        <span>starts at</span> <b className="break2">{returnedTime}</b>
       </p>
       <p className="attendance">
         {trip.attendance} out of {trip.maxAttendees} people are attending
       </p>
-      <button className="primary--button" onClick={() => handleDelete()}>
+      <button className="delete--button" onClick={() => handleDelete()}>
         Delete Trip
       </button>
     </div>

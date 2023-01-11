@@ -4,7 +4,7 @@ import { useLazyQuery } from "@apollo/client";
 import { CREATE_SESSION_QUERY } from "../../queries/queries";
 import { manageLocalData } from "../../utilities/utilities";
 import "./LoginForm.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function LoginForm({ setUser }) {
   const [loginValues, setLoginValues] = useState({
@@ -21,7 +21,9 @@ function LoginForm({ setUser }) {
       manageLocalData("userData", setUser, data.createSession.user);
       navigate("/trip-type");
     } else if (data) {
-      setWarning("Sorry, the information you provided does not seem to match any user in our system.")
+      setWarning(
+        "Sorry, the information you provided does not seem to match any user in our system."
+      );
     }
   }, [data]);
 
@@ -33,7 +35,9 @@ function LoginForm({ setUser }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const isLoginValid = Object.keys(loginValues).every(property => loginValues[property] !== "");
+    const isLoginValid = Object.keys(loginValues).every(
+      (property) => loginValues[property] !== ""
+    );
 
     if (!isLoginValid) {
       setWarning("Please fill in all fields");
@@ -41,7 +45,6 @@ function LoginForm({ setUser }) {
       loginUser({ variables: loginValues });
       setWarning("");
     }
-    
   };
 
   return (
@@ -63,7 +66,7 @@ function LoginForm({ setUser }) {
           placeholder="Password"
           onChange={(event) => handleChange(event)}
         />
-        <button className="primary--button" type="submit">
+        <button className="login--button" type="submit">
           Login
         </button>
       </form>
