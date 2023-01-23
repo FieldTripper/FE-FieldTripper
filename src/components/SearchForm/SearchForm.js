@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SearchForm.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 function SearchForm({ updateSearch }) {
   const [values, setValues] = useState({ city: "", state: "", zipCode: "" });
   const [warning, setWarning] = useState("");
-  
+
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -24,7 +24,7 @@ function SearchForm({ updateSearch }) {
     } else {
       setWarning("Sorry, you need to fill in both City and State");
     }
-  }
+  };
 
   return (
     <section className="page--container column">
@@ -54,10 +54,7 @@ function SearchForm({ updateSearch }) {
             onChange={(event) => handleChange(event)}
             value={values.zipCode}
           />
-          <button
-            className="primary--button search--button"
-            type="submit"
-          >
+          <button className="search--button" type="submit">
             Search
           </button>
         </form>

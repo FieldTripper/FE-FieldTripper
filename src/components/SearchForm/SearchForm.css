@@ -26,6 +26,7 @@ form {
 }
 
 .search--button {
-    margin-left: 5%;
+    margin-top: 0;
+    width: 16vw;
 }
 

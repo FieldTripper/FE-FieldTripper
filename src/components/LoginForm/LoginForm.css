@@ -7,7 +7,11 @@
 }
 
 .login-form-input {
-  margin-top: 1%;
   height: 25%;
   margin-bottom: 1%;
+}
+
+.login--button {
+  height: 8vh;
+  width: 16vw;
 }

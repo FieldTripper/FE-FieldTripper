@@ -17,7 +17,7 @@
 h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    color:#03989e;
+    color: #00676b;
     margin-top: 4%
 }
 
@@ -25,6 +25,15 @@ h2 {
     margin-bottom: 0;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+}
+
+.museum-website {
+    color:#00676b;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    text-decoration: none;
+    margin-bottom: 1%;
+    margin-top: -1%;
 }
 
 .address {
@@ -50,23 +59,22 @@ h3 {
     height: auto;
     margin-top: 2%;
     margin-bottom: 1%;
-    border-color: #03989e;
+    border-color: #00676b;
     border-width: 5px;
     border-style: solid;
 }
 
-a {
+/* a {
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
     margin-bottom: 1%;
-
-}
+} */
 
 @media only screen and (min-width:200px) and (max-width:480px) {
     h1 {
         font-family: 'Roboto', sans-serif;
         font-weight: 600;
-        color:#03989e;
+        color:#00676b;
         margin-top: 4%;
         text-align: center;
     }
