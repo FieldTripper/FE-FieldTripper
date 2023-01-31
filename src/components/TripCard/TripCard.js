@@ -9,14 +9,17 @@ function TripCard({ trip, user }) {
 
   const returnedDate = formatDates(trip.startTime, "MMMM D, YYYY");
   const returnedTime = formatDates(trip.startTime, "h:mmA")
+
+  console.log(trip)
   
   return (
     <article className="trip-card" id={trip.id} key={trip.id}>
       <h3>{trip.name}</h3>
-      <p>{trip.destinationName}</p>
+      <p><b>{trip.destinationName}</b></p>
       <p>
-        This trip on: {returnedDate} starts at: {returnedTime}
+        <b className="break1"> This trip on: </b> {returnedDate} starts at: <b>{returnedTime}</b>
       </p>
+      <p>{trip.attendance} out of {trip.maxAttendees} people are attending</p>
       <button
         onClick={() => createUserTrip({
             variables: { userId: user.id, tripId: trip.id, isHost: false },

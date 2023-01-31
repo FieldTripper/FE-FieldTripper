@@ -1,0 +1,11 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=418
+END=1283
+title=about page should show an About title and a description
+[CHAPTER]
+TIMEBASE=1/1000
+START=2187
+END=2187
+title=about page should show a title with the names and links(linkedIn, GitHub) of everyone who worked on the project
