@@ -12,7 +12,7 @@ function TripCard({ trip, user }) {
 
   return (
     <article className="trip-card" id={trip.id} key={trip.id}>
-      <h3>{trip.name}</h3>
+      <h3 className="existing-trip-name" >{trip.name}</h3>
       <p><b>{trip.destinationName}</b></p>
       <p>
         <b className="break1"> This trip on: </b> {returnedDate} starts at: <b>{returnedTime}</b>

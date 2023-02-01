@@ -31,7 +31,7 @@ function SearchForm({ updateSearch }) {
       <div className="search-housing">
         <h2 className="search-museums">Search Museums</h2>
         <p className="warning-message">{warning}</p>
-        <form onSubmit={(event) => validateSearch(event)}>
+        <form className="search-form" onSubmit={(event) => validateSearch(event)}>
           <input
             type="text"
             name="city"

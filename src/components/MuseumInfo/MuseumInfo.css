@@ -14,17 +14,11 @@
       url('../../images/city.png');
 }
 
-h1 {
+.museum-name {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
     color: #00676b;
     margin-top: 4%
-}
-
-h2 {
-    margin-bottom: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
 }
 
 .museum-website {
@@ -39,12 +33,6 @@ h2 {
 .address {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-}
-
-h3 {
-    margin-bottom: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
 }
 
 .hours {
@@ -64,11 +52,6 @@ h3 {
     border-style: solid;
 }
 
-/* a {
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 1%;
-} */
 
 @media only screen and (min-width:200px) and (max-width:480px) {
     h1 {

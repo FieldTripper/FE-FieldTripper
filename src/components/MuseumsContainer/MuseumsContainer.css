@@ -40,6 +40,34 @@
     transform: translateY(4px)
 }
 
+.back-button {
+    margin-bottom: 2%;
+    margin-top: 5%;
+    background-color: #00676b;
+    border: 2px solid #00676b;
+    color: hsl(0deg 0% 100%);
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 92%;
+    font-weight: 600;
+    text-align: center;
+    transition: all 300ms;
+    width: 18vw;
+    height: 5vh;
+}
+
+.back-button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #00676b;
+    border: 2px solid #00676b;
+}
+
+.back-button:active {
+    box-shadow: 0 2px #666;
+    transform: translateY(4px)
+}
+
 @media only screen and (min-width:50px) and (max-width:574px) {
     .museum-container {
       flex-direction: column;

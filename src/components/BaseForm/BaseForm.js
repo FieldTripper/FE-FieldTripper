@@ -11,8 +11,8 @@ function BaseForm({ setUser }) {
   return (
     <section className="page--container column">
       <QueryResult data={data} error={error} loading={loading}>
-        <p className="welcome">Welcome to FieldTrippers!</p>
-        <form>
+        <p className="welcome-text">Welcome to FieldTrippers!</p>
+        <form className="landing-form">
           <p className="disclaimer">
             You can also choose to "See App" without having an account.
           </p>
