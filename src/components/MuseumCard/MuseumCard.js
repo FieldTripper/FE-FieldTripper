@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./MuseumCard.css";
+import "../../mediaQueries.css"
 import PropTypes from 'prop-types';
 
 function MuseumCard({ museum }) {

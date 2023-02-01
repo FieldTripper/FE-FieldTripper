@@ -66,7 +66,7 @@ function LoginForm({ setUser }) {
           placeholder="Password"
           onChange={(event) => handleChange(event)}
         />
-        <button className="login--button" type="submit">
+        <button className="login-button" type="submit">
           Login
         </button>
       </form>

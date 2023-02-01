@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 import './SignOut.css';
-import PropTypes from 'prop-types';
+import "../../mediaQueries.css"
 
 function SignOut({ setUser }) {
   const navigate = useNavigate();

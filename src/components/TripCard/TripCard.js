@@ -24,7 +24,7 @@ function TripCard({ trip, user }) {
           <p><b>Sorry, this trip is full!</b></p>
           <button className="join--button">Join Trip</button>
         </> :
-        <button 
+        <button className="join-trip--button"
           onClick={() => createUserTrip({
             variables: { userId: user.id, tripId: trip.id, isHost: false },
           })

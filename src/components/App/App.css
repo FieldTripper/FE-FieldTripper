@@ -1,37 +1,35 @@
 * {
-  margin: 0;
-  padding: 0;
   clear: both;
+  padding: 0;
+  margin: 0;
 }
 
 input {
-  margin: 5px;
-  width: 15vw;
   font-size: 12px;
-  height: 40vh;
+  margin: 1vh;
 }
 
 input:focus {
+  box-shadow:0 0 3px 3px #03989e;
   -moz-box-shadow:0 0 3px 3px #03989e;
   -webkit-box-shadow:0 0 3px 3px #03989e;
-  box-shadow:0 0 3px 3px #03989e;
 }
 
 .page--container {
-  height: 70vh;
-  width: 100vw;
-  display: flex;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   background-image:
       linear-gradient(to bottom, #ffffffdb, #ffffffdb),
       url('../../images/city.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 70vh;
+  width: 100vw;
 }
 
 .column {
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 
 .row {
@@ -46,18 +44,16 @@ input:focus {
   font-family: 'Montserrat', sans-serif;
   font-size: 92%;
   font-weight: 600;
-  text-align: center;
-  transition: all 300ms;
-  width: 18vw;
-  height: 4vh;
   margin-left: -.5%;
   margin-top: -3%;
+  text-align: center;
+  transition: all 300ms;
 }
 
 .primary--button:hover {
-  cursor: pointer;
   background-color: white;
   color: #00676b;
+  cursor: pointer;
 }
 
 .primary--button:active {

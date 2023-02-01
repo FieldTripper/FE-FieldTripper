@@ -1,0 +1,194 @@
+/* Phones */
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+  /* BaseForm */
+  .disclaimer {
+    font-size: 75%;
+  }
+
+  .login--button {
+    height: 6vh;
+    width: 20vw;
+  }
+
+  /* SignOut */
+  .sign-out--button {
+    height: 6vh;
+    width: 22vw;
+
+  }
+
+  /* Footer */
+  .footer {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  /* TripType */
+  .trip-host, .trip-join, .trip-saved {
+    height: 6vh;
+    width: 30vw;
+  }
+
+
+  /* SearchForm */
+  .search-input {
+    height: 40vh;
+    width: 40vw;
+  }
+
+  .search--button {
+    height: 6vh;
+    width: 20vw;
+  }
+}
+
+
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+  /* BaseForm */
+  .login--button {
+    height: 6vh;
+    width: 12vw;
+  }
+
+  /* SignOut */
+  .sign-out--button {
+    height: 5vh;
+    width: 17vw;
+  }
+
+  /* TripType */
+  .trip-host, .trip-join, .trip-saved {
+    width: 20vw;
+    height: 5vh;
+  }
+
+    /* SearchForm */
+    .search-input {
+      height: 4vh;
+      width: 20vw;
+    } 
+  
+    .search--button {
+      height: 5vh;
+      width: 15vw;
+    }
+}
+
+
+/* Desktops */
+@media only screen and (min-width: 1025px) {
+
+  /* App */
+  .primary--button {
+    width: 18vw;
+    height: 4vh;
+  }
+
+  /* TripType */
+  .trip-host, .trip-join, .trip-saved {
+    width: 20vw;
+    height: 5vh;
+  }
+
+    /* SearchForm */
+    .search-input {
+      height: 4vh;
+      width: 20vw;
+    }
+  
+    .search--button {
+      height: 5vh;
+      width: 15vw;
+    }
+
+}
+
+
+
+/* usersavedtripcard */
+
+@media only screen and (min-width:50px) and (max-width:574px) {
+  .saved-trip-card {
+    width: 80vw;
+  }
+
+  .delete--button {
+    width: 20vw;
+    height: 5vh;
+  }
+}
+
+/* usersavedtrips */
+
+@media only screen and (min-width:50px) and (max-width:574px) {
+  .user-saved-trips {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #00676b;
+    font-size: 130%;
+    margin-bottom: 2%;
+    margin-top: 6%;
+  }
+
+  .page-title {
+    margin-bottom: 10%;
+  }
+}
+
+/* tripcard */
+
+@media only screen and (min-width:50px) and (max-width:574px) {
+  .trip-card {
+    width: 80vw;
+  }
+}
+
+
+/* museuminfo */
+
+@media only screen and (min-width:200px) and (max-width:480px) {
+  h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: #00676b;
+    margin-top: 4%;
+    text-align: center;
+  }
+}
+
+/* museumcard */
+
+@media only screen and (min-width:50px) and (max-width:574px) {
+  .museums-card {
+    width: 80vw;
+    margin-left: -1%;
+  }
+}
+
+/* museumcontainer */
+
+@media only screen and (min-width:50px) and (max-width:574px) {
+  .museum-container {
+    flex-direction: column;
+    align-items: center;
+    height: 350vh;
+  }
+}
+
+/* existingtrips */
+
+@media only screen and (min-width:50px) and (max-width:480px) {
+  .existing-trip-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .join-trip---button {
+    width: 15vw;
+    height: 5vh;
+  }
+}

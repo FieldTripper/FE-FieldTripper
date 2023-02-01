@@ -1,27 +1,25 @@
 .trip-type {
-    width: 100vw;
-    height: 70vh;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #ffffffdb, #ffffffdb), url('../../images/city.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #00676b;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    color: #00676b;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: linear-gradient(to bottom, #ffffffdb, #ffffffdb), url('../../images/city.png');
+    height: 70vh;
+    width: 100vw;
 }
 
 .choose-trip {
-    margin-bottom: 0;
     font-family: 'Roboto', sans-serif;
+    font-size: 130%;
     font-weight: 600;
     margin-bottom: 3%;
-    font-size: 130%;
     margin-top: 10%;
 }
 
 .trip-host, .trip-join, .trip-saved {
-    margin-bottom: 2%;
     background-color: #00676b;
     border: 2px solid #00676b;
     color: hsl(0deg 0% 100%);
@@ -29,17 +27,16 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 92%;
     font-weight: 600;
+    margin-bottom: 2%;
     text-align: center;
     transition: all 300ms;
-    width: 20vw;
-    height: 5vh;
 }
 
 .trip-host:hover, .trip-join:hover, .trip-saved:hover {
-    cursor: pointer;
     background-color: white;
-    color: #00676b;
     border: 2px solid #00676b;
+    color: #00676b;
+    cursor: pointer;
   }
   
   .primary--button:active {

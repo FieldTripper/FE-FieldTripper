@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SignOut from "../SignOut/SignOut";
 import "./Footer.css";
+import "../../mediaQueries.css"
 import PropTypes from "prop-types";
 
 const Footer = ({ user, setUser }) => {
