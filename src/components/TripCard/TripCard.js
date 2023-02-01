@@ -1,11 +1,17 @@
-import { useMutation } from "@apollo/client";
+import { useMutation, useQuery } from "@apollo/client";
 import { CREATE_USER_TRIP_MUTATION } from "../../queries/mutations";
+import { USER_QUERY } from "../../queries/queries";
 import { formatDates } from "../../utilities/utilities";
 import "./TripCard.css";
 import PropTypes from 'prop-types';
 
 function TripCard({ trip, user }) {
   const [createUserTrip] = useMutation(CREATE_USER_TRIP_MUTATION);
+  const { data } = useQuery(USER_QUERY, {
+    variables: {
+      id: trip.hostId
+    }
+  });
 
   const returnedDate = formatDates(trip.startTime, "MMMM D, YYYY");
   const returnedTime = formatDates(trip.startTime, "h:mmA")
@@ -17,6 +23,11 @@ function TripCard({ trip, user }) {
       <p>
         This trip on: {returnedDate} starts at: {returnedTime}
       </p>
+      {
+        data 
+          ? <p>Host: {`${data.user.name}`}</p>
+          : null
+      }
       <button
         onClick={() => createUserTrip({
             variables: { userId: user.id, tripId: trip.id, isHost: false },
