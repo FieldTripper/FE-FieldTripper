@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./TripType.css";
 
 const TripType = () => {
+
+
   return (
     <div className="trip-type">
       <p className="choose-trip">Choose Your Trip Type</p>

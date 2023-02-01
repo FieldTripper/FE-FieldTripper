@@ -10,8 +10,6 @@ function TripCard({ trip, user }) {
   const returnedDate = formatDates(trip.startTime, "MMMM D, YYYY");
   const returnedTime = formatDates(trip.startTime, "h:mmA")
 
-  console.log(trip)
-  
   return (
     <article className="trip-card" id={trip.id} key={trip.id}>
       <h3>{trip.name}</h3>
@@ -20,14 +18,22 @@ function TripCard({ trip, user }) {
         <b className="break1"> This trip on: </b> {returnedDate} starts at: <b>{returnedTime}</b>
       </p>
       <p>{trip.attendance} out of {trip.maxAttendees} people are attending</p>
-      <button
-        onClick={() => createUserTrip({
+
+      {trip.attendance === trip.maxAttendees ?
+        <>
+          <p><b>Sorry, this trip is full!</b></p>
+          <button className="join--button">Join Trip</button>
+        </> :
+        <button 
+          onClick={() => createUserTrip({
             variables: { userId: user.id, tripId: trip.id, isHost: false },
           })
-        }
-      >
-        Join Trip
-      </button>
+          }
+        >
+          Join Trip
+        </button>
+      }
+
     </article>
   );
 }

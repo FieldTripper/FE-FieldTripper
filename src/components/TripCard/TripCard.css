@@ -11,6 +11,12 @@
   box-shadow: 6px 3px 3px grey;
 }
 
+.join--button:hover {
+  cursor: not-allowed;
+  color: white;
+  background-color: #00676b;
+}
+
 h3 {
   color: #00676b;
 }
