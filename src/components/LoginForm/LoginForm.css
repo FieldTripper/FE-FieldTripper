@@ -11,7 +11,16 @@
   margin-bottom: 1%;
 }
 
-.login--button {
-  height: 8vh;
-  width: 16vw;
+.login-button {
+  margin: 10px;
+  max-height: 45px;
+  border: 2px solid #00676b;
+  background-color: rgb(32, 99, 103);
+  border-color: rgb(54, 229, 236);
+  color: rgb(255, 254, 251);
+  cursor: pointer;
+  font-family: Montserrat,sans-serif;
+  font-size: 92%;
+  font-weight: 600;
+  text-align: center;
 }

@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import "./TripType.css";
+import "../../mediaQueries.css"
 
 const TripType = () => {
+
+
   return (
     <div className="trip-type">
       <p className="choose-trip">Choose Your Trip Type</p>

@@ -1,9 +1,12 @@
+.link {
+  text-decoration: none;
+}
+
 .museums-card {
   display: flex;
   border-radius: 12px;
-  width: 30vw;
-  height: 10vh;
   margin: 7%;
+  margin-left: -1%;
   align-items: center;
   justify-content: space-between;
   background-color: #00676b;
@@ -30,16 +33,9 @@
   color: white;
 }
 
-h4 {
+.museum-rating {
   margin-bottom: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   color: white;
-}
-
-@media only screen and (min-width:50px) and (max-width:574px) {
-  .museums-card {
-    width: 80vw;
-    margin-left: -1%;
-  }
 }

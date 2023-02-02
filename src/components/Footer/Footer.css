@@ -17,10 +17,3 @@
     font-size: 94%;
     color: white;
 }
-
-@media only screen and (min-width:50px) and (max-width:480px) {
-    .footer {
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-}

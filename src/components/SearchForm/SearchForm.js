@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SearchForm.css";
+import "../../mediaQueries.css"
 import PropTypes from "prop-types";
 
 function SearchForm({ updateSearch }) {
@@ -31,8 +32,9 @@ function SearchForm({ updateSearch }) {
       <div className="search-housing">
         <h2 className="search-museums">Search Museums</h2>
         <p className="warning-message">{warning}</p>
-        <form onSubmit={(event) => validateSearch(event)}>
+        <form className="search-form" onSubmit={(event) => validateSearch(event)}>
           <input
+            className="search-input"
             type="text"
             name="city"
             placeholder="Enter City"
@@ -40,6 +42,7 @@ function SearchForm({ updateSearch }) {
             value={values.city}
           />
           <input
+            className="search-input"
             type="text"
             name="state"
             placeholder="Enter State"
@@ -47,7 +50,7 @@ function SearchForm({ updateSearch }) {
             value={values.state}
           />
           <input
-            className="zip"
+            className="search-input"
             type="text"
             name="zipCode"
             placeholder="Zip Code (Optional)"

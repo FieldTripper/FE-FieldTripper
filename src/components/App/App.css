@@ -1,63 +1,35 @@
 * {
-  margin: 0;
-  padding: 0;
   clear: both;
+  padding: 0;
+  margin: 0;
 }
 
-.App {
-  text-align: center;
+input {
+  font-size: 12px;
+  margin: 1vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input:focus {
+  box-shadow:0 0 3px 3px #03989e;
+  -moz-box-shadow:0 0 3px 3px #03989e;
+  -webkit-box-shadow:0 0 3px 3px #03989e;
 }
 
 .page--container {
-  height: 70vh;
-  width: 100vw;
-  display: flex;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
   background-image:
       linear-gradient(to bottom, #ffffffdb, #ffffffdb),
       url('../../images/city.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 70vh;
+  width: 100vw;
 }
 
 .column {
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
 }
 
 .row {
@@ -72,36 +44,21 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 92%;
   font-weight: 600;
-  text-align: center;
-  transition: all 300ms;
-  width: 18vw;
-  height: 4vh;
   margin-left: -.5%;
   margin-top: -3%;
+  text-align: center;
+  transition: all 300ms;
 }
 
 .primary--button:hover {
-  cursor: pointer;
   background-color: white;
   color: #00676b;
+  cursor: pointer;
 }
 
 .primary--button:active {
   box-shadow: 0 2px #666;
   transform: translateY(4px)
-}
-
-input {
-  margin: 5px;
-  width: 15vw;
-  font-size: 12px;
-  height: 40vh;
-}
-
-input:focus {
-  -moz-box-shadow:0 0 3px 3px #03989e;
-  -webkit-box-shadow:0 0 3px 3px #03989e;
-  box-shadow:0 0 3px 3px #03989e;
 }
 
 .warning-message {
