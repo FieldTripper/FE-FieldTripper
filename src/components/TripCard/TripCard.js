@@ -2,6 +2,7 @@ import { useMutation } from "@apollo/client";
 import { CREATE_USER_TRIP_MUTATION } from "../../queries/mutations";
 import { formatDates } from "../../utilities/utilities";
 import "./TripCard.css";
+import "../../mediaQueries.css"
 import PropTypes from 'prop-types';
 
 function TripCard({ trip, user }) {
@@ -22,9 +23,9 @@ function TripCard({ trip, user }) {
       {trip.attendance === trip.maxAttendees ?
         <>
           <p><b>Sorry, this trip is full!</b></p>
-          <button className="join--button">Join Trip</button>
+          <button className="join-trip-button">Join Trip</button>
         </> :
-        <button className="join-trip--button"
+        <button className="join-trip-button"
           onClick={() => createUserTrip({
             variables: { userId: user.id, tripId: trip.id, isHost: false },
           })

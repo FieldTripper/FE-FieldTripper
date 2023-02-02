@@ -3,6 +3,7 @@ import { DELETE_USER_TRIP_MUTATION } from "../../queries/mutations";
 import { USER_TRIPS_QUERY } from "../../queries/queries";
 import { formatDates } from "../../utilities/utilities";
 import "./UserSavedTripCard.css";
+import "../../mediaQueries.css"
 import PropTypes from "prop-types";
 
 const UserSavedTripCard = ({ trip, user }) => {

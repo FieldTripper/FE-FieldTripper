@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Image from "../../images/location-pin.png";
 import "./LocationPin.css";
+import "../../mediaQueries.css"
 import PropTypes from 'prop-types';
 
 const LocationPin = ({ name, placeId }) => {

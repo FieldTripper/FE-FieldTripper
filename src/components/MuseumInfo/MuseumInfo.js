@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client";
 import { MUSEUM_QUERY } from "../../queries/queries";
 import QueryResult from "../QueryResult/QueryResult";
 import "./MuseumInfo.css";
+import "../../mediaQueries.css"
 
 function MuseumInfo() {
   const { placeId } = useParams();
@@ -132,7 +133,7 @@ function MuseumInfo() {
           </>
         )}
         <Link to="/booking-form">
-          <button className="go-book-trip">Book Trip</button>
+          <button className="booking-trip-button">Book Trip</button>
         </Link>
         <Link to="/museums">
           <button className="back-button">Back</button>

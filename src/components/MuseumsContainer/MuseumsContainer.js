@@ -8,6 +8,7 @@ import Map from "../Map/Map";
 import LocationPin from "../LocationPin/LocationPin";
 import { manageLocalData } from "../../utilities/utilities";
 import "./MuseumsContainer.css";
+import "../../mediaQueries.css"
 import PropTypes from 'prop-types';
 
 function MuseumsContainer({ searchTerms, setMuseumData }) {
@@ -42,7 +43,7 @@ function MuseumsContainer({ searchTerms, setMuseumData }) {
           <LocationPin data={data} />
         </Map>
         <Link to="/booking-form">
-          <button className="go-book-trip">Book Trip</button>
+          <button className="book-trip-button">Book Trip</button>
         </Link>
       </QueryResult>
     </section>

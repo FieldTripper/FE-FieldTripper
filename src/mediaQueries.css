@@ -41,6 +41,65 @@
     height: 6vh;
     width: 20vw;
   }
+
+  /* MuseumCard */
+  .museums-card {
+    height: 10vh;
+    width: 80vw;
+  }
+
+  /* MuseumsContainer */
+  .book-trip-button {
+    height: 6vh;
+    width: 21vw;
+    margin-bottom: 1vh;
+  }
+
+  .museum-container {
+    flex-direction: column;
+    align-items: center;
+    height: 350vh;
+  }
+
+  /* BookingForm */
+  .booking-button {
+    height: 6vh;
+    width: 35vw;
+  }
+
+  .booking-trip-button {
+    height: 6vh;
+    width: 19vw;
+  }
+
+  .booking-options {
+    height: 4vh;
+    width: 77vw;
+  }
+
+  /* ExistingTrips */
+  .join-trip-button {
+    height: 7vh;
+    width: 20vw;
+    margin-bottom: 4%;
+  }
+
+  .existing-trip-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* LogIn */
+  .login-button {
+    height: 6vh;
+    width: 20vw;
+  }
+
+   /* SignUp */
+   .sign-up-button {
+    height: 6vh;
+    width: 15vw;
+  }
 }
 
 
@@ -76,6 +135,55 @@
       height: 5vh;
       width: 15vw;
     }
+
+    /* MuseumCard */
+  .museums-card {
+    height: 10vh;
+    width: 30vw;
+  }
+
+  /* MuseumsContainer */
+  .book-trip-button {
+    height: 6vh;
+    width: 20vw;
+  }
+
+  .museum-container {
+    flex-direction: column;
+    align-items: center;
+    height: 350vh;
+  }
+
+  /* BookingForm */
+  .booking-button {
+    height: 5vh;
+    width: 18vw;
+  }
+
+  .booking-options {
+    height: 3vh;
+    width: 37vw;
+    align-items: center;
+  }
+
+  /* ExistingTrips */
+  .join-trip-button {
+    height: 4vh;
+    width: 8vw;
+  }
+
+  /* LogIn */
+  .login-button {
+    height: 6vh;
+    width: 12vw;
+  }
+
+   /* SignUp */
+   .sign-up-button {
+    height: 3vh;
+    width: 9vw;
+  }
+
 }
 
 
@@ -105,90 +213,52 @@
       width: 15vw;
     }
 
-}
-
-
-
-/* usersavedtripcard */
-
-@media only screen and (min-width:50px) and (max-width:574px) {
-  .saved-trip-card {
-    width: 80vw;
-  }
-
-  .delete--button {
-    width: 20vw;
-    height: 5vh;
-  }
-}
-
-/* usersavedtrips */
-
-@media only screen and (min-width:50px) and (max-width:574px) {
-  .user-saved-trips {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    color: #00676b;
-    font-size: 130%;
-    margin-bottom: 2%;
-    margin-top: 6%;
-  }
-
-  .page-title {
-    margin-bottom: 10%;
-  }
-}
-
-/* tripcard */
-
-@media only screen and (min-width:50px) and (max-width:574px) {
-  .trip-card {
-    width: 80vw;
-  }
-}
-
-
-/* museuminfo */
-
-@media only screen and (min-width:200px) and (max-width:480px) {
-  h1 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    color: #00676b;
-    margin-top: 4%;
-    text-align: center;
-  }
-}
-
-/* museumcard */
-
-@media only screen and (min-width:50px) and (max-width:574px) {
+  /* MuseumCard */
   .museums-card {
-    width: 80vw;
-    margin-left: -1%;
-  }
-}
-
-/* museumcontainer */
-
-@media only screen and (min-width:50px) and (max-width:574px) {
-  .museum-container {
-    flex-direction: column;
-    align-items: center;
-    height: 350vh;
-  }
-}
-
-/* existingtrips */
-
-@media only screen and (min-width:50px) and (max-width:480px) {
-  .existing-trip-card-container {
-    flex-direction: column;
-    align-items: center;
+    height: 10vh;
+    width: 30vw;
   }
 
-  .join-trip---button {
-    width: 15vw;
+  /* MuseumsContainer */
+  .book-trip-button {
     height: 5vh;
+    width: 18vw;
   }
+
+  .museum-container {
+    height: 70vh;
+  }
+
+  .book-trip-button {
+    margin-top: 100%;
+  }
+
+    /* BookingForm */
+    .booking-button {
+      height: 5vh;
+      width: 18vw;
+    }
+
+    .booking-options {
+      height: 3vh;
+      width: 23vw;
+    }
+
+    /* ExistingTrips  */
+    .join-trip-button {
+      height: 4vh;
+      width: 8vw;
+    }
+
+    /* LogIn */
+    .login-button {
+      height: 5vh;
+      width: 10vw;
+    }
+
+    /* SignUp */
+    .sign-up-button {
+      height: 3vh;
+      width: 9vw;
+    }
 }

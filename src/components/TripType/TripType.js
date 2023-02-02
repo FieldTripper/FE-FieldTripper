@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./TripType.css";
+import "../../mediaQueries.css"
 
 const TripType = () => {
 
