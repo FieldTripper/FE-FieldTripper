@@ -11,12 +11,19 @@
   box-shadow: 6px 3px 3px grey;
 }
 
-h3 {
+.join--button:hover {
+  cursor: not-allowed;
+  color: white;
+  background-color: #00676b;
+}
+
+.existing-trip-name {
   color: #00676b;
 }
 
-@media only screen and (min-width:50px) and (max-width:574px) {
+@media only screen and (min-width:320px) and (max-width:767px) {
   .trip-card {
+    height: 32vh;
     width: 80vw;
   }
 }

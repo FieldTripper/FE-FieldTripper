@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import { CREATE_USER_MUTATION } from "../../queries/mutations";
 import { manageLocalData } from "../../utilities/utilities";
 import "./SignUpForm.css";
+import "../../mediaQueries.css"
 import PropTypes from 'prop-types';
 
 function SignUpForm({ setUser }) {

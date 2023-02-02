@@ -4,6 +4,7 @@ import { USERS_QUERY } from "../../queries/queries";
 import { manageLocalData } from "../../utilities/utilities";
 import QueryResult from "../QueryResult/QueryResult";
 import "./BaseForm.css";
+import "../../mediaQueries.css"
 import PropTypes from "prop-types";
 function BaseForm({ setUser }) {
   const { loading, error, data } = useQuery(USERS_QUERY);
@@ -11,8 +12,8 @@ function BaseForm({ setUser }) {
   return (
     <section className="page--container column">
       <QueryResult data={data} error={error} loading={loading}>
-        <p className="welcome">Welcome to FieldTrippers!</p>
-        <form>
+        <p className="welcome-text">Welcome to FieldTrippers!</p>
+        <form className="landing-form">
           <p className="disclaimer">
             You can also choose to "See App" without having an account.
           </p>

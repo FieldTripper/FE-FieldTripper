@@ -29,13 +29,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   height: 35vh;
 }
 
-.booking-options {
-  height: 3vh;
-  width: 20vw;
-}
 
 .booking-button {
   background-color: #00676b;
@@ -46,9 +43,8 @@
   font-size: 92%;
   font-weight: 600;
   text-align: center;
+  margin-top: 5%;
   transition: all 300ms;
-  width: 15vw;
-  height: 4vh;
 }
 
 .booking-button:hover {
