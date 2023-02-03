@@ -100,7 +100,7 @@ function MuseumInfo() {
               <></>
             )}
 
-            {data.museum.price && (
+            {data.museum.price >= 1 && (
               <h3>
                 <b>Price:</b> {formatPrice(data.museum.price)}
               </h3>
@@ -133,7 +133,7 @@ function MuseumInfo() {
           </>
         )}
         <Link to="/booking-form">
-          <button className="booking-trip-button">Book Trip</button>
+          <button className="booking-button">Book Trip</button>
         </Link>
         <Link to="/museums">
           <button className="back-button">Back</button>
