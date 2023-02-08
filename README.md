@@ -2,7 +2,7 @@
   <img width="600" alt="FieldTrippers logo" src="https://user-images.githubusercontent.com/63877492/207712459-87dba476-f414-4e28-9e4c-f0ec0b82baeb.png">
 </p>
 
-## Table of Contens
+## Table of Contents
 - [Introduction](#introduction)
 - [Project Managers](#project-managers)
 - [Contributors](#contributors)
